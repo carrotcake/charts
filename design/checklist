@@ -1,0 +1,71 @@
+ARCHITECTURE:
+
+	
+
+OBJECTS:
+	
+	MUSIC:
+		- Song / Chart
+		  - Key
+		  - Meter
+		  - Style***
+		  - Measure
+		    - Beat / Subdiv
+		      - Chord / ChordContext
+		        - Note (Bass?)
+		  - Selection (UI)
+		  - Instrument / "Part"
+		  - Pattern (Style***)
+		  - Playback Context
+		  - Chord Suggestion
+		    - Progression (Tree Structure + Linked List?)
+	UI:
+		- StartWindow
+		  - New Chart Wizard
+		  - Recently Opened
+		  - Templates
+		- MainWindow
+		  - Side Palette
+			- Harmonic Tools
+			- Metric Tools
+			  - Swing
+			- Other Tools
+		  - Score View
+		  - (???) Top Toolbar
+		  - Status Bar
+		- Song Properties Dialog
+		- Chord Entry Dialog
+		  - Named Chord (user choice: keyb input / buttons or dropdown)
+		  - Nashville Numbers / Roman Numerals
+		  - Spell out with notes
+		    - (???) Virtual piano / piano roll
+		  - Chord Suggestion Algo
+		    - Pick bass note
+		    - (???) Pick modulation
+		- Import / Export Dialog
+		- DB Connection Dialog
+		- Login / Register Dialog
+		- Application Preferences Dialog
+		- Tutorial System
+	OTHER:
+		- User
+		- ExportChart
+		- ImportChart
+		- Login
+		- Publish
+		- Retrieve from DB
+		- 
+
+	UTIL:
+		- MIDI I/O
+		- File I/O
+		- 
+		
+
+
+ACTIVITY:
+
+
+
+USE CASE:
+
