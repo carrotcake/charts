@@ -10,13 +10,26 @@ CONFIG += c++17
 
 SOURCES += \
     src/main.cpp \
-    src/ui/mainwindow.cpp
+    src/music/chart.cpp \
+    src/music/chord.cpp \
+    src/music/note.cpp \
+    src/ui/mainwindow.cpp \
+    src/ui/scorewidget.cpp \
+    src/ui/startupwindow.cpp
 
 HEADERS += \
-    src/ui/mainwindow.h
+    src/music/chart.h \
+    src/music/chord.h \
+    src/music/meter.h \
+    src/music/note.h \
+    src/music/notes.h \
+    src/ui/mainwindow.h \
+    src/ui/scorewidget.h \
+    src/ui/startupwindow.h
 
 FORMS += \
-    src/ui/mainwindow.ui
+    src/ui/mainwindow.ui \
+    src/ui/startupwindow.ui
 
 TRANSLATIONS += \
     Charts_en_US.ts

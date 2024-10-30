@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "startupwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -15,8 +16,13 @@ class MainWindow : public QMainWindow {
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void startUp();
+
+public slots:
+    void on_start_windowClosed(int result);
 
 private:
     Ui::MainWindow *ui;
+    StartupWindow start;
 };
 #endif // MAINWINDOW_H
