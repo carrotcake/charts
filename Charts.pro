@@ -9,6 +9,7 @@ CONFIG += c++17
 
 
 SOURCES += \
+    src/chordparser.cpp \
     src/main.cpp \
     src/music/chart.cpp \
     src/music/chord.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
     src/ui/startupwindow.cpp
 
 HEADERS += \
+    src/chordparser.h \
     src/music/chart.h \
     src/music/chord.h \
     src/music/meter.h \

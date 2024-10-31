@@ -7,7 +7,7 @@ namespace Meter {
 enum class Subdivision {
     SIXTYFOURTH  = 1,
     THIRTYSECOND = 2,
-    SIXTEENH     = 4,
+    SIXTEENTH    = 4,
     EIGTH        = 8,
     QUARTER      = 16,
     HALF         = 32,

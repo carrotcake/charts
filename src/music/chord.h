@@ -5,7 +5,6 @@
 #include "note.h"
 
 /*
-    
 	CHORD:
         - Root
         - Quality - 3rd & 5th (maj, min, aug, dim, sus, no3?, no5?)
@@ -30,16 +29,16 @@
 			<Major> ::= M | Maj | Δ | <null>
 			<Minor> ::= m | min | - 
    			<Aug> 	::= aug | +
-			<Dim>   ::= dim | o | ° | ø 
+            <Dim>   ::= dim | o | °
 			<Sus> 	::= sus2 | sus4 | sus
 			<NoX> 	::= no3 | no5 | 5
 
 		<Extension> ::= <BasicExt> <JazzExt>
     		<BasicExt> ::= 2 | 6 | 6/9 | add9 | add11 | <null>
 			<JazzExt> ::=  <ValidExt> | <ValidExt> <JazzExt> | <null>
-			<ValidExt> ::= <Ext5> | <Ext7> | <Ext9> | <Ext11> | <Ext13>
+            <ValidExt> ::= <Ext5> | <Ext7> | <Ext9> | <Ext11> | <Ext13>
 				<Ext5> ::= b5
-				<Ext7> ::= 7 | Maj7 | M7 | dim7 | °7 | o7 | ø7
+                <Ext7> ::= 7 | 7alt
 				<Ext9> ::= b9 | 9 | #9
 				<Ext11> ::= 11 | #11
 				<Ext13> ::= b13 | 13
@@ -50,7 +49,7 @@
 
 */
 
-enum class TriadQuality { maj, min, aug, dim, sus2, sus4 };
+enum class TriadQuality { maj, min, aug, dim, sus2, sus4, no3 };
 
 enum class ExtQuality { none = 0, sharp, nat, flat, maj, min, dim };
 
@@ -76,12 +75,12 @@ class Chord {
 public:
     Chord();
 
-private:
+//private:
     QString name;
     QList<Note> notes;
     //Notes::NoteName root;
-    Notes::NoteValue root;
-    Notes::NoteValue bass;
+    Notes::Value root;
+    Notes::Value bass;
     TriadQuality quality;
     ChordExtension ext;
 };
