@@ -49,11 +49,11 @@
 
 */
 
-enum class TriadQuality { maj, min, aug, dim, sus2, sus4, no3 };
+enum class TriadQuality { maj, min, aug, dim, sus2, sus4, no3, dommaj };
 
 enum class ExtQuality { none = 0, sharp, nat, flat, maj, min, dim };
 
-enum ExtIntervalType {
+enum ExtType {
     two = 0,
     six,
     sixnine,
@@ -68,14 +68,14 @@ enum ExtIntervalType {
 };
 
 struct ChordExtension {
-    ExtQuality qualities[ExtIntervalType::INTVLTYPECOUNT] = {ExtQuality::none};
+    ExtQuality qualities[ExtType::INTVLTYPECOUNT] = {ExtQuality::none};
 };
 
 class Chord {
 public:
     Chord();
 
-//private:
+    // private:
     QString name;
     QList<Note> notes;
     //Notes::NoteName root;
