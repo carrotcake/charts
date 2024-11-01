@@ -3,12 +3,14 @@
 
 #include "notes.h"
 
-class Note {
+
+
+struct Note {
 public:
     Note(Notes::Letter let, Notes::Value v)
-        : m_name(let),
+        : m_let(let),
         m_val(v){}
-    Notes::Letter const name(){return m_name;}
+    Notes::Letter const letter(){return m_let;}
     Notes::Value const value(){return m_val;}
     bool const accidental(){
         switch(m_val){
@@ -25,7 +27,8 @@ public:
     }
 
 private:
-    Notes::Letter m_name;
+
+    Notes::Letter m_let;
     Notes::Value m_val;
 };
 
