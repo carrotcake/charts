@@ -88,15 +88,16 @@ public:
     void setBass(const Notes::Note bass);
     void setQuality(const quality newqual);
     void setExtension(const extension newlevel);
-    bool canAddAlteration(const alteration alt);
-    bool addAlteration(const alteration newalt);
-    bool removeAlteration(const alteration alt);
+    bool canAddAlteration(const alteration alt) const;
+    void addAlteration(const alteration newalt);
+    void removeAlteration(const alteration alt);
 
 private:
     void constructChord();
+    void nameChord();
     enum action{R=-1,N=0,A=1}; //remove, no action, add
     typedef std::array<bool, Notes::COUNT> interval_set;
-    typedef std::array<action, Notes::COUNT> action_set;
+    typedef const std::array<action, Notes::COUNT> action_set;
                                             //          #9      #11     #5
                                             //  1 b9  9 b3  3 11 b5  5 b13 13 b7 7
     static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1}, //maj
@@ -110,7 +111,7 @@ private:
                                               {1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1}, //11
                                               {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1}};//13
 
-    static constexpr action_set ALTSETS[] = {{N, N, N, R, R, N, N, N, N, N, N, N}, //no3 / 5
+    static constexpr action_set ALTSETS[] =   {{N, N, N, R, R, N, N, N, N, N, N, N}, //no3 / 5
                                                {N, N, N, N, N, N, R, R, N, N, N, N}, //no5
                                                {N, N, N, N, N, N, A, R, N, N, N, N}, //b5
                                                {N, N, N, N, N, N, R, R, A, N, N, N}, //#5

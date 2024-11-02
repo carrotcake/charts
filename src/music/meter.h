@@ -1,9 +1,8 @@
 #ifndef METER_H
 #define METER_H
 
-#include <QtTypes>
-
 namespace Meter {
+
 enum class Subdivision {
     SIXTYFOURTH  = 1,
     THIRTYSECOND = 2,
@@ -18,12 +17,16 @@ const static double DOTTED = 1.5, TRIPLE = 2. / 3.;
 
 struct TimeSig {
 public:
-    const quint8 upper, lower;
-    TimeSig(const quint8 top, const quint8 btm)
-        : upper(top)
-        , lower(btm) {};
+    TimeSig(int upper, int lower)
+        : m_upper(upper)
+        , m_lower(lower) {};
     TimeSig()
         : TimeSig(4, 4) {};
+    int upper() const {return m_upper;}
+    int lower() const {return m_lower;}
+private:
+    const int m_upper, m_lower;
+
 };
 } // namespace Meter
 #endif // METER_H

@@ -1,9 +1,13 @@
 #ifndef NOTES_H
 #define NOTES_H
+
 #include <string>
+#include <array>
 
 namespace Notes {
+
 const size_t COUNT = 12;
+
 enum value {
     ERRNOTE=-1,
     NOTE_A      = 0,
@@ -24,6 +28,7 @@ enum value {
     NOTE_Gsharp = 11,
     NOTE_Aflat  = 11
 };
+
 enum interval {
     UNISON     = 0,
     MINSECOND  = 1,
@@ -42,22 +47,26 @@ enum interval {
     MAJSEVENTH = 11,
     OCTAVE     = 12
 };
+
 enum class Letter { A = 0, B, C, D, E, F, G };
 enum class Octave { A0 = 0, A1, A2, A3, A4, A5, A6, A7 };
-static std::string str_ROMANMAJ[COUNT]
+
+const std::array<const std::string, COUNT> str_ROMANMAJ
     = {"I", "bII", "II", "bIII", "III", "IV", "bV", "V", "bVI", "VI", "bVII", "VII"};
-static std::string str_ROMANMIN[COUNT]
+const std::array<const std::string, COUNT> str_ROMANMIN
     = {"i", "bii", "ii", "biii", "iii", "iv", "bv", "v", "bvi", "vi", "bvii", "vii"};
-static std::string str_NASHVILLE[COUNT]
+const std::array<const std::string, COUNT> str_NASHVILLE
     = {"1", "b2", "2", "b3", "3", "4", "b5", "5", "b6", "6", "b7", "7"};
-static std::string str_FLATNAMES[COUNT]
+const std::array<const std::string, COUNT> str_FLATNAMES
     = {"A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"};
-static std::string str_SHARPNAMES[COUNT]
+const std::array<const std::string, COUNT> str_SHARPNAMES
     = {"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"};
 
+const std::string ERRSTR = "bad note";
+
 struct Note{
-    std::string flatName() const {return m_value == ERRNOTE ? "err" : str_FLATNAMES[m_value];}
-    std::string sharpName() const {return m_value == ERRNOTE ? "err" :  str_SHARPNAMES[m_value];}
+    const std::string& flatName() const {return m_value == ERRNOTE ? ERRSTR : str_FLATNAMES[m_value];}
+    const std::string& sharpName() const {return m_value == ERRNOTE ? ERRSTR :  str_SHARPNAMES[m_value];}
     bool const accidental(){
         switch(m_value){
         case Notes::value::NOTE_A:
@@ -67,9 +76,8 @@ struct Note{
         case Notes::value::NOTE_G:
             return false;
         default:
-            break;
+            return true;
         }
-        return true;
     }
     value m_value;
 };
