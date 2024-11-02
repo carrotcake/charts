@@ -3,33 +3,16 @@
 
 #include "notes.h"
 
-
-
-struct Note {
+struct PitchedNote {
 public:
-    Note(Notes::Letter let, Notes::Value v)
-        : m_let(let),
-        m_val(v){}
-    Notes::Letter const letter(){return m_let;}
-    Notes::Value const value(){return m_val;}
-    bool const accidental(){
-        switch(m_val){
-        case Notes::Value::A:
-        case Notes::Value::B:
-        case Notes::Value::D:
-        case Notes::Value::E:
-        case Notes::Value::G:
-            return false;
-        default:
-            break;
-        }
-        return true;
-    }
-
+    PitchedNote(const Notes::Note val, Notes::Octave oct)
+        : m_note(val),
+        m_octave(oct){}
+    Notes::Note const note(){return m_note;}
+    Notes::Octave const value(){return m_octave;}
 private:
-
-    Notes::Letter m_let;
-    Notes::Value m_val;
+    const Notes::Note m_note;
+    Notes::Octave m_octave;
 };
 
 #endif // NOTE_H

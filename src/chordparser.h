@@ -8,7 +8,7 @@ class ChordParser
 {
 public:
     ChordParser();
-    Chord parseChordFromString(const QString &str);
+    Chord parseChordFromString(const std::string &str);
 };
 
 #endif // CHORDPARSER_H
