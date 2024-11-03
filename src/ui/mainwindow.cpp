@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::startUp() {
     connect(&start, &StartupWindow::windowClosed, this, &MainWindow::on_start_windowClosed);
+    ui->alterationButtons->setExclusive(false);
     start.show();
     this->setDisabled(true);
 }
