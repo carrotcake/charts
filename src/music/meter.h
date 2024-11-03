@@ -28,5 +28,6 @@ private:
     const int m_upper, m_lower;
 
 };
+
 } // namespace Meter
 #endif // METER_H

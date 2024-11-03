@@ -1,10 +1,10 @@
 #ifndef CHORD_H
 #define CHORD_H
 
-#include <Array>
+#include "note.h"
+#include <array>
 #include <string>
 #include <vector>
-#include "note.h"
 /*
 	CHORD:
         - Root
@@ -41,22 +41,13 @@
 */
 
 class Chord {
-
-    enum quality {
-        maj=0,
-        dom,
-        min,
-        dim
-    };
-    enum extension {
-        triad=0,
-        seven,
-        nine,
-        eleven,
-        thirteen
-    };
+public:
+    enum quality { maj = 0, dom, min, dim };
+    const std::array<const std::string, 4> str_QUALITY = {"Maj", "min", "", "dim"};
+    enum extension { triad = 0, seven, nine, eleven, thirteen };
+    const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
     enum alteration {
-        no3=0,
+        no3 = 0,
         no5,
         flat5,
         sharp5,
@@ -64,16 +55,16 @@ class Chord {
         sus4,
         flat9,
         sharp9,
+        add13,
         add9,
         sharp11,
         add11,
         flat13,
-        add13,
         ALTCOUNT
     };
+    const std::array<const std::string, ALTCOUNT> str_ALTERATION = {
+        "no3", "no5", "b5", "#5", "sus2", "sus4", "b9", "#9", "add9", "#11", "add11", "b13", "add13"};
     typedef std::array<bool, ALTCOUNT> Alterations;
-
-public:
     Chord();
     Chord(const Notes::Note root, const quality qual, const extension ext);
     Chord(const Notes::Note root, const quality qual, const extension ext,
@@ -98,18 +89,18 @@ private:
     enum action{R=-1,N=0,A=1}; //remove, no action, add
     typedef std::array<bool, Notes::COUNT> interval_set;
     typedef const std::array<action, Notes::COUNT> action_set;
-                                            //          #9      #11     #5
-                                            //  1 b9  9 b3  3 11 b5  5 b13 13 b7 7
-    static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1}, //maj
-                                               {1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0}, //dom
-                                               {1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0}, //min
-                                               {1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0}};//dim
+    //                                                   #9      #11     #5
+    //                                           1 b9  9 b3  3 11 b5  5 b13 13 b7 7
+    static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1},  //maj
+                                                {1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0},  //dom
+                                                {1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0},  //min
+                                                {1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0}}; //dim
 
-    static constexpr interval_set EXTSETS[] =  {{1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0}, //triad
-                                              {1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1}, //7
-                                              {1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1}, //9
-                                              {1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1}, //11
-                                              {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1}};//13
+    static constexpr interval_set EXTSETS[] = {{1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0},  //triad
+                                               {1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //7
+                                               {1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //9
+                                               {1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1},  //11
+                                               {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1}}; //13
 
     static constexpr action_set ALTSETS[] =   {{N, N, N, R, R, N, N, N, N, N, N, N}, //no3 / 5
                                                {N, N, N, N, N, N, R, R, N, N, N, N}, //no5

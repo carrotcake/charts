@@ -62,12 +62,14 @@ const std::array<const std::string, COUNT> str_FLATNAMES
 const std::array<const std::string, COUNT> str_SHARPNAMES
     = {"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"};
 
-const std::string ERRSTR = "bad note";
-
-struct Note{
-    const std::string& flatName() const {return m_value == ERRNOTE ? ERRSTR : str_FLATNAMES[m_value];}
-    const std::string& sharpName() const {return m_value == ERRNOTE ? ERRSTR :  str_SHARPNAMES[m_value];}
-    bool const accidental(){
+struct Note {
+    const std::string& flatName() const {
+        return m_value == ERRNOTE ? str_FLATNAMES[0] : str_FLATNAMES[m_value];
+    }
+    const std::string& sharpName() const {
+        return m_value == ERRNOTE ? str_FLATNAMES[0] : str_SHARPNAMES[m_value];
+    }
+    bool accidental() const {
         switch(m_value){
         case Notes::value::NOTE_A:
         case Notes::value::NOTE_B:
@@ -82,13 +84,9 @@ struct Note{
     value m_value;
 };
 
-const Note A{NOTE_A},As{NOTE_Asharp},Bb{NOTE_Bflat},
-    B{NOTE_B},C{NOTE_C},Cs{NOTE_Csharp},
-    Db{NOTE_Dflat},D{NOTE_D},Ds{NOTE_Dsharp},
-    Eb{NOTE_Eflat},E{NOTE_E},F{NOTE_F},
-    Fs{NOTE_Fsharp},Gb{NOTE_Gflat},G{NOTE_G},
-    Gs{NOTE_Gsharp},Ab{NOTE_Aflat};
-
+const Note A{NOTE_A}, As{NOTE_Asharp}, Bb{NOTE_Bflat}, B{NOTE_B}, C{NOTE_C}, Cs{NOTE_Csharp},
+    Db{NOTE_Dflat}, D{NOTE_D}, Ds{NOTE_Dsharp}, Eb{NOTE_Eflat}, E{NOTE_E}, F{NOTE_F},
+    Fs{NOTE_Fsharp}, Gb{NOTE_Gflat}, G{NOTE_G}, Gs{NOTE_Gsharp}, Ab{NOTE_Aflat};
 
 } // namespace Notes
 

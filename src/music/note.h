@@ -8,8 +8,9 @@ public:
     PitchedNote(const Notes::Note val, Notes::Octave oct)
         : m_note(val),
         m_octave(oct){}
-    Notes::Note const note(){return m_note;}
-    Notes::Octave const value(){return m_octave;}
+    Notes::Note note() const { return m_note; }
+    Notes::Octave value() const { return m_octave; }
+
 private:
     const Notes::Note m_note;
     Notes::Octave m_octave;

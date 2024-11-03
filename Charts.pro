@@ -27,8 +27,8 @@ HEADERS += \
     src/music/notes.h \
     src/ui/mainwindow.h \
     src/ui/scorewidget.h \
-    src/ui/startupwindow.h
-
+    src/ui/startupwindow.h \
+    external/include/fluidsynth.h
 FORMS += \
     src/ui/mainwindow.ui \
     src/ui/startupwindow.ui
@@ -42,3 +42,8 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    design/models/activity.qmodel \
+    design/models/object.qmodel \
+    design/models/usecase.qmodel

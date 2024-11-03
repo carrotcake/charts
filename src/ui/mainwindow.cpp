@@ -17,6 +17,11 @@ void MainWindow::startUp() {
 void MainWindow::on_start_windowClosed(int) {
     // ui->chordEntryMainBtn->setText(QString::number(result));
     start.close();
+    chord.setRoot(Notes::C);
+    chord.setExtension(Chord::triad);
+    chord.addAlteration(Chord::add13);
+    chord.addAlteration(Chord::add9);
+    ui->label->setText(QString::fromStdString(chord.name()));
     this->setDisabled(false);
 }
 

@@ -3,9 +3,7 @@
 
 #include "music/chord.h"
 
-
-class ChordParser
-{
+class ChordParser {
 public:
     ChordParser();
     Chord parseChordFromString(const std::string &str);

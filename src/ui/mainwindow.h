@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "src/music/chord.h"
 #include "startupwindow.h"
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +23,7 @@ public slots:
     void on_start_windowClosed(int result);
 
 private:
+    Chord chord;
     Ui::MainWindow *ui;
     StartupWindow start;
 };
