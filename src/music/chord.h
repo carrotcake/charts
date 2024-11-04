@@ -44,7 +44,7 @@ class Chord {
 public:
     typedef std::array<bool, Notes::COUNT> interval_set;
     enum quality { maj = 0, dom, min, dim };
-    const std::array<const std::string, 4> str_QUALITY = {"Maj", "min", "", "dim"};
+    const std::array<const std::string, 4> str_QUALITY = {"Maj", "", "min", "dim"};
     enum extension { triad = 0, seven, nine, eleven, thirteen };
     const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
     enum alteration {
@@ -104,19 +104,21 @@ private:
                                                {1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1},  //11
                                                {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1}}; //13
 
-    static constexpr action_set ALTSETS[] =   {{N, N, N, R, R, N, N, N, N, N, N, N}, //no3 / 5
-                                               {N, N, N, N, N, N, R, R, N, N, N, N}, //no5
-                                               {N, N, N, N, N, N, A, R, N, N, N, N}, //b5
-                                               {N, N, N, N, N, N, R, R, A, N, N, N}, //#5
-                                               {N, N, A, R, R, N, N, N, N, N, N, N}, //sus2
-                                               {N, N, N, R, R, A, N, N, N, N, N, N}, //sus4 / sus
-                                               {N, A, R, N, N, N, N, N, N, N, N, N}, //b9
-                                               {N, N, R, A, N, N, N, N, N, N, N, N}, //#9
-                                               {N, N, A, N, N, N, N, N, N, N, N, N}, //add9
-                                               {N, N, N, N, N, R, A, N, N, N, N, N}, //#11
-                                               {N, N, N, N, N, A, N, N, N, N, N, N}, //add11
-                                               {N, N, N, N, N, N, N, N, A, R, N, N}, //b13
-                                               {N, N, N, N, N, N, N, N, N, A, N, N}};//add13
+    static constexpr action_set ALTSETS[] = {
+        {N, N, N, R, R, N, N, N, N, N, N, N}, //no3 / 5
+        {N, N, N, N, N, N, R, R, N, N, N, N}, //no5
+        {N, N, N, N, N, N, A, R, N, N, N, N}, //b5
+        {N, N, N, N, N, N, R, R, A, N, N, N}, //#5
+        {N, N, A, R, R, N, N, N, N, N, N, N}, //sus2
+        {N, N, N, R, R, A, N, N, N, N, N, N}, //sus4 / sus
+        {N, A, R, N, N, N, N, N, N, N, N, N}, //b9
+        {N, N, R, A, N, N, N, N, N, N, N, N}, //#9
+        {N, N, N, N, N, N, N, N, N, A, N, N}, //add13
+        {N, N, A, N, N, N, N, N, N, N, N, N}, //add9
+        {N, N, N, N, N, R, A, N, N, N, N, N}, //#11
+        {N, N, N, N, N, A, N, N, N, N, N, N}, //add11
+        {N, N, N, N, N, N, N, N, A, R, N, N}, //b13
+    }; //add13
     std::string m_namestr;
     std::vector<PitchedNote> m_noteslist;
     Notes::Note m_rootnote;

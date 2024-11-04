@@ -43,6 +43,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->alterationButtons->setId(ui->altAdd11CBtn, Chord::add11);
     ui->alterationButtons->setId(ui->altFlat13CBtn, Chord::flat13);
     ui->alterationButtons->setExclusive(false);
+
+    settings = new_fluid_settings();
+    fluid_settings_setint(settings, "synth.polyphony", 128);
+    fluid_settings_setnum(settings, "synth.gain", 1);
+    synth   = new_fluid_synth(settings);
+    adriver = new_fluid_audio_driver(settings, synth);
+    fluid_synth_sfload(
+        synth, "/opt/homebrew/Cellar/fluid-synth/2.4.0/share/fluid-synth/sf2/GeneralUser-GS.sf2", 1);
 }
 
 void MainWindow::startUp() {
@@ -100,18 +108,10 @@ void MainWindow::on_bassAnyNoteCBox_currentIndexChanged(int index) {
 }
 
 void MainWindow::on_chordPreviewBtn_clicked() {
-    fluid_synth_t *synth;
-    fluid_audio_driver_t *adriver;
-    fluid_settings_t *settings = new_fluid_settings();
-    fluid_settings_setint(settings, "synth.polyphony", 128);
-    synth = new_fluid_synth(settings);
-    adriver = new_fluid_audio_driver(settings, synth);
     auto &notes = chord.notes();
     for (auto note : notes) {
         fluid_synth_noteon(synth, 0, note.MIDIValue(), 100);
     }
     std::this_thread::sleep_for(1000ms);
     fluid_synth_all_notes_off(synth, 0);
-    delete_fluid_synth(synth);
-    delete_fluid_settings(settings);
 }

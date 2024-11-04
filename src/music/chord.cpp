@@ -25,9 +25,12 @@ void Chord::constructChord(){
         }
     }
     Notes::Octave oct = Notes::Octave::A4;
+    m_noteslist.clear();
+    m_noteslist.emplace_back(PitchedNote(m_bassnote, Notes::Octave::A3));
     for (size_t i = 0; i < Notes::COUNT; ++i) {
         if (m_intervals[i]) {
-            m_noteslist.emplace_back(PitchedNote(Notes::Note{static_cast<Notes::value>(i)}, oct));
+            auto val = (m_rootnote.m_value + i) % Notes::COUNT;
+            m_noteslist.emplace_back(PitchedNote(Notes::Note{static_cast<Notes::value>(val)}, oct));
         }
     }
     nameChord();
@@ -88,12 +91,12 @@ Chord::Chord(const Notes::Note root, const quality qual, const extension ext,
 
 void Chord::setRoot(const Notes::Note root){
     m_rootnote = root;
-    nameChord();
+    constructChord();
 }
 
 void Chord::setBass(const Notes::Note bass){
     m_bassnote = bass;
-    nameChord();
+    constructChord();
 }
 
 void Chord::setQuality(const quality newqual){

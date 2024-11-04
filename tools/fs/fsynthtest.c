@@ -17,7 +17,6 @@ void createsynth()
     fluid_settings_setint(settings, "synth.reverb.active", 0);
     fluid_settings_setint(settings, "synth.chorus.active", 0);
     synth = new_fluid_synth(settings);
-    fluid_settings_setstr(settings, "audio.driver", "pipewire");
     adriver = new_fluid_audio_driver(settings, synth);
     sequencer = new_fluid_sequencer2(0);
     fluid_synth_set_channel_type(synth, 0, CHANNEL_TYPE_DRUM);

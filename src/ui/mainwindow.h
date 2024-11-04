@@ -3,6 +3,7 @@
 
 #include <QButtonGroup>
 #include <QMainWindow>
+#include "fluidsynth.h"
 #include "src/music/chord.h"
 #include "startupwindow.h"
 
@@ -34,6 +35,9 @@ private slots:
     void on_chordPreviewBtn_clicked();
 
 private:
+    fluid_synth_t *synth;
+    fluid_audio_driver_t *adriver;
+    fluid_settings_t *settings;
     Chord chord;
     Ui::MainWindow *ui;
     StartupWindow start;
