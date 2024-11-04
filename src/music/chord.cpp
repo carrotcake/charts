@@ -118,24 +118,29 @@ Chord::Chord(const Notes::Note root, const quality qual, const extension ext,
     constructChord();
 }
 
-void Chord::setRoot(const Notes::Note root){
+void Chord::setRoot(const Notes::Note root, bool rebuild) {
     m_rootnote = root;
-    constructChord();
+    if (rebuild)
+        constructChord();
 }
 
-void Chord::setBass(const Notes::Note bass){
+void Chord::setBass(const Notes::Note bass, bool rebuild) {
     m_bassnote = bass;
-    constructChord();
+    if (rebuild)
+        constructChord();
 }
 
-void Chord::setQuality(const quality newqual){
+void Chord::setQuality(const quality newqual, bool rebuild) {
+    removeAllAlterations(false);
     m_quality = newqual;
-    constructChord();
+    if (rebuild)
+        constructChord();
 }
 
-void Chord::setExtension(const extension newlevel){
+void Chord::setExtension(const extension newlevel, bool rebuild) {
     m_extlevel = newlevel;
-    constructChord();
+    if (rebuild)
+        constructChord();
 }
 
 bool Chord::canAddAlteration(const alteration alt) const {
@@ -171,15 +176,21 @@ bool Chord::canAddAlteration(const alteration alt) const {
     }
 }
 
-void Chord::addAlteration(const alteration newalt){
+void Chord::addAlteration(const alteration newalt, bool rebuild) {
     m_alts[newalt] = true;
-    constructChord();
+    if (rebuild)
+        constructChord();
 }
 
-void Chord::removeAlteration(const alteration alt){
+void Chord::removeAlteration(const alteration alt, bool rebuild) {
     m_alts[alt] = false;
-    constructChord();
+    if (rebuild)
+        constructChord();
 }
 
-
-
+void Chord::removeAllAlterations(bool rebuild) {
+    for (size_t i = 0; i < ALTCOUNT; ++i)
+        m_alts[i] = false;
+    if (rebuild)
+        constructChord();
+}

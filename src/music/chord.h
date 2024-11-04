@@ -71,19 +71,21 @@ public:
     Chord(const Notes::Note root, const quality qual, const extension ext,
           const Alterations& alts, const Notes::Note bass);
     const auto& notes() const { return m_noteslist; }
-    const std::string& name() const { return m_namestr; }
+    const auto& name() const { return m_namestr; }
     Notes::Note root() const {return m_rootnote;}
     Notes::Note bass() const {return m_bassnote;}
     quality qual() const {return m_quality;}
-    extension extensionLevel() const {return m_extlevel;}
-    bool hasAlteration(const alteration alt) const {return m_alts[alt];}
-    void setRoot(const Notes::Note root);
-    void setBass(const Notes::Note bass);
-    void setQuality(const quality newqual);
-    void setExtension(const extension newlevel);
+    extension extensionLevel() const { return m_extlevel; }
+
     bool canAddAlteration(const alteration alt) const;
-    void addAlteration(const alteration newalt);
-    void removeAlteration(const alteration alt);
+    bool hasAlteration(const alteration alt) const {return m_alts[alt];}
+    void setRoot(const Notes::Note root, bool rebuild = true);
+    void setBass(const Notes::Note bass, bool rebuild = true);
+    void setQuality(const quality newqual, bool rebuild = true);
+    void setExtension(const extension newlevel, bool rebuild = true);
+    void addAlteration(const alteration newalt, bool rebuild = true);
+    void removeAlteration(const alteration alt, bool rebuild = true);
+    void removeAllAlterations(bool rebuild = true);
 
 private:
     void constructChord();

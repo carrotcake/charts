@@ -49,8 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
     fluid_settings_setnum(settings, "synth.gain", 1);
     synth   = new_fluid_synth(settings);
     adriver = new_fluid_audio_driver(settings, synth);
-    fluid_synth_sfload(
-        synth, "GU-GS.sf2", 1);
+    fluid_synth_sfload(synth, "GU-GS.sf2", 1);
 }
 
 void MainWindow::startUp() {
