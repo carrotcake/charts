@@ -47,3 +47,6 @@ DISTFILES += \
     design/models/activity.qmodel \
     design/models/object.qmodel \
     design/models/usecase.qmodel
+
+unix: CONFIG += link_pkgconfig
+unix: PKGCONFIG += fluidsynth

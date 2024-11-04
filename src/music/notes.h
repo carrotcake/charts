@@ -61,6 +61,8 @@ const std::array<const std::string, COUNT> str_FLATNAMES
     = {"A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"};
 const std::array<const std::string, COUNT> str_SHARPNAMES
     = {"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"};
+const std::array<const std::string, COUNT> str_BOTHNAMES
+    = {"A", "A# / Bb", "B", "C", "C# / Db", "D", "D# / Eb", "E", "F", "F# / Gb", "G", "G# / Gb"};
 
 struct Note {
     const std::string& flatName() const {
@@ -84,9 +86,18 @@ struct Note {
     value m_value;
 };
 
-const Note A{NOTE_A}, As{NOTE_Asharp}, Bb{NOTE_Bflat}, B{NOTE_B}, C{NOTE_C}, Cs{NOTE_Csharp},
-    Db{NOTE_Dflat}, D{NOTE_D}, Ds{NOTE_Dsharp}, Eb{NOTE_Eflat}, E{NOTE_E}, F{NOTE_F},
-    Fs{NOTE_Fsharp}, Gb{NOTE_Gflat}, G{NOTE_G}, Gs{NOTE_Gsharp}, Ab{NOTE_Aflat};
+static constexpr Note NOTES[] = {Note{NOTE_A},
+                                 Note{NOTE_Bflat},
+                                 Note{NOTE_B},
+                                 Note{NOTE_C},
+                                 Note{NOTE_Dflat},
+                                 Note{NOTE_D},
+                                 Note{NOTE_Eflat},
+                                 Note{NOTE_E},
+                                 Note{NOTE_F},
+                                 Note{NOTE_Gflat},
+                                 Note{NOTE_G},
+                                 Note{NOTE_Aflat}};
 
 } // namespace Notes
 

@@ -17,6 +17,7 @@ void createsynth()
     fluid_settings_setint(settings, "synth.reverb.active", 0);
     fluid_settings_setint(settings, "synth.chorus.active", 0);
     synth = new_fluid_synth(settings);
+    fluid_settings_setstr(settings, "audio.driver", "pipewire");
     adriver = new_fluid_audio_driver(settings, synth);
     sequencer = new_fluid_sequencer2(0);
     fluid_synth_set_channel_type(synth, 0, CHANNEL_TYPE_DRUM);
@@ -42,7 +43,7 @@ void loadsoundfont()
 {
     int fluid_res;
     // put your own path here
-    fluid_res = fluid_synth_sfload(synth, "/opt/homebrew/Cellar/fluid-synth/2.4.0/share/fluid-synth/sf2/VintageDreamsWaves-v2.sf2", 1);
+    fluid_res = fluid_synth_sfload(synth, "./VintageDreamsWaves-v2.sf2", 1);
 }
  
 void sendnoteon(int chan, short key, unsigned int date) 

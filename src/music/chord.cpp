@@ -53,13 +53,18 @@ void Chord::nameChord(){
             namestr.append(str_ALTERATION[i]);
         }
     }
+    if (m_rootnote.m_value != m_bassnote.m_value) {
+        namestr.append("/");
+        namestr.append(m_bassnote.flatName());
+    }
     m_namestr.assign(namestr);
 }
 
-Chord::Chord() : m_rootnote(Notes::C),
-    m_bassnote(Notes::C),
-    m_quality(Chord::maj),
-    m_extlevel(Chord::triad){
+Chord::Chord()
+    : m_rootnote(Notes::NOTES[Notes::NOTE_C])
+    , m_bassnote(Notes::NOTES[Notes::NOTE_C])
+    , m_quality(Chord::maj)
+    , m_extlevel(Chord::triad) {
     constructChord();
 }
 

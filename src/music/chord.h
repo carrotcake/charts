@@ -42,6 +42,7 @@
 
 class Chord {
 public:
+    typedef std::array<bool, Notes::COUNT> interval_set;
     enum quality { maj = 0, dom, min, dim };
     const std::array<const std::string, 4> str_QUALITY = {"Maj", "min", "", "dim"};
     enum extension { triad = 0, seven, nine, eleven, thirteen };
@@ -63,13 +64,14 @@ public:
         ALTCOUNT
     };
     const std::array<const std::string, ALTCOUNT> str_ALTERATION = {
-        "no3", "no5", "b5", "#5", "sus2", "sus4", "b9", "#9", "add9", "#11", "add11", "b13", "add13"};
+        "no3", "no5", "b5", "#5", "sus2", "sus4", "b9", "#9", "add13", "add9", "#11", "add11", "b13"};
     typedef std::array<bool, ALTCOUNT> Alterations;
     Chord();
     Chord(const Notes::Note root, const quality qual, const extension ext);
     Chord(const Notes::Note root, const quality qual, const extension ext,
           const Alterations& alts, const Notes::Note bass);
-    const std::string& name() const {return m_namestr;}
+    const auto& notes() const { return m_noteslist; }
+    const std::string& name() const { return m_namestr; }
     Notes::Note root() const {return m_rootnote;}
     Notes::Note bass() const {return m_bassnote;}
     quality qual() const {return m_quality;}
@@ -87,7 +89,7 @@ private:
     void constructChord();
     void nameChord();
     enum action{R=-1,N=0,A=1}; //remove, no action, add
-    typedef std::array<bool, Notes::COUNT> interval_set;
+
     typedef const std::array<action, Notes::COUNT> action_set;
     //                                                   #9      #11     #5
     //                                           1 b9  9 b3  3 11 b5  5 b13 13 b7 7
