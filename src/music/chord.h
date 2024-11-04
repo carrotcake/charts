@@ -64,7 +64,7 @@ public:
         ALTCOUNT
     };
     const std::array<const std::string, ALTCOUNT> str_ALTERATION = {
-        "no3", "no5", "b5", "#5", "sus2", "sus4", "b9", "#9", "add13", "add9", "#11", "add11", "b13"};
+        "no3", "no5", "♭5", "♯5", "sus2", "sus4", "♭9", "♯9", "add13", "add9", "♯11", "add11", "♭13"};
     typedef std::array<bool, ALTCOUNT> Alterations;
     Chord();
     Chord(const Notes::Note root, const quality qual, const extension ext);

@@ -50,3 +50,12 @@ DISTFILES += \
 
 unix: CONFIG += link_pkgconfig
 unix: PKGCONFIG += fluidsynth
+
+
+win32: LIBS += -L$$PWD/external/lib/ -lfluidsynth
+
+INCLUDEPATH += $$PWD/external/include/fluidsynth
+DEPENDPATH += $$PWD/external/include/fluidsynth
+win32-g++: PRE_TARGETDEPS += $$PWD/external/lib/libfluidsynth.a
+
+RESOURCES +=

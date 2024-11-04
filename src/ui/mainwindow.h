@@ -3,7 +3,7 @@
 
 #include <QButtonGroup>
 #include <QMainWindow>
-#include "fluidsynth.h"
+#include "external/include/fluidsynth.h"
 #include "src/music/chord.h"
 #include "startupwindow.h"
 

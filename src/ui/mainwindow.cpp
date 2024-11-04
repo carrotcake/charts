@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include <QString>
-#include "fluidsynth.h"
+#include <QFile>
 #include "ui_mainwindow.h"
 #include <chrono>
 #include <thread>
@@ -50,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     synth   = new_fluid_synth(settings);
     adriver = new_fluid_audio_driver(settings, synth);
     fluid_synth_sfload(
-        synth, "/opt/homebrew/Cellar/fluid-synth/2.4.0/share/fluid-synth/sf2/GeneralUser-GS.sf2", 1);
+        synth, "C:/Users/cc/Documents/Charts/tools/fs/GU-GS.sf2", 1);
 }
 
 void MainWindow::startUp() {
@@ -98,6 +98,7 @@ void MainWindow::on_alterationButtons_buttonToggled(QAbstractButton *btn, bool c
 void MainWindow::on_customRootCBox_currentIndexChanged(int index) {
     auto val = static_cast<Notes::value>(ui->customRootCBox->itemData(index).toUInt());
     chord.setRoot(Notes::NOTES[val]);
+    chord.setBass(Notes::NOTES[val]);
     ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
 }
 

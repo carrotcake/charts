@@ -52,17 +52,17 @@ enum class Letter { A = 0, B, C, D, E, F, G };
 enum class Octave { A0 = 0, A1, A2, A3, A4, A5, A6, A7 };
 
 const std::array<const std::string, COUNT> str_ROMANMAJ
-    = {"I", "bII", "II", "bIII", "III", "IV", "bV", "V", "bVI", "VI", "bVII", "VII"};
+    = {"I", "♭II", "II", "♭III", "III", "IV", "bV", "V", "♭VI", "VI", "♭VII", "VII"};
 const std::array<const std::string, COUNT> str_ROMANMIN
-    = {"i", "bii", "ii", "biii", "iii", "iv", "bv", "v", "bvi", "vi", "bvii", "vii"};
+    = {"i", "♭ii", "ii", "♭iii", "iii", "iv", "bv", "v", "♭vi", "vi", "♭vii", "vii"};
 const std::array<const std::string, COUNT> str_NASHVILLE
-    = {"1", "b2", "2", "b3", "3", "4", "b5", "5", "b6", "6", "b7", "7"};
+    = {"1", "♭2", "2", "b3", "3", "4", "♭5", "5", "♭6", "6", "♭7", "7"};
 const std::array<const std::string, COUNT> str_FLATNAMES
-    = {"A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"};
+    = {"A", "B♭", "B", "C", "Db", "D", "E♭", "E", "F", "Gb", "G", "A♭"};
 const std::array<const std::string, COUNT> str_SHARPNAMES
-    = {"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"};
+    = {"A", "A♯", "B", "C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G#"};
 const std::array<const std::string, COUNT> str_BOTHNAMES
-    = {"A", "A# / Bb", "B", "C", "C# / Db", "D", "D# / Eb", "E", "F", "F# / Gb", "G", "G# / Gb"};
+    = {"A", "A♯ / B♭", "B", "C", "C♯ / D♭", "D", "D♯ / Eb", "E", "F", "F♯ / G♭", "G", "G♯ / A♭"};
 
 struct Note {
     const std::string& flatName() const {
