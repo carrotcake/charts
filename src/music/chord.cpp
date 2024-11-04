@@ -24,14 +24,43 @@ void Chord::constructChord(){
             }
         }
     }
-    Notes::Octave oct = Notes::Octave::A4;
+
     m_noteslist.clear();
     m_noteslist.emplace_back(PitchedNote(m_bassnote, Notes::Octave::A3));
     for (size_t i = 0; i < Notes::COUNT; ++i) {
-        if (m_intervals[i]) {
-            auto val = (m_rootnote.m_value + i) % Notes::COUNT;
-            m_noteslist.emplace_back(PitchedNote(Notes::Note{static_cast<Notes::value>(val)}, oct));
+        Notes::Octave oct = Notes::Octave::A4;
+        if (!m_intervals[i])
+            continue;
+        auto val = (m_rootnote.m_value + i) % Notes::COUNT;
+        switch(static_cast<Notes::interval>(i)){
+        case Notes::MINSECOND:
+            oct = Notes::Octave::A5;
+            break;
+        case Notes::MAJSECOND:
+            if(!m_alts[sus2])
+                oct = Notes::Octave::A5;
+            break;
+        case Notes::PERFOURTH:
+            if(!m_alts[sus4])
+                oct = Notes::Octave::A5;
+            break;
+        case Notes::AUGFOURTH:
+            if (m_alts[sharp11])
+                oct = Notes::Octave::A5;
+            break;
+        case Notes::AUGSECOND:
+            if(m_alts[sharp9])
+                oct = Notes::Octave::A5;
+        case Notes::AUGFIFTH:
+            if(m_alts[flat13])
+                oct = Notes::Octave::A5;
+        case Notes::MAJSIXTH:
+            if(m_extlevel > seven && m_quality != dim)
+                oct = Notes::Octave::A5;
+        default:
+            break;
         }
+        m_noteslist.emplace_back(PitchedNote(Notes::NOTES[val], oct));
     }
     nameChord();
 }
@@ -136,7 +165,7 @@ bool Chord::canAddAlteration(const alteration alt) const {
     case flat13:
         return !(m_alts[sharp5] || m_extlevel == thirteen);
     case add13:
-        return (m_quality != dim || m_alts[flat13] || m_extlevel == thirteen);
+        return m_quality != dim && !(m_alts[flat13] || m_extlevel == thirteen);
     default:
         return false;;
     }

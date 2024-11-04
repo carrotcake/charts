@@ -11,11 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    for (uint i = 0; i < Notes::COUNT; i++) {
-        ui->customRootCBox->addItem(QString::fromStdString(Notes::str_BOTHNAMES[i]), i);
-        ui->bassAnyNoteCBox->addItem(QString::fromStdString(Notes::str_BOTHNAMES[i]), i);
-    }
-    ui->bassAnyNoteCBox->setCurrentIndex(-1);
     ui->qualityButtons->setId(ui->qualMajBtn, Chord::maj);
     ui->qualityButtons->setId(ui->qualMinBtn, Chord::min);
     ui->qualityButtons->setId(ui->qualDomBtn, Chord::dom);
@@ -44,13 +39,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->alterationButtons->setId(ui->altFlat13CBtn, Chord::flat13);
     ui->alterationButtons->setExclusive(false);
 
+    for (uint i = 0; i < Notes::COUNT; i++) {
+        ui->customRootCBox->addItem(QString::fromStdString(Notes::str_BOTHNAMES[i]), i);
+        ui->bassAnyNoteCBox->addItem(QString::fromStdString(Notes::str_BOTHNAMES[i]), i);
+    }
+    ui->bassAnyNoteCBox->setCurrentIndex(-1);
     settings = new_fluid_settings();
     fluid_settings_setint(settings, "synth.polyphony", 128);
     fluid_settings_setnum(settings, "synth.gain", 1);
     synth   = new_fluid_synth(settings);
     adriver = new_fluid_audio_driver(settings, synth);
     fluid_synth_sfload(
-        synth, "C:/Users/cc/Documents/Charts/tools/fs/GU-GS.sf2", 1);
+        synth, "GU-GS.sf2", 1);
 }
 
 void MainWindow::startUp() {
@@ -60,16 +60,12 @@ void MainWindow::startUp() {
 }
 
 void MainWindow::on_start_windowClosed(int) {
-    // ui->chordEntryMainBtn->setText(QString::number(result));
-    start.close();
-
     ui->customRootCBox->setCurrentIndex(Notes::NOTE_Bflat);
     chord.setBass(Notes::NOTES[Notes::NOTE_Bflat]);
     ui->qualMajBtn->setChecked(true);
     ui->ext5Btn->setChecked(true);
     ui->altAdd13CBtn->setCheckState(Qt::Checked);
-
-    ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
+    updateChord();
     this->setDisabled(false);
 }
 
@@ -77,14 +73,21 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
+
+void MainWindow::updateChord(){
+    for(size_t i = 0; i < Chord::ALTCOUNT; ++i)
+        ui->alterationButtons->button(i)->setEnabled(chord.canAddAlteration(static_cast<Chord::alteration>(i)));
+    ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
+}
+
 void MainWindow::on_qualityButtons_buttonClicked(QAbstractButton *btn) {
     chord.setQuality(static_cast<Chord::quality>(ui->qualityButtons->id(btn)));
-    ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
+    updateChord();
 }
 
 void MainWindow::on_extensionButtons_buttonClicked(QAbstractButton *btn) {
     chord.setExtension(static_cast<Chord::extension>(ui->extensionButtons->id(btn)));
-    ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
+    updateChord();
 }
 
 void MainWindow::on_alterationButtons_buttonToggled(QAbstractButton *btn, bool checked) {
@@ -92,27 +95,33 @@ void MainWindow::on_alterationButtons_buttonToggled(QAbstractButton *btn, bool c
         chord.addAlteration(static_cast<Chord::alteration>(ui->alterationButtons->id(btn)));
     else
         chord.removeAlteration(static_cast<Chord::alteration>(ui->alterationButtons->id(btn)));
-    ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
+    updateChord();
 }
 
 void MainWindow::on_customRootCBox_currentIndexChanged(int index) {
     auto val = static_cast<Notes::value>(ui->customRootCBox->itemData(index).toUInt());
     chord.setRoot(Notes::NOTES[val]);
+    ui->bassAnyNoteCBox->setCurrentIndex(-1);
     chord.setBass(Notes::NOTES[val]);
-    ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
+    updateChord();
 }
 
 void MainWindow::on_bassAnyNoteCBox_currentIndexChanged(int index) {
     auto val = static_cast<Notes::value>(ui->bassAnyNoteCBox->itemData(index).toUInt());
     chord.setBass(Notes::NOTES[val]);
-    ui->chordNameTxt->setText(QString::fromStdString(chord.name()));
+    updateChord();
 }
 
-void MainWindow::on_chordPreviewBtn_clicked() {
+
+void MainWindow::on_chordPreviewBtn_pressed(){
     auto &notes = chord.notes();
     for (auto note : notes) {
         fluid_synth_noteon(synth, 0, note.MIDIValue(), 100);
     }
-    std::this_thread::sleep_for(1000ms);
+}
+
+
+void MainWindow::on_chordPreviewBtn_released(){
     fluid_synth_all_notes_off(synth, 0);
 }
+

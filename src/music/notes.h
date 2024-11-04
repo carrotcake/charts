@@ -10,23 +10,18 @@ const size_t COUNT = 12;
 
 enum value {
     ERRNOTE=-1,
-    NOTE_A      = 0,
-    NOTE_Asharp = 1,
-    NOTE_Bflat  = 1,
-    NOTE_B      = 2,
-    NOTE_C      = 3,
-    NOTE_Csharp = 4,
-    NOTE_Dflat  = 4,
-    NOTE_D      = 5,
-    NOTE_Dsharp = 6,
-    NOTE_Eflat  = 6,
-    NOTE_E      = 7,
-    NOTE_F      = 8,
-    NOTE_Fsharp = 9,
-    NOTE_Gflat  = 9,
-    NOTE_G      = 10,
-    NOTE_Gsharp = 11,
-    NOTE_Aflat  = 11
+    NOTE_C      = 0,
+    NOTE_Dflat  ,
+    NOTE_D      ,
+    NOTE_Eflat  ,
+    NOTE_E      ,
+    NOTE_F      ,
+    NOTE_Gflat  ,
+    NOTE_G      ,
+    NOTE_Aflat  ,
+    NOTE_A      ,
+    NOTE_Bflat  ,
+    NOTE_B
 };
 
 enum interval {
@@ -48,8 +43,8 @@ enum interval {
     OCTAVE     = 12
 };
 
-enum class Letter { A = 0, B, C, D, E, F, G };
-enum class Octave { A0 = 0, A1, A2, A3, A4, A5, A6, A7 };
+enum class Letter { C = 0, D, E, F, G, A, B };
+enum class Octave { A0 = 1, A1, A2, A3, A4, A5, A6, A7 };
 
 const std::array<const std::string, COUNT> str_ROMANMAJ
     = {"I", "♭II", "II", "♭III", "III", "IV", "bV", "V", "♭VI", "VI", "♭VII", "VII"};
@@ -58,11 +53,11 @@ const std::array<const std::string, COUNT> str_ROMANMIN
 const std::array<const std::string, COUNT> str_NASHVILLE
     = {"1", "♭2", "2", "b3", "3", "4", "♭5", "5", "♭6", "6", "♭7", "7"};
 const std::array<const std::string, COUNT> str_FLATNAMES
-    = {"A", "B♭", "B", "C", "Db", "D", "E♭", "E", "F", "Gb", "G", "A♭"};
+    = { "C", "Db", "D", "E♭", "E", "F", "Gb", "G", "A♭","A", "B♭", "B"};
 const std::array<const std::string, COUNT> str_SHARPNAMES
-    = {"A", "A♯", "B", "C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G#"};
+    = { "C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G#","A", "A♯", "B",};
 const std::array<const std::string, COUNT> str_BOTHNAMES
-    = {"A", "A♯ / B♭", "B", "C", "C♯ / D♭", "D", "D♯ / Eb", "E", "F", "F♯ / G♭", "G", "G♯ / A♭"};
+    = {"C", "C♯ / D♭", "D", "D♯ / Eb", "E", "F", "F♯ / G♭", "G", "G♯ / A♭","A", "A♯ / B♭", "B"};
 
 struct Note {
     const std::string& flatName() const {
@@ -86,10 +81,7 @@ struct Note {
     value m_value;
 };
 
-static constexpr Note NOTES[] = {Note{NOTE_A},
-                                 Note{NOTE_Bflat},
-                                 Note{NOTE_B},
-                                 Note{NOTE_C},
+static constexpr Note NOTES[] = {Note{NOTE_C},
                                  Note{NOTE_Dflat},
                                  Note{NOTE_D},
                                  Note{NOTE_Eflat},
@@ -97,7 +89,10 @@ static constexpr Note NOTES[] = {Note{NOTE_A},
                                  Note{NOTE_F},
                                  Note{NOTE_Gflat},
                                  Note{NOTE_G},
-                                 Note{NOTE_Aflat}};
+                                 Note{NOTE_Aflat},
+                                 Note{NOTE_A},
+                                 Note{NOTE_Bflat},
+                                 Note{NOTE_B}};
 
 } // namespace Notes
 

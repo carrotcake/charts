@@ -32,9 +32,11 @@ private slots:
     void on_customRootCBox_currentIndexChanged(int index);
     void on_bassAnyNoteCBox_currentIndexChanged(int index);
 
-    void on_chordPreviewBtn_clicked();
+    void on_chordPreviewBtn_pressed();
+    void on_chordPreviewBtn_released();
 
 private:
+    void updateChord();
     fluid_synth_t *synth;
     fluid_audio_driver_t *adriver;
     fluid_settings_t *settings;

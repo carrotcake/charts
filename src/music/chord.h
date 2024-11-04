@@ -93,10 +93,10 @@ private:
     typedef const std::array<action, Notes::COUNT> action_set;
     //                                                   #9      #11     #5
     //                                           1 b9  9 b3  3 11 b5  5 b13 13 b7 7
-    static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1},  //maj
-                                                {1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0},  //dom
-                                                {1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0},  //min
-                                                {1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0}}; //dim
+    static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},  //maj
+                                                {1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0},  //dom
+                                                {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0},  //min
+                                                {1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0}}; //dim
 
     static constexpr interval_set EXTSETS[] = {{1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0},  //triad
                                                {1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //7
@@ -117,7 +117,7 @@ private:
         {N, N, A, N, N, N, N, N, N, N, N, N}, //add9
         {N, N, N, N, N, R, A, N, N, N, N, N}, //#11
         {N, N, N, N, N, A, N, N, N, N, N, N}, //add11
-        {N, N, N, N, N, N, N, N, A, R, N, N}, //b13
+        {N, N, N, N, N, N, N, N, A, N, N, N}, //b13
     }; //add13
     std::string m_namestr;
     std::vector<PitchedNote> m_noteslist;

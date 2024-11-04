@@ -10,7 +10,7 @@ public:
         m_octave(oct){}
     Notes::Note note() const { return m_note; }
     Notes::Octave value() const { return m_octave; }
-    int MIDIValue() const { return 12 * static_cast<int>(m_octave) + m_note.m_value + 9; }
+    int MIDIValue() const { return 12 * static_cast<int>(m_octave) + m_note.m_value; }
 
 private:
     const Notes::Note m_note;
