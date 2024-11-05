@@ -3,7 +3,9 @@
 
 #include <QButtonGroup>
 #include <QMainWindow>
+#include <QThread>
 #include "external/include/fluidsynth.h"
+#include "src/charts/midiplayer.h"
 #include "src/music/chord.h"
 #include "startupwindow.h"
 
@@ -21,8 +23,12 @@ public:
     ~MainWindow();
     void startUp();
 
+signals:
+    void chordPreviewed(WorkingChord &chord);
+
 public slots:
     void on_start_windowClosed(int result);
+    void updateChord();
 
 private slots:
     void on_qualityButtons_buttonClicked(QAbstractButton *btn);
@@ -33,15 +39,11 @@ private slots:
     void on_bassAnyNoteCBox_currentIndexChanged(int index);
 
     void on_chordPreviewBtn_pressed();
-    void on_chordPreviewBtn_released();
 
 private:
-    void updateChord();
-    fluid_synth_t *synth;
-    fluid_audio_driver_t *adriver;
-    fluid_settings_t *settings;
-    Chord chord;
     Ui::MainWindow *ui;
     StartupWindow start;
+    MIDIController m_midi;
+    WorkingChord m_chord;
 };
 #endif // MAINWINDOW_H

@@ -9,16 +9,17 @@ CONFIG += c++17
 
 
 SOURCES += \
+    src/charts/midiplayer.cpp \
     src/charts/workingchord.cpp \
     src/chordparser.cpp \
     src/main.cpp \
     src/music/chord.cpp \
-    src/music/note.cpp \
     src/ui/mainwindow.cpp \
     src/ui/scorewidget.cpp \
     src/ui/startupwindow.cpp
 
 HEADERS += \
+    src/charts/midiplayer.h \
     src/charts/workingchord.h \
     src/chordparser.h \
     src/music/chord.h \

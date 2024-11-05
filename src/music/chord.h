@@ -70,7 +70,7 @@ public:
     Chord(const Notes::Note root, const quality qual, const extension ext);
     Chord(const Notes::Note root, const quality qual, const extension ext,
           const Alterations& alts, const Notes::Note bass);
-    const auto& notes() const { return m_noteslist; }
+    auto notes() const { return m_noteslist; }
     const auto& name() const { return m_namestr; }
     Notes::Note root() const {return m_rootnote;}
     Notes::Note bass() const {return m_bassnote;}

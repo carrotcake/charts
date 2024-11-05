@@ -31,7 +31,7 @@ void Chord::constructChord(){
         Notes::Octave oct = Notes::Octave::A4;
         if (!m_intervals[i])
             continue;
-        auto val = (m_rootnote.m_value + i) % Notes::COUNT;
+        auto val = (m_rootnote.val + i) % Notes::COUNT;
         switch(static_cast<Notes::interval>(i)){
         case Notes::MINSECOND:
             oct = Notes::Octave::A5;
@@ -51,12 +51,15 @@ void Chord::constructChord(){
         case Notes::AUGSECOND:
             if(m_alts[sharp9])
                 oct = Notes::Octave::A5;
+            break;
         case Notes::AUGFIFTH:
             if(m_alts[flat13])
                 oct = Notes::Octave::A5;
+            break;
         case Notes::MAJSIXTH:
             if(m_extlevel > seven && m_quality != dim)
                 oct = Notes::Octave::A5;
+            break;
         default:
             break;
         }
@@ -66,7 +69,7 @@ void Chord::constructChord(){
 }
 
 void Chord::nameChord(){
-    if (m_rootnote.m_value == Notes::ERRNOTE) {
+    if (m_rootnote.val == Notes::ERRNOTE) {
         m_namestr.assign("N.C.");
         return;
     }
@@ -85,7 +88,7 @@ void Chord::nameChord(){
             namestr.append(str_ALTERATION[i]);
         }
     }
-    if (m_rootnote.m_value != m_bassnote.m_value) {
+    if (m_rootnote.val != m_bassnote.val) {
         namestr.append("/");
         namestr.append(m_bassnote.flatName());
     }
@@ -131,7 +134,6 @@ void Chord::setBass(const Notes::Note bass, bool rebuild) {
 }
 
 void Chord::setQuality(const quality newqual, bool rebuild) {
-    removeAllAlterations(false);
     m_quality = newqual;
     if (rebuild)
         constructChord();

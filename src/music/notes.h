@@ -8,19 +8,19 @@ namespace Notes {
 
 const size_t COUNT = 12;
 
-enum value {
-    ERRNOTE=-1,
-    NOTE_C      = 0,
-    NOTE_Dflat  ,
-    NOTE_D      ,
-    NOTE_Eflat  ,
-    NOTE_E      ,
-    NOTE_F      ,
-    NOTE_Gflat  ,
-    NOTE_G      ,
-    NOTE_Aflat  ,
-    NOTE_A      ,
-    NOTE_Bflat  ,
+enum Value {
+    ERRNOTE = -1,
+    NOTE_C = 0,
+    NOTE_Dflat,
+    NOTE_D,
+    NOTE_Eflat,
+    NOTE_E,
+    NOTE_F,
+    NOTE_Gflat,
+    NOTE_G,
+    NOTE_Aflat,
+    NOTE_A,
+    NOTE_Bflat,
     NOTE_B
 };
 
@@ -61,24 +61,24 @@ const std::array<const std::string, COUNT> str_BOTHNAMES
 
 struct Note {
     const std::string& flatName() const {
-        return m_value == ERRNOTE ? str_FLATNAMES[0] : str_FLATNAMES[m_value];
+        return val == ERRNOTE ? str_FLATNAMES[0] : str_FLATNAMES[val];
     }
     const std::string& sharpName() const {
-        return m_value == ERRNOTE ? str_FLATNAMES[0] : str_SHARPNAMES[m_value];
+        return val == ERRNOTE ? str_FLATNAMES[0] : str_SHARPNAMES[val];
     }
     bool accidental() const {
-        switch(m_value){
-        case Notes::value::NOTE_A:
-        case Notes::value::NOTE_B:
-        case Notes::value::NOTE_D:
-        case Notes::value::NOTE_E:
-        case Notes::value::NOTE_G:
+        switch (val) {
+        case Notes::Value::NOTE_A:
+        case Notes::Value::NOTE_B:
+        case Notes::Value::NOTE_D:
+        case Notes::Value::NOTE_E:
+        case Notes::Value::NOTE_G:
             return false;
         default:
             return true;
         }
     }
-    value m_value;
+    Value val;
 };
 
 static constexpr Note NOTES[] = {Note{NOTE_C},
