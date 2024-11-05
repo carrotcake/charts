@@ -4,8 +4,8 @@
 #include <QObject>
 #include <QThread>
 #include <QTime>
-#include "fluidsynth.h"
 #include "src/charts/workingchord.h"
+#include <fluidsynth.h>
 
 using namespace std::chrono_literals;
 

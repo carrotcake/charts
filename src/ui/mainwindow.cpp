@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->qualityButtons->setId(ui->qualMinBtn, Chord::min);
     ui->qualityButtons->setId(ui->qualDomBtn, Chord::dom);
     ui->qualityButtons->setId(ui->qualDimBtn, Chord::dim);
+    ui->qualityButtons->setId(ui->qualMinMajBtn, Chord::minMaj);
     ui->qualityButtons->setExclusive(true);
     ui->extensionButtons->setId(ui->ext5Btn, Chord::triad);
     ui->extensionButtons->setId(ui->ext7Btn, Chord::seven);

@@ -43,8 +43,8 @@
 class Chord {
 public:
     typedef std::array<bool, Notes::COUNT> interval_set;
-    enum quality { maj = 0, dom, min, dim };
-    const std::array<const std::string, 4> str_QUALITY = {"Maj", "", "min", "dim"};
+    enum quality { maj = 0, dom, min, dim, minMaj };
+    const std::array<const std::string, 5> str_QUALITY = {"Maj", "", "min", "dim", "minMaj"};
     enum extension { triad = 0, seven, nine, eleven, thirteen };
     const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
     enum alteration {
@@ -98,7 +98,8 @@ private:
     static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},  //maj
                                                 {1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0},  //dom
                                                 {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0},  //min
-                                                {1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0}}; //dim
+                                                {1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0},  //dim
+                                                {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1}}; //dim
 
     static constexpr interval_set EXTSETS[] = {{1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0},  //triad
                                                {1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //7
