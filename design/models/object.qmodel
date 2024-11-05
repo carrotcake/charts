@@ -49,8 +49,8 @@
                          </base-DElement>
                          <object>{516cdc2c-f0a9-4f74-8170-549f9eee1983}</object>
                          <name>Chart</name>
-                         <pos>x:280;y:205</pos>
-                         <rect>x:-45;y:-115;w:90;h:230</rect>
+                         <pos>x:210;y:235</pos>
+                         <rect>x:-90;y:-110;w:180;h:220</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -71,9 +71,9 @@
                          </base-DElement>
                          <object>{7c1cacd5-43c6-454d-9511-93a37c2526b4}</object>
                          <name>Chord</name>
-                         <pos>x:670;y:455</pos>
-                         <rect>x:-50;y:-85;w:100;h:170</rect>
-                         <visual-role>0</visual-role>
+                         <pos>x:710;y:615</pos>
+                         <rect>x:-105;y:-150;w:210;h:300</rect>
+                         <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
                        <namespace>Music</namespace>
@@ -93,9 +93,9 @@
                          </base-DElement>
                          <object>{be87c1aa-279a-4043-93d1-449d73c2c9a4}</object>
                          <name>Note</name>
-                         <pos>x:805;y:285</pos>
-                         <rect>x:-55;y:-55;w:110;h:110</rect>
-                         <visual-role>0</visual-role>
+                         <pos>x:990;y:275</pos>
+                         <rect>x:-60;y:-65;w:120;h:130</rect>
+                         <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
                        <namespace>Music</namespace>
@@ -140,9 +140,9 @@
                          </base-DElement>
                          <object>{f948f00b-d10d-43f6-8061-ddc0e9114415}</object>
                          <name>PitchedNote</name>
-                         <pos>x:805;y:480</pos>
-                         <rect>x:-40;y:-45;w:80;h:90</rect>
-                         <visual-role>0</visual-role>
+                         <pos>x:975;y:555</pos>
+                         <rect>x:-55;y:-60;w:110;h:120</rect>
+                         <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
                        <namespace>Music</namespace>
@@ -204,10 +204,10 @@
                           </DElement>
                          </base-DElement>
                          <object>{8cc64f61-e3ef-440b-a2a4-8a2d85aff8aa}</object>
-                         <name>Time Signature</name>
-                         <pos>x:670;y:285</pos>
-                         <rect>x:-45;y:-45;w:90;h:90</rect>
-                         <visual-role>0</visual-role>
+                         <name>TimeSig</name>
+                         <pos>x:735;y:385</pos>
+                         <rect>x:-40;y:-45;w:80;h:90</rect>
+                         <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
                        <namespace>Music</namespace>
@@ -227,8 +227,8 @@
                          </base-DElement>
                          <object>{f46e2bca-70d8-42f6-b7fd-a3b70071d3dc}</object>
                          <name>Measure</name>
-                         <pos>x:395;y:310</pos>
-                         <rect>x:-45;y:-55;w:90;h:110</rect>
+                         <pos>x:395;y:400</pos>
+                         <rect>x:-80;y:-55;w:160;h:110</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -249,8 +249,8 @@
                          </base-DElement>
                          <object>{9ef5f6ae-dd7e-406d-a179-8edc120cabe1}</object>
                          <name>Segment</name>
-                         <pos>x:510;y:365</pos>
-                         <rect>x:-40;y:-55;w:80;h:110</rect>
+                         <pos>x:470;y:545</pos>
+                         <rect>x:-50;y:-55;w:100;h:110</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -396,8 +396,8 @@
                          </base-DElement>
                          <object>{0d83e656-d64d-47d6-b2df-fe391bb4e024}</object>
                          <name>MainWindow</name>
-                         <pos>x:55;y:335</pos>
-                         <rect>x:-40;y:-45;w:80;h:90</rect>
+                         <pos>x:-20;y:325</pos>
+                         <rect>x:-85;y:-65;w:170;h:130</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -417,9 +417,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{cb56c579-715d-48b9-b6b5-71a5408409b7}</object>
-                         <name>Startup Dialog</name>
-                         <pos>x:-120;y:335</pos>
-                         <rect>x:-60;y:-45;w:120;h:90</rect>
+                         <name>StartupDialog</name>
+                         <pos>x:-260;y:325</pos>
+                         <rect>x:-90;y:-45;w:180;h:90</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -440,8 +440,8 @@
                          </base-DElement>
                          <object>{03b5c964-1365-4710-a1c7-d885fe64aa55}</object>
                          <name>ScorePanel</name>
-                         <pos>x:55;y:200</pos>
-                         <rect>x:-40;y:-45;w:80;h:90</rect>
+                         <pos>x:-20;y:170</pos>
+                         <rect>x:-70;y:-45;w:140;h:90</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -509,8 +509,8 @@
                         </DElement>
                        </base-DElement>
                        <text>Music Lib</text>
-                       <pos>x:740;y:375</pos>
-                       <rect>x:-135;y:-180;w:270;h:360</rect>
+                       <pos>x:825;y:445</pos>
+                       <rect>x:-245;y:-340;w:490;h:680</rect>
                       </DBoundary>
                      </instance>
                     </item>
@@ -523,8 +523,8 @@
                         </DElement>
                        </base-DElement>
                        <text>Core Application</text>
-                       <pos>x:375;y:465</pos>
-                       <rect>x:-200;y:-410;w:400;h:820</rect>
+                       <pos>x:335;y:455</pos>
+                       <rect>x:-230;y:-570;w:460;h:1140</rect>
                       </DBoundary>
                      </instance>
                     </item>
@@ -537,8 +537,8 @@
                         </DElement>
                        </base-DElement>
                        <text>UI (Qt Widgets)</text>
-                       <pos>x:-35;y:345</pos>
-                       <rect>x:-175;y:-215;w:350;h:430</rect>
+                       <pos>x:-140;y:295</pos>
+                       <rect>x:-230;y:-260;w:460;h:520</rect>
                       </DBoundary>
                      </instance>
                     </item>
@@ -554,8 +554,8 @@
                          </base-DElement>
                          <object>{d0dd13a2-0dc1-46a8-b1e1-090831777039}</object>
                          <name>Account Dialog</name>
-                         <pos>x:-120;y:465</pos>
-                         <rect>x:-50;y:-55;w:100;h:110</rect>
+                         <pos>x:-260;y:465</pos>
+                         <rect>x:-80;y:-60;w:160;h:120</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -576,8 +576,8 @@
                          </base-DElement>
                          <object>{89901dd5-cd37-4ee5-9eec-e4a2b59e6138}</object>
                          <name>DB Search Dialog</name>
-                         <pos>x:55;y:465</pos>
-                         <rect>x:-70;y:-45;w:140;h:90</rect>
+                         <pos>x:-20;y:450</pos>
+                         <rect>x:-85;y:-45;w:170;h:90</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -672,9 +672,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{f2c654ef-2774-4bce-a990-224a4c6a3282}</object>
-                         <name>Printing Model</name>
-                         <pos>x:460;y:150</pos>
-                         <rect>x:-60;y:-65;w:120;h:130</rect>
+                         <name>PrintingModel</name>
+                         <pos>x:440;y:100</pos>
+                         <rect>x:-90;y:-65;w:180;h:130</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>8</visual-role>
                         </DObject>
@@ -720,9 +720,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{4a41c2c7-e29b-42de-b4bf-55532aa3fba5}</object>
-                         <name>Temp Chord</name>
-                         <pos>x:280;y:420</pos>
-                         <rect>x:-65;y:-45;w:130;h:90</rect>
+                         <name>WorkingChord</name>
+                         <pos>x:325;y:610</pos>
+                         <rect>x:-50;y:-50;w:100;h:100</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -785,8 +785,8 @@
                          </base-DElement>
                          <object>{f2d8224d-7b4d-4e72-9327-25d87d42e958}</object>
                          <name>User</name>
-                         <pos>x:280;y:750</pos>
-                         <rect>x:-50;y:-90;w:100;h:180</rect>
+                         <pos>x:-260;y:715</pos>
+                         <rect>x:-95;y:-95;w:190;h:190</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>9</visual-role>
                         </DObject>
@@ -807,9 +807,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{384f2398-68ed-4450-b5c4-ec89d8b18dc5}</object>
-                         <name>Chart Entry</name>
-                         <pos>x:460;y:670</pos>
-                         <rect>x:-50;y:-85;w:100;h:170</rect>
+                         <name>ChartEntry</name>
+                         <pos>x:-20;y:870</pos>
+                         <rect>x:-70;y:-85;w:140;h:170</rect>
                          <visual-role>9</visual-role>
                         </DObject>
                        </base-DObject>
@@ -879,9 +879,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{f4cecede-9095-4aec-adfd-37f2df6d5774}</object>
-                         <name>Search Query</name>
-                         <pos>x:280;y:570</pos>
-                         <rect>x:-45;y:-60;w:90;h:120</rect>
+                         <name>SearchQuery</name>
+                         <pos>x:-20;y:680</pos>
+                         <rect>x:-90;y:-60;w:180;h:120</rect>
                          <visual-role>9</visual-role>
                         </DObject>
                        </base-DObject>
@@ -949,14 +949,256 @@
                         </DElement>
                        </base-DElement>
                        <text>Database Interface</text>
-                       <pos>x:375;y:670</pos>
-                       <rect>x:-180;y:-195;w:360;h:390</rect>
+                       <pos>x:-140;y:780</pos>
+                       <rect>x:-225;y:-195;w:450;h:390</rect>
                       </DBoundary>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{7bacb41d-7505-47db-885f-82e3fe879da4}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{8302b8ec-75c6-44e0-8e90-a27058834f66}</object>
+                         <name>KeySig</name>
+                         <pos>x:715;y:235</pos>
+                         <rect>x:-90;y:-60;w:180;h:120</rect>
+                         <visual-role>7</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>Music</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{6437d188-7998-401b-bd4f-8a5f0f68db51}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{5cb9326f-2588-4a9c-a6d9-d6e752280df0}</object>
+                         <name>Glyph</name>
+                         <pos>x:385;y:-40</pos>
+                         <rect>x:-45;y:-45;w:90;h:90</rect>
+                         <visual-role>8</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>Charts</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{76c46384-a94b-49a3-9568-490d10dce8fa}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{9d5acdd4-f655-45da-a294-1139b2a3d3ad}</object>
+                         <a>{a6fe3a3e-2d9b-426b-b17b-7e958309a881}</a>
+                         <b>{6437d188-7998-401b-bd4f-8a5f0f68db51}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{5247b0c3-209f-4ccf-a294-09c41646c7f6}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{4683a073-13ca-4da0-988c-9d00ea037e56}</object>
+                         <name>Repeat</name>
+                         <pos>x:210;y:45</pos>
+                         <rect>x:-90;y:-45;w:180;h:90</rect>
+                         <visual-role>8</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <namespace>Charts</namespace>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DInheritance">
+                      <DInheritance>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{c88e9641-5a14-4d24-8a8d-9e0631a77fc2}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{abc6fc50-6a15-44ac-8800-b1f8bd1f40c3}</object>
+                         <a>{5247b0c3-209f-4ccf-a294-09c41646c7f6}</a>
+                         <b>{6437d188-7998-401b-bd4f-8a5f0f68db51}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DInheritance>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{418bdb63-4d38-4dbc-b50a-0baa7048dcfc}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{46e94e03-a7a1-4f5a-aa4d-a140375713d6}</object>
+                         <a>{bb032976-3ae3-4d0d-9ee1-cf35c9a170f5}</a>
+                         <b>{5247b0c3-209f-4ccf-a294-09c41646c7f6}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{91dc7aba-2450-448d-89c4-5603b631a43e}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{9186a7c9-4b32-45ee-9be0-ccb07a8b58d1}</object>
+                         <a>{e787fe48-e412-4a08-a031-de80e3681d59}</a>
+                         <b>{7bacb41d-7505-47db-885f-82e3fe879da4}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>1</cradinality>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{adeaf96f-2c64-4aa2-83a1-dff4eac5c345}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{be013b1b-c05c-482d-b1e2-b371f0d23fb8}</object>
+                         <a>{bb032976-3ae3-4d0d-9ee1-cf35c9a170f5}</a>
+                         <b>{7bacb41d-7505-47db-885f-82e3fe879da4}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>1</cradinality>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DBoundary">
+                      <DBoundary>
+                       <base-DElement>
+                        <DElement>
+                         <uid>{4495c402-ca65-4262-96de-74b63f735b81}</uid>
+                        </DElement>
+                       </base-DElement>
+                       <text>MIDI Handler (FluidSynth Wrapper)</text>
+                       <pos>x:335;y:845</pos>
+                       <rect>x:-220;y:-170;w:440;h:340</rect>
+                      </DBoundary>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{75d15302-1021-41dd-bdf0-f896b450d672}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{03a83374-3907-4bc4-864c-9c7a9fd394bf}</object>
+                         <name>MIDIController</name>
+                         <pos>x:235;y:825</pos>
+                         <rect>x:-110;y:-105;w:220;h:210</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>5</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{7550ca10-8f9a-42d8-813c-1e2aca1ae57b}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{f2885f03-da1a-4ed4-9ffd-d65595c5968a}</object>
+                         <name>MIDIPlayer</name>
+                         <pos>x:455;y:870</pos>
+                         <rect>x:-95;y:-60;w:190;h:120</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>5</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
                      </instance>
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1730667358252</last-modified>
+                  <last-modified>1730835612085</last-modified>
                   <toolbarid>Classes</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -1070,6 +1312,64 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{46e94e03-a7a1-4f5a-aa4d-a140375713d6}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{46e94e03-a7a1-4f5a-aa4d-a140375713d6}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{516cdc2c-f0a9-4f74-8170-549f9eee1983}</a>
+                             <b>{4683a073-13ca-4da0-988c-9d00ea037e56}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{be013b1b-c05c-482d-b1e2-b371f0d23fb8}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{be013b1b-c05c-482d-b1e2-b371f0d23fb8}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{516cdc2c-f0a9-4f74-8170-549f9eee1983}</a>
+                             <b>{8302b8ec-75c6-44e0-8e90-a27058834f66}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>1</cardinality>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -1081,84 +1381,77 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{40538075-5b07-4c92-a5d8-ed2f10154f9b}</uid>
+                    <uid>{be1024d5-e1b9-4a5b-891a-0b5f031af77b}</uid>
                     <type>1</type>
-                    <declaration>Measues List</declaration>
+                    <declaration>Measues : List&lt;Measure&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c12d4b5a-96ec-4a00-adc9-7aadba0e22d1}</uid>
+                    <uid>{5ca957bc-2318-47e1-8218-4c69660259f5}</uid>
                     <type>1</type>
-                    <declaration>Repeats List</declaration>
+                    <declaration>Repeats : List&lt;repeat&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a702665c-110d-4b21-934f-745091c94b9f}</uid>
+                    <uid>{818637b4-3988-47e3-a6a2-e5d341bfcc81}</uid>
                     <type>1</type>
-                    <declaration>Decorations</declaration>
+                    <declaration>view : PrintingModel</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{81d34362-c28d-4c1a-87f7-15bc8c1364f6}</uid>
+                    <uid>{552d88d2-9e5d-4d4b-ae96-3ab4196f3b38}</uid>
                     <type>1</type>
-                    <declaration>Printing Model</declaration>
+                    <declaration>key : KeySig</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5c121aa0-1c39-418a-89ee-122948344139}</uid>
+                    <uid>{5e71ee60-132d-445d-9ea0-f8e16e8b1b7e}</uid>
                     <type>1</type>
-                    <declaration>Key</declaration>
+                    <declaration>meter : TimeSig</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{05455481-6f97-4959-8c11-97cf04a42515}</uid>
+                    <uid>{edde84ea-a829-409c-bfb6-9d42e863619e}</uid>
                     <type>1</type>
-                    <declaration>Time Signature</declaration>
+                    <declaration>Length : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a47973dd-64e9-4ba8-ae92-81604365d197}</uid>
+                    <uid>{c7c42c49-18e6-41fc-af93-18fda53df8da}</uid>
                     <type>1</type>
-                    <declaration>Length</declaration>
+                    <declaration>playbackStyle : Style</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{50caa409-2aca-4f38-b495-b2e8afe58754}</uid>
+                    <uid>{978c120b-75d1-4856-bc7e-666c0814d51c}</uid>
                     <type>1</type>
-                    <declaration>Playback Style</declaration>
+                    <declaration>instruments : MIDIInstruments</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a57ef18c-6286-4d16-adb0-a21f2680a7c7}</uid>
-                    <type>1</type>
-                    <declaration>Instruments</declaration>
-                   </MClassMember>
-                  </item>
-                  <item>
-                   <MClassMember>
-                    <uid>{a7496d39-0c7d-44f6-a99b-9d3b09e242f5}</uid>
+                    <uid>{24fe470d-c8b5-483d-bec4-c953b95a0e0a}</uid>
                     <type>2</type>
                     <declaration>readFromFile()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4d13177c-a7ef-484e-8f86-ab33df49724e}</uid>
+                    <uid>{ab1311af-ef69-42b4-8b47-99d3237fff3b}</uid>
                     <type>2</type>
                     <declaration>saveToFile()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{48357903-17b4-4367-8a6a-3cb16e7bbfca}</uid>
+                    <uid>{43fe107e-9ed9-422c-b169-a8cbaabea559}</uid>
                     <type>2</type>
                     <declaration>playback()</declaration>
                    </MClassMember>
@@ -1257,58 +1550,121 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{f190b95e-dfa9-4285-83b2-51b2d5c3ae7b}</uid>
+                    <uid>{57d02af5-f3a6-47c4-a449-a2cc96bcbfaf}</uid>
                     <type>1</type>
-                    <declaration>Name</declaration>
+                    <declaration>name : str</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{521a29a5-b0aa-44df-b5a3-8788dfd61d04}</uid>
+                    <uid>{49f7bd02-2314-4323-aa0e-049370cb50bf}</uid>
                     <type>1</type>
-                    <declaration>PitchedNotes List</declaration>
+                    <declaration>notes : List&lt;PitchedNote&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0343c1d5-afa5-490c-8bc1-c949bd128f0a}</uid>
+                    <uid>{094a9407-aeec-44b8-9cac-deccaf8c905e}</uid>
                     <type>1</type>
-                    <declaration>Root Note</declaration>
+                    <declaration>root : Note</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{363c6632-39f0-46e9-bb67-b2975cb03c0a}</uid>
+                    <uid>{dbf05941-17f1-4280-a987-5c04cb51f960}</uid>
                     <type>1</type>
-                    <declaration>Bass Note</declaration>
+                    <declaration>bass : Note</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2bcd7bda-195b-4722-af98-0cb758dc5b70}</uid>
+                    <uid>{b644c286-15ce-42bc-b8b6-40ad86f71437}</uid>
                     <type>1</type>
-                    <declaration>Quality</declaration>
+                    <declaration>quality : enum</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{42730d6c-28bc-4355-a3ff-2cfe8a031083}</uid>
+                    <uid>{ce7581db-f161-4d5d-8dfb-3a04b35c8d50}</uid>
                     <type>1</type>
-                    <declaration>Extension Level</declaration>
+                    <declaration>extension : enum</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{499d87c8-f37b-403a-a400-f15089f1b377}</uid>
+                    <uid>{52e3d71c-a5b0-4471-b83e-24dd0b397d7f}</uid>
                     <type>1</type>
-                    <declaration>Alterations</declaration>
+                    <declaration>alterations : enum[alterationCount]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d276a5d4-c780-476c-859d-cab37c56f95c}</uid>
+                    <uid>{78930f6f-c251-48dc-98ac-390697265a6e}</uid>
                     <type>1</type>
-                    <declaration>Interval Set</declaration>
+                    <declaration>intervals : bool[intervalCount]</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{422ee4f8-14c2-4017-8c55-a75a964ca2eb}</uid>
+                    <type>2</type>
+                    <declaration>setRoot(Note)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{125a536b-b79f-4971-87f9-5f8fe03b3350}</uid>
+                    <type>2</type>
+                    <declaration>setBass(Note)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0c63fb41-e044-4ee3-9867-c5b390521efa}</uid>
+                    <type>2</type>
+                    <declaration>setQuality(quality)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{62817a6b-c810-4b72-bb8f-c0a81d5c57d7}</uid>
+                    <type>2</type>
+                    <declaration>setExtension(extension)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{43162281-fbc4-4f9c-bed6-f7f50b20fa54}</uid>
+                    <type>2</type>
+                    <declaration>addAlteration(alt)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ad2d9952-248a-4e48-9502-8a125255264e}</uid>
+                    <type>2</type>
+                    <declaration>removeAlteration(alt)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{33b5d69e-6244-4777-a521-ef7991d49068}</uid>
+                    <type>2</type>
+                    <declaration>removeAllAlterations()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{70c354fa-b283-40ca-bdb1-e46fbdb08962}</uid>
+                    <type>2</type>
+                    <declaration>bool hasAlteration()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{375b5f8f-f97b-470c-83e8-2da19c65cf2b}</uid>
+                    <type>2</type>
+                    <declaration>bool canAddAlteration()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1339,23 +1695,30 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{922c1cb2-bd89-422e-983b-d42fc52ec7bc}</uid>
+                    <uid>{ae115ae0-0236-465f-a632-bb5c713b3a84}</uid>
                     <type>1</type>
-                    <declaration>int Value</declaration>
+                    <declaration>value : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8bb22071-fc3e-4663-b4fd-5c3e99c67bf1}</uid>
+                    <uid>{7197aeb8-3fcf-4a5d-ab27-6870390b4768}</uid>
                     <type>1</type>
-                    <declaration>Name in Flat Key</declaration>
+                    <declaration>flatName : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5ae9af65-761b-435f-b3e7-e350659282b3}</uid>
+                    <uid>{4c8d2a1b-92f9-4e6d-b4da-ade083c70639}</uid>
                     <type>1</type>
-                    <declaration>Name in Sharp Key</declaration>
+                    <declaration>sharpName : string</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7b7d252f-f4f4-4510-81eb-06746f439983}</uid>
+                    <type>2</type>
+                    <declaration>bool accidental()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1416,16 +1779,23 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{1d2261ed-c655-44f5-ac65-14b3355ca786}</uid>
+                    <uid>{654c77d8-1ab6-40df-b6e6-78a33e3a6fed}</uid>
                     <type>1</type>
-                    <declaration>Octave</declaration>
+                    <declaration>value : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c700a782-1117-49f6-9805-a1b0e5233544}</uid>
+                    <uid>{ab1b85b0-5a4b-40f7-8e3a-ba64ad16d98d}</uid>
                     <type>1</type>
-                    <declaration>MIDI Value</declaration>
+                    <declaration>octave : int</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d31637f2-c5f3-410f-a0cc-6f460af86515}</uid>
+                    <type>2</type>
+                    <declaration>uint : MIDIValue()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1448,7 +1818,7 @@
                     <uid>{8cc64f61-e3ef-440b-a2a4-8a2d85aff8aa}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Time Signature</name>
+                  <name>TimeSig</name>
                  </MObject>
                 </base-MObject>
                 <namespace>Music</namespace>
@@ -1456,16 +1826,16 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{c1918f18-a550-40ad-b19d-8226eb99c8c6}</uid>
+                    <uid>{2f466375-c5c3-433c-8ee5-caa75a945343}</uid>
                     <type>1</type>
-                    <declaration>int Upper</declaration>
+                    <declaration>upper : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7cb73042-fd15-4c64-b30a-abc4d8d488d2}</uid>
+                    <uid>{71a844cb-446e-489f-b21f-dab3044ddbac}</uid>
                     <type>1</type>
-                    <declaration>int Lower</declaration>
+                    <declaration>lower : int</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1562,23 +1932,23 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{9619768f-fa6b-42f1-bf77-a6a70a4d0c16}</uid>
+                    <uid>{3dc9beea-8e12-413f-aa48-3ff315c19f3d}</uid>
                     <type>1</type>
-                    <declaration>Time Signature</declaration>
+                    <declaration>meter : TimeSig</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cb5c9a7b-b87f-462e-85b1-3ddcf6d3beec}</uid>
+                    <uid>{fbd81a02-9190-44fb-90b8-1bf702c89229}</uid>
                     <type>1</type>
-                    <declaration>Beat Count</declaration>
+                    <declaration>beats : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2640a556-d402-4242-90fd-fbc86f948950}</uid>
+                    <uid>{5c89235e-f301-439f-b2d7-578d27da7428}</uid>
                     <type>1</type>
-                    <declaration>Segment List</declaration>
+                    <declaration>segments : List&lt;Segment&gt;</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1635,6 +2005,35 @@
                         </target>
                        </handle>
                       </item>
+                      <item>
+                       <handle>
+                        <uid>{9186a7c9-4b32-45ee-9be0-ccb07a8b58d1}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{9186a7c9-4b32-45ee-9be0-ccb07a8b58d1}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{9ef5f6ae-dd7e-406d-a179-8edc120cabe1}</a>
+                             <b>{8302b8ec-75c6-44e0-8e90-a27058834f66}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>1</cardinality>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
                      </qlist>
                     </handles>
                    </handles>
@@ -1646,23 +2045,23 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{a6db77a3-962b-42d8-87b4-3d006d6f7797}</uid>
+                    <uid>{17c6fe39-aead-46dd-a95e-45086d6fddb6}</uid>
                     <type>1</type>
-                    <declaration>Chord</declaration>
+                    <declaration>chord : Chord</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8d007083-e4b4-47a5-96fe-7dd891de5057}</uid>
+                    <uid>{1ba7651a-20dd-4d8b-9498-c51a4611af12}</uid>
                     <type>1</type>
-                    <declaration>Length</declaration>
+                    <declaration>length : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{89edd031-06ad-48d5-a061-5de4ad0ad6cd}</uid>
+                    <uid>{7fd4455a-afc4-4cc9-a67b-60588ee6c78f}</uid>
                     <type>1</type>
-                    <declaration>Key</declaration>
+                    <declaration>key : KeySig</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1904,16 +2303,31 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{7d406fcc-a24e-4e8e-b38f-911677367869}</uid>
+                    <uid>{15474e43-04fc-45f5-8970-b0cc4eb800a3}</uid>
                     <type>1</type>
-                    <declaration>Tools Palette</declaration>
+                    <declaration>toolsPalette : Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{96351dd3-e4cb-4334-999a-1baf9a2ef509}</uid>
+                    <uid>{482a9303-9e54-424b-b89e-f4c1002404db}</uid>
                     <type>1</type>
-                    <declaration>Temp Chord</declaration>
+                    <declaration>tempChord : WorkingChord</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d26bc9bd-fd1e-45e8-9fff-012d7a161af0}</uid>
+                    <type>1</type>
+                    <declaration>midi : MIDIController</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f1d6f33f-a282-435d-b2dc-dd3d9fc5f9c9}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>chordPreviewed()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1936,7 +2350,7 @@
                     <uid>{cb56c579-715d-48b9-b6b5-71a5408409b7}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Startup Dialog</name>
+                  <name>StartupDialog</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2010,16 +2424,16 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{3504896d-54e7-46a1-96db-5331daec007b}</uid>
+                    <uid>{84dbdb6f-34c9-4f2f-9bd3-4e8d30134bde}</uid>
                     <type>1</type>
-                    <declaration>New Chart Settings</declaration>
+                    <declaration>newChartSettings : Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d5b8fc30-04bf-4767-9407-3d379bc4018d}</uid>
+                    <uid>{39da6746-6a48-4dd8-9217-6a234cbb8209}</uid>
                     <type>1</type>
-                    <declaration>Recently Opened List</declaration>
+                    <declaration>recentlyOpenedList : Widgets</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2087,16 +2501,16 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{1165d6ee-b1de-4235-a8f6-c41a70209770}</uid>
+                    <uid>{f40e2e35-3977-4764-a883-8166d81d375c}</uid>
                     <type>1</type>
-                    <declaration>Chart</declaration>
+                    <declaration>chart : Chart</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{520f775f-065d-41d8-a41e-f827c0a54e1e}</uid>
+                    <uid>{abdedfb6-f3db-46d6-b1f0-83cff8a7ed23}</uid>
                     <type>1</type>
-                    <declaration>Selection</declaration>
+                    <declaration>selection: Segment idx</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2164,23 +2578,30 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{818667e0-f1f2-4268-a136-371ab651f112}</uid>
+                    <uid>{d4ba2bf0-8f95-483f-bbd8-4a8ed3f0b01d}</uid>
                     <type>1</type>
-                    <declaration>Login Form</declaration>
+                    <declaration>loginForm: Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{45a3c6de-f7e1-477c-9781-57d42684bbe4}</uid>
+                    <uid>{04fc4892-99b6-4a81-a72c-c7bb7ef9ebcc}</uid>
                     <type>1</type>
-                    <declaration>Registration Form</declaration>
+                    <declaration>registrationForm: Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{914234e8-0cad-4ce9-a536-76c4b2a43a6b}</uid>
+                    <uid>{88df30b6-4e50-42f8-90af-e2174be899a2}</uid>
                     <type>1</type>
-                    <declaration>Logout Button</declaration>
+                    <declaration>logoutButton: Widgets</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f482cf86-554f-4b58-8da2-1568d0f1ab0c}</uid>
+                    <type>1</type>
+                    <declaration>activeUser : User</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2248,16 +2669,16 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{eda1b193-6b48-42e7-a385-aff2a96a2da3}</uid>
+                    <uid>{1339eece-76d4-435d-a8df-864e9b034f58}</uid>
                     <type>1</type>
-                    <declaration>Search Query</declaration>
+                    <declaration>query : SearchQuery</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{04f3068f-1183-47c6-b647-bee6eb343743}</uid>
+                    <uid>{2a243fe3-5da5-4c7d-b7cb-cee0e058ab55}</uid>
                     <type>1</type>
-                    <declaration>Search Results List View</declaration>
+                    <declaration>searchResultsList : Widgets</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2280,7 +2701,44 @@
                     <uid>{f2c654ef-2774-4bce-a990-224a4c6a3282}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Printing Model</name>
+                  <name>PrintingModel</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{9d5acdd4-f655-45da-a294-1139b2a3d3ad}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{9d5acdd4-f655-45da-a294-1139b2a3d3ad}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f2c654ef-2774-4bce-a990-224a4c6a3282}</a>
+                             <b>{5cb9326f-2588-4a9c-a6d9-d6e752280df0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
                  </MObject>
                 </base-MObject>
                 <namespace>Charts</namespace>
@@ -2288,37 +2746,30 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{8a882aeb-4e8b-4001-82e3-83cd09924722}</uid>
+                    <uid>{874ca523-cd44-4425-bdd8-2d1603feee28}</uid>
                     <type>1</type>
-                    <declaration>Glyphs</declaration>
+                    <declaration>glyphsDictionary</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{65901ef0-95e9-46e5-ae4d-a6f5111fb3e9}</uid>
+                    <uid>{2c3e86f2-72d2-42ba-9704-bf3ce239b79f}</uid>
                     <type>1</type>
-                    <declaration>Glyph Position Map</declaration>
+                    <declaration>glyphMap : map&lt;Glyph, pos&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{789d4c3e-994b-49cc-9f0d-988065d1e1dd}</uid>
+                    <uid>{7bcf07e4-20e7-43a2-af88-fc1d642a9b25}</uid>
                     <type>1</type>
-                    <declaration>Length</declaration>
+                    <declaration>Length : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a0abb7f1-1444-45d5-97dd-9e497fe94cb3}</uid>
+                    <uid>{e3480c0b-496c-42b1-be9b-1cd4cbfb5126}</uid>
                     <type>1</type>
-                    <declaration>Style</declaration>
-                   </MClassMember>
-                  </item>
-                  <item>
-                   <MClassMember>
-                    <uid>{007c3862-3e04-4777-ab0b-90fdc3e080d2}</uid>
-                    <type>1</type>
-                    <declaration>Selection Point</declaration>
+                    <declaration>Selection : Segment idx</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2362,7 +2813,7 @@
                     <uid>{4a41c2c7-e29b-42de-b4bf-55532aa3fba5}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Temp Chord</name>
+                  <name>WorkingChord</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2399,16 +2850,25 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{8099eaf3-6cae-4c9c-b6dd-1355e9269914}</uid>
+                    <uid>{7d9c935e-30cd-46d2-a220-b206c4187d97}</uid>
                     <type>1</type>
-                    <declaration>Chord</declaration>
+                    <declaration>chord : Chord</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{88cbae46-ba66-4b7e-a9da-5d29dd76a380}</uid>
+                    <uid>{ab1824c4-412c-428a-a0c9-7826f8493071}</uid>
                     <type>2</type>
-                    <declaration>doChordModification()</declaration>
+                    <properties>512</properties>
+                    <declaration>chordEdits()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a97ee7e8-1139-4a75-901f-24647b62ee55}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>chordEdited()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2476,56 +2936,63 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{8fda9e8a-7c3d-45e0-8742-8a5949973f23}</uid>
+                    <uid>{90b9b7ae-607b-4ba7-bb69-001c4452866a}</uid>
                     <type>1</type>
-                    <declaration>Email</declaration>
+                    <declaration>userID : uint</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6ce382cb-5bad-4c31-a39d-adcf2511073b}</uid>
+                    <uid>{63d61e20-6a1f-4c10-b251-6c76ba9fc190}</uid>
                     <type>1</type>
-                    <declaration>Username</declaration>
+                    <declaration>email : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0e723c2b-fe4c-4e23-8076-6017b84d95ce}</uid>
+                    <uid>{e8701c6f-a210-44ff-9c09-b4ae8cccd9a2}</uid>
                     <type>1</type>
-                    <declaration>Password Hash</declaration>
+                    <declaration>username : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e3353870-edb1-4d60-8a08-ffce74b760df}</uid>
+                    <uid>{42940929-3689-4b95-8f85-8713683752dd}</uid>
                     <type>1</type>
-                    <declaration>ChartEntries</declaration>
+                    <declaration>passwordHash : PassDigest</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{92b2db19-3674-4dee-82e0-d9e1d5ca8e2b}</uid>
+                    <uid>{d45f009c-6b49-4427-9793-67b7e115607d}</uid>
+                    <type>1</type>
+                    <declaration>chartEntries : List&lt;ChartEntry&gt;</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5a2e4304-ec14-4f46-a553-2dd287429a3c}</uid>
                     <type>2</type>
                     <declaration>authenticate()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a0bcee5f-6f99-4454-934e-3b7b0329ed61}</uid>
+                    <uid>{2be31c1c-55d0-4e67-9303-723b04aadbef}</uid>
                     <type>2</type>
                     <declaration>endSession()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{31d3a4d5-8bdc-4428-a45d-e65faa7062a1}</uid>
+                    <uid>{468d62e3-abd3-4fc4-aab7-448755915272}</uid>
                     <type>2</type>
                     <declaration>uploadChart()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{45ac0cba-95b1-4d46-8b66-ee3fa6706ebb}</uid>
+                    <uid>{267cdced-39ea-449d-bbfd-e944a8973637}</uid>
                     <type>2</type>
                     <declaration>removeChart()</declaration>
                    </MClassMember>
@@ -2550,7 +3017,7 @@
                     <uid>{384f2398-68ed-4450-b5c4-ec89d8b18dc5}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Chart Entry</name>
+                  <name>ChartEntry</name>
                  </MObject>
                 </base-MObject>
                 <namespace>Charts DB</namespace>
@@ -2558,49 +3025,49 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{d1fe831e-3111-4ca1-801c-0f395bddfb72}</uid>
+                    <uid>{29420496-2f6b-460c-9df2-6c16ad8a6bee}</uid>
                     <type>1</type>
-                    <declaration>Name</declaration>
+                    <declaration>Name : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6408800f-9d41-4fc0-a918-b06fccc1b22d}</uid>
+                    <uid>{57cad237-7a23-4b07-9255-e49f6256bd92}</uid>
                     <type>1</type>
-                    <declaration>Author User</declaration>
+                    <declaration>authorUserID : uint</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6c8018da-d46f-4d58-91bc-7a0e2f4179ee}</uid>
+                    <uid>{178915c9-db8c-4c6a-8bf5-a39970bbc04e}</uid>
                     <type>1</type>
-                    <declaration>Genre</declaration>
+                    <declaration>genre : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7bf729d0-6b0a-4ec2-a7c1-52ee11820cb7}</uid>
+                    <uid>{e1431058-49c8-4a2d-8cca-96fd9d86d324}</uid>
                     <type>1</type>
-                    <declaration>Chart File</declaration>
+                    <declaration>chartFile : File</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ae8ccb61-0cb2-4c7c-bfa6-48c1d6786490}</uid>
+                    <uid>{87917e78-4fc6-47b8-9aac-be70b006a384}</uid>
                     <type>1</type>
-                    <declaration>Publication Date</declaration>
+                    <declaration>publicationDate : Date</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d63445fc-4c8d-4498-b304-52edb56c8d9c}</uid>
+                    <uid>{52f05e57-ffba-46b9-92fa-6435e6e4c993}</uid>
                     <type>2</type>
                     <declaration>upload()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{99203210-2beb-4f9b-937f-c7d6912aee23}</uid>
+                    <uid>{260d9898-e7a7-4aba-82d4-341eb4f2fc6b}</uid>
                     <type>2</type>
                     <declaration>retrieve()</declaration>
                    </MClassMember>
@@ -2625,7 +3092,7 @@
                     <uid>{f4cecede-9095-4aec-adfd-37f2df6d5774}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Search Query</name>
+                  <name>SearchQuery</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2670,30 +3137,414 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{04779f01-b4d7-4ab1-85a6-19bcda8afbe2}</uid>
+                    <uid>{806a50c4-479c-4bb9-839c-f85caf48e0ad}</uid>
                     <type>1</type>
-                    <declaration>Name</declaration>
+                    <declaration>name : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0d38b552-304e-4596-a7eb-d0857e7598ab}</uid>
+                    <uid>{c5146f1b-864a-45b5-8798-42010329e46d}</uid>
                     <type>1</type>
-                    <declaration>Author</declaration>
+                    <declaration>authorUserID : uint</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cd4cc388-4891-4a99-a042-4feb6dd39aa9}</uid>
+                    <uid>{fa92851a-a3a7-4ff2-927b-21871cfed1fc}</uid>
                     <type>1</type>
-                    <declaration>Genre</declaration>
+                    <declaration>genre : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cb2b19ff-fc18-45b8-b7c6-352444dd511a}</uid>
+                    <uid>{65d0d88f-72ef-4bfe-8d32-e0a350bd39bd}</uid>
                     <type>1</type>
-                    <declaration>Chart Entry List</declaration>
+                    <declaration>resultsList : List&lt;ChartEntry&gt;</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{8302b8ec-75c6-44e0-8e90-a27058834f66}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{8302b8ec-75c6-44e0-8e90-a27058834f66}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>KeySig</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>Music</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{6fc855fb-a820-47ce-af5c-e1d135542128}</uid>
+                    <type>1</type>
+                    <declaration>tonic : Note</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{783efaf6-7eb2-4044-b37d-5d3ff6799835}</uid>
+                    <type>1</type>
+                    <declaration>scale : enum</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ec112a26-068a-4031-be71-acc95416e102}</uid>
+                    <type>1</type>
+                    <declaration>intervals : bool[intervalCount]</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{98ddb4fd-8174-47c6-b1e3-183f11bba907}</uid>
+                    <type>1</type>
+                    <declaration>sharpKey : bool</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{5cb9326f-2588-4a9c-a6d9-d6e752280df0}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{5cb9326f-2588-4a9c-a6d9-d6e752280df0}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Glyph</name>
+                 </MObject>
+                </base-MObject>
+                <namespace>Charts</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{29c4b6fb-d113-4e9d-809c-c8aea6133e3f}</uid>
+                    <type>1</type>
+                    <declaration>img : PixMap</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{73ac1113-fa3c-4d5f-95f5-552f76f7b5ef}</uid>
+                    <type>1</type>
+                    <declaration>id : enum</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{4683a073-13ca-4da0-988c-9d00ea037e56}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{4683a073-13ca-4da0-988c-9d00ea037e56}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Repeat</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{ed5c341d-0cfa-41f6-a03d-27498d5eedff}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{ed5c341d-0cfa-41f6-a03d-27498d5eedff}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{4683a073-13ca-4da0-988c-9d00ea037e56}</a>
+                             <b>{5cb9326f-2588-4a9c-a6d9-d6e752280df0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>1</cardinality>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{abc6fc50-6a15-44ac-8800-b1f8bd1f40c3}</uid>
+                        <target>
+                         <instance type="MInheritance">
+                          <MInheritance>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{abc6fc50-6a15-44ac-8800-b1f8bd1f40c3}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{4683a073-13ca-4da0-988c-9d00ea037e56}</a>
+                             <b>{5cb9326f-2588-4a9c-a6d9-d6e752280df0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MInheritance>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{70335933-7ddf-4076-9f58-7a9dabe1ec4d}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{70335933-7ddf-4076-9f58-7a9dabe1ec4d}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{4683a073-13ca-4da0-988c-9d00ea037e56}</a>
+                             <b>{516cdc2c-f0a9-4f74-8170-549f9eee1983}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <namespace>Charts</namespace>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{dd52370a-378a-4e49-baee-928031874f39}</uid>
+                    <type>1</type>
+                    <declaration>start : Segment idx</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d21a99fc-e0e0-49b5-b049-31018d9323a2}</uid>
+                    <type>1</type>
+                    <declaration>endPoints : List&lt;Segment idx&gt;</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{03a83374-3907-4bc4-864c-9c7a9fd394bf}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{03a83374-3907-4bc4-864c-9c7a9fd394bf}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>MIDIController</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{058fa147-221c-4f3f-afaa-b33095a4fee1}</uid>
+                    <type>1</type>
+                    <declaration>player : MIDIPlayer</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b390fa14-072c-440a-943c-5f114b74800e}</uid>
+                    <type>1</type>
+                    <declaration>playerthread : QThread</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8b3d97b8-3c1f-42bf-b152-d4151be3020e}</uid>
+                    <type>1</type>
+                    <declaration>synth : fsynth</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{dfea1f19-42fb-4df2-8e13-4287ff0670af}</uid>
+                    <type>1</type>
+                    <declaration>settings : fssettings</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{681de6c5-d189-493f-8150-78053911ca06}</uid>
+                    <type>1</type>
+                    <declaration>audiodriver : fsaudiodriver</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{565a446d-1a0a-4eff-9912-bfaf529bac68}</uid>
+                    <type>1</type>
+                    <declaration>sequencer : fssequencer</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0c4c2bb9-b6a7-4793-bc9c-329d29d92fc4}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>requestPreview(WorkingChord&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{aab8fc9d-069b-4903-bdc4-c027f366a623}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>requestPlayback(Chart&amp;, index)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{37990ca1-d972-45ae-b68b-72c1cc52095b}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>requestStopPlayback()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0aea9ec9-4c33-4fd8-bd2a-cb0851956056}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>chordPreviewRequested(Chord&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e7166d2f-cefd-4cff-bcea-b79f091e9c75}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>playbackRequested(Chart&amp;, index)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{f2885f03-da1a-4ed4-9ffd-d65595c5968a}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{f2885f03-da1a-4ed4-9ffd-d65595c5968a}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>MIDIPlayer</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{b9b907ff-e456-434f-9f76-f7f604a6fa5a}</uid>
+                    <type>1</type>
+                    <declaration>playbackInterrupted : bool</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7ab55e66-9671-4b49-b746-faa8b283c66c}</uid>
+                    <type>2</type>
+                    <declaration>interruptPlayback()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{81f56f12-0f00-477c-a0bf-36831f1b489f}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>previewChord(Chord&amp;)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{649d21f5-c795-4b28-bee4-d1644486e8aa}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>playbackChart(Chart&amp;, index)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>

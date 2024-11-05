@@ -152,7 +152,7 @@
                        </base-DElement>
                        <text>Core Application</text>
                        <pos>x:410;y:-1325</pos>
-                       <rect>x:0;y:0;w:130;h:35</rect>
+                       <rect>x:0;y:0;w:130.891;h:35</rect>
                        <visual-role>1</visual-role>
                       </DAnnotation>
                      </instance>
@@ -167,7 +167,7 @@
                        </base-DElement>
                        <text>Music Lib</text>
                        <pos>x:980;y:-1320</pos>
-                       <rect>x:0;y:0;w:79;h:35</rect>
+                       <rect>x:0;y:0;w:82.3281;h:35</rect>
                        <visual-role>1</visual-role>
                       </DAnnotation>
                      </instance>
@@ -185,7 +185,7 @@
                          <object>{e29cc87a-f5c3-4d33-966a-4489c8f6aeff}</object>
                          <name>Initialize Chart</name>
                          <pos>x:545;y:-1225</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -207,7 +207,7 @@
                          <object>{99664f8e-0b03-48fe-872c-f41449a2d224}</object>
                          <name>Initialize Chart Components</name>
                          <pos>x:1075;y:-1225</pos>
-                         <rect>x:-75;y:-20;w:150;h:40</rect>
+                         <rect>x:-85;y:-20;w:170;h:40</rect>
                          <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
@@ -253,7 +253,7 @@
                          <object>{2c866f07-c6e5-4984-adcb-1d3798e9effe}</object>
                          <name>Build View Model</name>
                          <pos>x:545;y:-1175</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -299,7 +299,7 @@
                          <object>{d6851bcc-b099-49a8-87cf-2ae958a03373}</object>
                          <name>Update Chart View</name>
                          <pos>x:205;y:-1055</pos>
-                         <rect>x:-55;y:-20;w:110;h:40</rect>
+                         <rect>x:-60;y:-20;w:120;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -390,7 +390,7 @@
                          </base-DElement>
                          <object>{787d33c7-42ec-4e20-a2db-5dcb562ae755}</object>
                          <name>Update Chart</name>
-                         <pos>x:545;y:-875</pos>
+                         <pos>x:545;y:-880</pos>
                          <rect>x:-45;y:-20;w:90;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
@@ -413,7 +413,7 @@
                          <object>{720c5c3b-e423-4c73-864f-6d5a413d743e}</object>
                          <name>Update Music Model</name>
                          <pos>x:1075;y:-1095</pos>
-                         <rect>x:-60;y:-20;w:120;h:40</rect>
+                         <rect>x:-65;y:-20;w:130;h:40</rect>
                          <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
@@ -434,8 +434,8 @@
                          </base-DElement>
                          <object>{13b8406d-499b-438e-9dc8-417648e86e3c}</object>
                          <name>Update Temp Chord Model</name>
-                         <pos>x:1075;y:-835</pos>
-                         <rect>x:-75;y:-20;w:150;h:40</rect>
+                         <pos>x:1075;y:-845</pos>
+                         <rect>x:-80;y:-20;w:160;h:40</rect>
                          <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
@@ -457,7 +457,7 @@
                          <object>{5ec86f4e-d2ca-4e32-8b37-b0328a32f446}</object>
                          <name>Update View Model</name>
                          <pos>x:545;y:-1105</pos>
-                         <rect>x:-55;y:-20;w:110;h:40</rect>
+                         <rect>x:-60;y:-20;w:120;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -739,7 +739,7 @@
                          <object>{c8cd045a-4cd2-4648-baca-f80613d4075b}</object>
                          <name>Control Playback</name>
                          <pos>x:545;y:-975</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -783,7 +783,7 @@
                        </base-DElement>
                        <text>MIDI Playback Thread (FluidSynth)</text>
                        <pos>x:860;y:-1010</pos>
-                       <rect>x:-90;y:-70;w:180;h:140</rect>
+                       <rect>x:-100;y:-70;w:200;h:140</rect>
                       </DBoundary>
                      </instance>
                     </item>
@@ -800,7 +800,7 @@
                          <object>{2772bd8e-2e61-4aae-87d2-50e4993eef4c}</object>
                          <name>MIDI Sequencer</name>
                          <pos>x:845;y:-975</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -918,7 +918,7 @@
                          <object>{674367e4-e18f-41a4-8da3-65584a72e26f}</object>
                          <name>Preview Chord</name>
                          <pos>x:545;y:-925</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -965,30 +965,6 @@
                          <a>{a97d4905-08d5-43cc-8ce1-e61c2aee9d70}</a>
                          <b>{289f26d3-50c3-4c3b-a43e-059b6c910c1a}</b>
                          <name>                 Preview Button</name>
-                        </DRelation>
-                       </base-DRelation>
-                       <custom-relation>Controlflow</custom-relation>
-                       <a>
-                        <DConnectionEnd>
-                         <navigable>true</navigable>
-                        </DConnectionEnd>
-                       </a>
-                      </DConnection>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DConnection">
-                      <DConnection>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{d51d98b3-af39-4e6a-a49c-5b9ee46ab042}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{50950363-4dc6-4f53-aef0-86737e5f6012}</object>
-                         <a>{67f059da-1c8e-43ea-bff7-12406c479dd3}</a>
-                         <b>{289f26d3-50c3-4c3b-a43e-059b6c910c1a}</b>
                         </DRelation>
                        </base-DRelation>
                        <custom-relation>Controlflow</custom-relation>
@@ -1157,7 +1133,7 @@
                          <object>{4d9093c0-db27-4dd3-ade9-965e4b9fd70b}</object>
                          <name>Save Chart Locally</name>
                          <pos>x:545;y:-720</pos>
-                         <rect>x:-55;y:-20;w:110;h:40</rect>
+                         <rect>x:-60;y:-20;w:120;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1204,7 +1180,7 @@
                          <object>{ba60c7a6-6eae-45d2-9dd8-837ec106b46d}</object>
                          <name>Export Backing Track</name>
                          <pos>x:545;y:-775</pos>
-                         <rect>x:-60;y:-20;w:120;h:40</rect>
+                         <rect>x:-65;y:-20;w:130;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1265,7 +1241,7 @@
                          <object>{12990d04-6559-4d0c-a8fc-6c04837d475a}</object>
                          <name>MIDI Sequencer</name>
                          <pos>x:835;y:-775</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1311,7 +1287,7 @@
                          <object>{25f8883a-8814-4db0-bef7-10b0abd5bab2}</object>
                          <name>Save MIDI File</name>
                          <pos>x:760;y:-720</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1333,7 +1309,7 @@
                          <object>{0d5cbcc1-2bba-494a-b6ed-0eb19463b5fe}</object>
                          <name>Save Audio File</name>
                          <pos>x:915;y:-720</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1613,7 +1589,7 @@
                          <object>{9aa7dc36-f449-4ea6-afd0-68aaf3edb629}</object>
                          <name>Download Chart</name>
                          <pos>x:545;y:-565</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1927,7 +1903,7 @@
                          <object>{4e87c9c7-9016-4ba2-9925-a2724625d3de}</object>
                          <name>Retrieve Chart</name>
                          <pos>x:840;y:-565</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>9</visual-role>
                         </DObject>
                        </base-DObject>
@@ -2019,7 +1995,7 @@
                          <object>{2f46943b-ef77-456b-8d8a-9cce70881513}</object>
                          <name>Display Search Results</name>
                          <pos>x:320;y:-565</pos>
-                         <rect>x:-65;y:-20;w:130;h:40</rect>
+                         <rect>x:-70;y:-20;w:140;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -2041,7 +2017,7 @@
                          <object>{06fc3e05-c3fd-4bab-b1d2-d37548f0ec6d}</object>
                          <name>Execute Query</name>
                          <pos>x:840;y:-635</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>9</visual-role>
                         </DObject>
                        </base-DObject>
@@ -2182,7 +2158,7 @@
                          <object>{236f9092-a703-4b9e-9b3c-ad0bc1d2e7ec}</object>
                          <name>Account Mgmt.</name>
                          <pos>x:325;y:-335</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -2345,7 +2321,7 @@
                          <object>{96f84c9f-9254-4784-a63e-61a1580410b8}</object>
                          <name>Insert New User</name>
                          <pos>x:840;y:-285</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>9</visual-role>
                         </DObject>
                        </base-DObject>
@@ -2804,7 +2780,7 @@
                           </DElement>
                          </base-DElement>
                          <object>{fe5562e6-ea4f-422f-b18e-d9c03906b421}</object>
-                         <pos>x:352.5;y:-840</pos>
+                         <pos>x:352.5;y:-845</pos>
                          <rect>x:-2.5;y:-10;w:5;h:20</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>6</visual-role>
@@ -2829,31 +2805,6 @@
                          <object>{663665b3-b757-472f-9c73-019853364b9e}</object>
                          <a>{a97d4905-08d5-43cc-8ce1-e61c2aee9d70}</a>
                          <b>{3c63cd34-fa3d-42ff-b95b-71c655636ada}</b>
-                        </DRelation>
-                       </base-DRelation>
-                       <custom-relation>Controlflow</custom-relation>
-                       <a>
-                        <DConnectionEnd>
-                         <navigable>true</navigable>
-                        </DConnectionEnd>
-                       </a>
-                      </DConnection>
-                     </instance>
-                    </item>
-                    <item>
-                     <instance type="DConnection">
-                      <DConnection>
-                       <base-DRelation>
-                        <DRelation>
-                         <base-DElement>
-                          <DElement>
-                           <uid>{83147b8e-1a69-48dd-bd53-3a8cd238d97d}</uid>
-                          </DElement>
-                         </base-DElement>
-                         <object>{86abd1b2-1289-44e5-a622-033975184b39}</object>
-                         <a>{3c63cd34-fa3d-42ff-b95b-71c655636ada}</a>
-                         <b>{67f059da-1c8e-43ea-bff7-12406c479dd3}</b>
-                         <name>Temp Chord Modified                                                                                                                                                                                                                 </name>
                         </DRelation>
                        </base-DRelation>
                        <custom-relation>Controlflow</custom-relation>
@@ -2985,9 +2936,103 @@
                       </DConnection>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DItem">
+                      <DItem>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{99d4c5fd-a59b-46fa-b738-f6a4a220e057}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b077f3a8-3663-4d68-a76c-f68a66e462ab}</object>
+                         <name>Update WorkingChord</name>
+                         <pos>x:745;y:-845</pos>
+                         <rect>x:-70;y:-20;w:140;h:40</rect>
+                         <visual-role>8</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <variety>activity</variety>
+                       <shape-editable>false</shape-editable>
+                      </DItem>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DConnection">
+                      <DConnection>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{35209c96-c07f-4cbd-943a-4b4d50d772f2}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{e009dc48-dbb9-4656-b4cd-a0da88562b29}</object>
+                         <a>{3c63cd34-fa3d-42ff-b95b-71c655636ada}</a>
+                         <b>{99d4c5fd-a59b-46fa-b738-f6a4a220e057}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <custom-relation>Controlflow</custom-relation>
+                       <a>
+                        <DConnectionEnd>
+                         <navigable>true</navigable>
+                        </DConnectionEnd>
+                       </a>
+                      </DConnection>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DConnection">
+                      <DConnection>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{a062cd2c-35ef-4ec5-902d-b758de7812a6}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{a14ad596-a74d-42bd-9a8f-f6321acc0b3d}</object>
+                         <a>{99d4c5fd-a59b-46fa-b738-f6a4a220e057}</a>
+                         <b>{67f059da-1c8e-43ea-bff7-12406c479dd3}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <custom-relation>Controlflow</custom-relation>
+                       <a>
+                        <DConnectionEnd>
+                         <navigable>true</navigable>
+                        </DConnectionEnd>
+                       </a>
+                      </DConnection>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DConnection">
+                      <DConnection>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{1c7b7971-f015-405c-9bde-9186c310b050}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{3b4b73a0-2150-4784-b9fe-9fc9e61a7b1a}</object>
+                         <a>{99d4c5fd-a59b-46fa-b738-f6a4a220e057}</a>
+                         <b>{289f26d3-50c3-4c3b-a43e-059b6c910c1a}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <custom-relation>Controlflow</custom-relation>
+                       <a>
+                        <DConnectionEnd>
+                         <navigable>true</navigable>
+                        </DConnectionEnd>
+                       </a>
+                      </DConnection>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1730672487707</last-modified>
+                  <last-modified>1730832005445</last-modified>
                   <toolbarid>Activities</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -7365,7 +7410,7 @@
                      <qlist>
                       <item>
                        <handle>
-                        <uid>{86abd1b2-1289-44e5-a622-033975184b39}</uid>
+                        <uid>{e009dc48-dbb9-4656-b4cd-a0da88562b29}</uid>
                         <target>
                          <instance type="MConnection">
                           <MConnection>
@@ -7373,12 +7418,11 @@
                             <MRelation>
                              <base-MElement>
                               <MElement>
-                               <uid>{86abd1b2-1289-44e5-a622-033975184b39}</uid>
+                               <uid>{e009dc48-dbb9-4656-b4cd-a0da88562b29}</uid>
                               </MElement>
                              </base-MElement>
-                             <name>Temp Chord Modified                                                                                                                                                                                                                 </name>
                              <a>{fe5562e6-ea4f-422f-b18e-d9c03906b421}</a>
-                             <b>{13b8406d-499b-438e-9dc8-417648e86e3c}</b>
+                             <b>{b077f3a8-3663-4d68-a76c-f68a66e462ab}</b>
                             </MRelation>
                            </base-MRelation>
                            <custom-relation>Controlflow</custom-relation>
@@ -7546,6 +7590,93 @@
                 </base-MObject>
                 <variety-editable>false</variety-editable>
                 <variety>horizontalbar</variety>
+               </MItem>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{b077f3a8-3663-4d68-a76c-f68a66e462ab}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{b077f3a8-3663-4d68-a76c-f68a66e462ab}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Update WorkingChord</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{a14ad596-a74d-42bd-9a8f-f6321acc0b3d}</uid>
+                        <target>
+                         <instance type="MConnection">
+                          <MConnection>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{a14ad596-a74d-42bd-9a8f-f6321acc0b3d}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b077f3a8-3663-4d68-a76c-f68a66e462ab}</a>
+                             <b>{13b8406d-499b-438e-9dc8-417648e86e3c}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <custom-relation>Controlflow</custom-relation>
+                           <a>
+                            <MConnectionEnd>
+                             <navigable>true</navigable>
+                            </MConnectionEnd>
+                           </a>
+                          </MConnection>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{3b4b73a0-2150-4784-b9fe-9fc9e61a7b1a}</uid>
+                        <target>
+                         <instance type="MConnection">
+                          <MConnection>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{3b4b73a0-2150-4784-b9fe-9fc9e61a7b1a}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b077f3a8-3663-4d68-a76c-f68a66e462ab}</a>
+                             <b>{674367e4-e18f-41a4-8da3-65584a72e26f}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <custom-relation>Controlflow</custom-relation>
+                           <a>
+                            <MConnectionEnd>
+                             <navigable>true</navigable>
+                            </MConnectionEnd>
+                           </a>
+                          </MConnection>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <variety-editable>false</variety-editable>
+                <variety>activity</variety>
                </MItem>
               </instance>
              </target>
