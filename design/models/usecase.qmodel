@@ -49,7 +49,7 @@
                          </base-DElement>
                          <object>{63f1f20b-8669-458d-ba43-75ade908818b}</object>
                          <name>User</name>
-                         <pos>x:-35;y:250</pos>
+                         <pos>x:10;y:260</pos>
                          <rect>x:-30;y:-50;w:60;h:100</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -72,7 +72,7 @@
                          </base-DElement>
                          <object>{02bc94e4-62fd-4dac-9099-ad185f5b7ec9}</object>
                          <name>Administrator</name>
-                         <pos>x:880;y:470</pos>
+                         <pos>x:885;y:475</pos>
                          <rect>x:-30;y:-55;w:60;h:110</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>5</visual-role>
@@ -125,7 +125,7 @@
                          <object>{0b5d226b-e2a7-4078-8c81-964479fcaa5d}</object>
                          <name>Create / Edit Chart</name>
                          <pos>x:315;y:60</pos>
-                         <rect>x:-55;y:-20;w:110;h:40</rect>
+                         <rect>x:-60;y:-20;w:120;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -147,7 +147,7 @@
                          <object>{27ddf4b3-0b9f-4a07-b676-220e6aabb4f9}</object>
                          <name>Export Local File</name>
                          <pos>x:315;y:105</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -169,7 +169,7 @@
                          <object>{f29726bf-71f7-4334-b0b9-07c088881c89}</object>
                          <name>Import Local File</name>
                          <pos>x:315;y:150</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -213,7 +213,7 @@
                          <object>{ece10097-c4e7-4f17-8d3b-eb21cc01ae37}</object>
                          <name>Search Charts</name>
                          <pos>x:315;y:480</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -257,7 +257,7 @@
                          <object>{6888a8e4-f87c-48cd-a830-8716b7eca771}</object>
                          <name>Register Account</name>
                          <pos>x:315;y:250</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -301,7 +301,7 @@
                          <object>{0f11498c-90c6-43b1-b741-66c397526089}</object>
                          <name>Remove Chart</name>
                          <pos>x:315;y:575</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-50;y:-20;w:100;h:40</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -411,7 +411,7 @@
                          <object>{d13422e0-a41f-4926-bb20-34bc6d5ab797}</object>
                          <name>Add Chart to DB</name>
                          <pos>x:580;y:530</pos>
-                         <rect>x:-50;y:-20;w:100;h:40</rect>
+                         <rect>x:-55;y:-20;w:110;h:40</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -433,7 +433,7 @@
                          <object>{e5bc0ac1-a4ca-405f-b2a1-c47f3e132f9a}</object>
                          <name>Remove Chart from DB</name>
                          <pos>x:580;y:575</pos>
-                         <rect>x:-65;y:-20;w:130;h:40</rect>
+                         <rect>x:-70;y:-20;w:140;h:40</rect>
                          <visual-role>5</visual-role>
                         </DObject>
                        </base-DObject>
@@ -785,7 +785,7 @@
                          <object>{b849c6fc-ea11-46ae-823b-b26e3264652c}</object>
                          <a>{63060283-9c80-42a0-baad-a916b38a5d46}</a>
                          <b>{8b6c6c70-e372-455b-bf5e-df8684909f62}</b>
-                         <name>ONLY THIS USER'S                           </name>
+                         <name>ONLY THIS USER                       </name>
                         </DRelation>
                        </base-DRelation>
                       </DDependency>
@@ -1054,9 +1054,22 @@
                       </DBoundary>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DBoundary">
+                      <DBoundary>
+                       <base-DElement>
+                        <DElement>
+                         <uid>{b87a8215-209b-4444-aa7c-b208bc2ebedb}</uid>
+                        </DElement>
+                       </base-DElement>
+                       <pos>x:455;y:305</pos>
+                       <rect>x:-485;y:-355;w:970;h:710</rect>
+                      </DBoundary>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1730667501538</last-modified>
+                  <last-modified>1730850642853</last-modified>
                   <toolbarid>UseCases</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -1996,7 +2009,7 @@
                                <uid>{b849c6fc-ea11-46ae-823b-b26e3264652c}</uid>
                               </MElement>
                              </base-MElement>
-                             <name>ONLY THIS USER'S                           </name>
+                             <name>ONLY THIS USER                       </name>
                              <a>{0f11498c-90c6-43b1-b741-66c397526089}</a>
                              <b>{e5bc0ac1-a4ca-405f-b2a1-c47f3e132f9a}</b>
                             </MRelation>
