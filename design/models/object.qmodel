@@ -49,7 +49,7 @@
                          </base-DElement>
                          <object>{516cdc2c-f0a9-4f74-8170-549f9eee1983}</object>
                          <name>Chart</name>
-                         <pos>x:230;y:150</pos>
+                         <pos>x:220;y:165</pos>
                          <rect>x:-90;y:-110;w:180;h:220</rect>
                          <visual-role>8</visual-role>
                         </DObject>
@@ -205,7 +205,7 @@
                          </base-DElement>
                          <object>{8cc64f61-e3ef-440b-a2a4-8a2d85aff8aa}</object>
                          <name>TimeSig</name>
-                         <pos>x:715;y:240</pos>
+                         <pos>x:685;y:235</pos>
                          <rect>x:-40;y:-45;w:80;h:90</rect>
                          <visual-role>7</visual-role>
                         </DObject>
@@ -227,8 +227,8 @@
                          </base-DElement>
                          <object>{f46e2bca-70d8-42f6-b7fd-a3b70071d3dc}</object>
                          <name>Measure</name>
-                         <pos>x:230;y:365</pos>
-                         <rect>x:-80;y:-55;w:160;h:110</rect>
+                         <pos>x:225;y:370</pos>
+                         <rect>x:-80;y:-65;w:160;h:130</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -250,7 +250,7 @@
                          <object>{9ef5f6ae-dd7e-406d-a179-8edc120cabe1}</object>
                          <name>Segment</name>
                          <pos>x:450;y:410</pos>
-                         <rect>x:-50;y:-55;w:100;h:110</rect>
+                         <rect>x:-55;y:-65;w:110;h:130</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -396,8 +396,8 @@
                          </base-DElement>
                          <object>{0d83e656-d64d-47d6-b2df-fe391bb4e024}</object>
                          <name>MainWindow</name>
-                         <pos>x:-45;y:325</pos>
-                         <rect>x:-85;y:-65;w:170;h:130</rect>
+                         <pos>x:-45;y:345</pos>
+                         <rect>x:-85;y:-75;w:170;h:150</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -440,8 +440,8 @@
                          </base-DElement>
                          <object>{03b5c964-1365-4710-a1c7-d885fe64aa55}</object>
                          <name>ScorePanel</name>
-                         <pos>x:-45;y:170</pos>
-                         <rect>x:-70;y:-45;w:140;h:90</rect>
+                         <pos>x:-40;y:185</pos>
+                         <rect>x:-80;y:-70;w:160;h:140</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -674,7 +674,7 @@
                          <object>{f2c654ef-2774-4bce-a990-224a4c6a3282}</object>
                          <name>PrintingModel</name>
                          <pos>x:450;y:105</pos>
-                         <rect>x:-90;y:-65;w:180;h:130</rect>
+                         <rect>x:-90;y:-75;w:180;h:150</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>8</visual-role>
                         </DObject>
@@ -966,7 +966,7 @@
                          </base-DElement>
                          <object>{8302b8ec-75c6-44e0-8e90-a27058834f66}</object>
                          <name>KeySig</name>
-                         <pos>x:715;y:350</pos>
+                         <pos>x:715;y:345</pos>
                          <rect>x:-90;y:-60;w:180;h:120</rect>
                          <visual-role>7</visual-role>
                         </DObject>
@@ -1164,7 +1164,7 @@
                          </base-DElement>
                          <object>{03a83374-3907-4bc4-864c-9c7a9fd394bf}</object>
                          <name>MIDIController</name>
-                         <pos>x:230;y:705</pos>
+                         <pos>x:265;y:705</pos>
                          <rect>x:-110;y:-110;w:220;h:220</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>5</visual-role>
@@ -1288,7 +1288,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1730850558820</last-modified>
+                  <last-modified>1730856438277</last-modified>
                   <toolbarid>Classes</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -1471,77 +1471,77 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{fc5cc38c-acd2-48b5-b708-4af6690fc6dc}</uid>
+                    <uid>{74c16e57-4f74-42b8-9d5d-5ffa4ba7d12a}</uid>
                     <type>1</type>
                     <declaration>Measues : List&lt;Measure&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{61efd2ef-5c91-437b-939f-9212dac8f56e}</uid>
+                    <uid>{226a346b-8c98-4fe1-8a0b-b2dbf885df95}</uid>
                     <type>1</type>
                     <declaration>Repeats : List&lt;repeat&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{96788aaa-23ba-46cd-996d-bcea5c1af4c2}</uid>
+                    <uid>{44137632-e4e1-46c1-8144-e757ede2a1a3}</uid>
                     <type>1</type>
                     <declaration>view : PrintingModel</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0cdb2a98-7219-4026-ba15-705293a04dd5}</uid>
+                    <uid>{8eac0797-fd78-4748-a213-bf19be6b34a7}</uid>
                     <type>1</type>
                     <declaration>key : KeySig</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{737b5cbc-35ad-4627-8395-e17a471765b2}</uid>
+                    <uid>{ff974b99-e7d3-4a76-908b-eb865c80addd}</uid>
                     <type>1</type>
                     <declaration>meter : TimeSig</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{61be8d40-14ae-4be6-a931-1dcd72fa9f63}</uid>
+                    <uid>{1b790510-757e-442a-b5aa-2250956f571b}</uid>
                     <type>1</type>
                     <declaration>Length : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6d49ecbb-00fb-49c8-a0c0-9a8cfe3e135a}</uid>
+                    <uid>{6b69e388-b6d1-40fa-b14f-37e0d29c59a3}</uid>
                     <type>1</type>
                     <declaration>playbackStyle : Style</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6fa5f853-3e0d-4f36-9d4c-eb1ea7b14e6f}</uid>
+                    <uid>{a68633ab-8776-4bdd-b696-62d4431db0d4}</uid>
                     <type>1</type>
                     <declaration>instruments : MIDIInstruments</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cdfe1a9f-2ad9-4768-be1c-aa299453eabc}</uid>
+                    <uid>{54a6055b-f48a-4809-9e6f-4ce62f343a5b}</uid>
                     <type>2</type>
                     <declaration>readFromFile()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5f49916c-e55b-453f-b5e8-9febf3856dda}</uid>
+                    <uid>{294edd7d-34ef-4981-87a9-19efaf734ad4}</uid>
                     <type>2</type>
                     <declaration>saveToFile()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{61d3f88a-9d5b-4362-988e-c2e1af8d0720}</uid>
+                    <uid>{b8ac3745-6166-45a2-b3a4-7fb51f54dedc}</uid>
                     <type>2</type>
                     <declaration>playback()</declaration>
                    </MClassMember>
@@ -1916,14 +1916,14 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{af959fe2-67be-4f1d-a1b5-9254cdc9aab1}</uid>
+                    <uid>{ae5d9315-034a-4873-9cc0-969bb01b0416}</uid>
                     <type>1</type>
                     <declaration>upper : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3b9b77f9-92b9-4211-88f5-61e97004d15d}</uid>
+                    <uid>{82adbcf6-94a4-4cfc-b09a-b225efe6832f}</uid>
                     <type>1</type>
                     <declaration>lower : int</declaration>
                    </MClassMember>
@@ -2022,23 +2022,31 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{9c852c7c-a3ee-470f-aeed-fe03136b1dee}</uid>
+                    <uid>{4a9a410c-ae81-40d4-9eae-1503f985b6f0}</uid>
                     <type>1</type>
                     <declaration>meter : TimeSig</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{eeb2aed6-fbc4-49f9-811f-41ce7daec120}</uid>
+                    <uid>{76b8cfaf-01e3-4a0b-960b-20ce9df0b187}</uid>
                     <type>1</type>
                     <declaration>beats : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{46a93069-aa08-48e6-b3a9-007908899fa7}</uid>
+                    <uid>{16cd3927-5927-47e2-9152-70a73a19040d}</uid>
                     <type>1</type>
                     <declaration>segments : List&lt;Segment&gt;</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{90ec342b-0e01-4c30-ac54-e6161db6eef9}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>addChord()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2135,23 +2143,31 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{3af10bec-355b-4def-9ff7-fd6831445cff}</uid>
+                    <uid>{dabbda7a-5d7b-4814-ae27-7f2d834e75e0}</uid>
                     <type>1</type>
                     <declaration>chord : Chord</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{281b3ce0-312c-44f3-ad6d-2b028ad88408}</uid>
+                    <uid>{ab85fcc1-869a-472b-b3ec-fac48a94626a}</uid>
                     <type>1</type>
                     <declaration>length : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8b801b09-fb2c-4308-95ae-7767217f0e78}</uid>
+                    <uid>{0e8c6b08-e270-4662-9a33-c308e8df998f}</uid>
                     <type>1</type>
                     <declaration>key : KeySig</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{cea40465-ffa7-4aae-a108-5cc2020d4b96}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>changeChord()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2422,31 +2438,47 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{f3a71b0e-0d63-410e-9e85-e861424ff288}</uid>
+                    <uid>{008aaeb0-d767-4a09-bb2e-4976a6f3ef6e}</uid>
                     <type>1</type>
                     <declaration>toolsPalette : Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2ee67f5a-0758-4c7a-9e6a-514490fbc72a}</uid>
+                    <uid>{29a64537-d70f-479d-8728-bff71facc8e3}</uid>
                     <type>1</type>
                     <declaration>tempChord : WorkingChord</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3b14d5fd-4dc4-4735-8e86-b6c362009f5d}</uid>
+                    <uid>{df9b684f-ce43-4916-b696-460ad9de8ccd}</uid>
                     <type>1</type>
                     <declaration>midi : MIDIController</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b025af54-1325-4f0c-966e-55d9cca5b3c7}</uid>
+                    <uid>{fa90b021-a250-463a-b4aa-04475bb60009}</uid>
                     <type>2</type>
                     <properties>256</properties>
-                    <declaration>chordPreviewed()</declaration>
+                    <declaration>wChordPreviewed()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4cb8f1e0-3fa7-40b0-9322-b61bbdcbd19c}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>chordAdded()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{544b5e9e-151d-40b9-b8ac-33c480ba84ce}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>chordChanged()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2620,16 +2652,40 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{f40e2e35-3977-4764-a883-8166d81d375c}</uid>
+                    <uid>{9082b3f8-53ec-4da8-82e7-e8164c1bc48b}</uid>
                     <type>1</type>
                     <declaration>chart : Chart</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{abdedfb6-f3db-46d6-b1f0-83cff8a7ed23}</uid>
+                    <uid>{24b4c8ab-e71a-4ced-ad96-829ac7979008}</uid>
                     <type>1</type>
                     <declaration>selection: Segment idx</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4ed35910-5ebe-40b7-9fb3-279782c42bcc}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>onClickMakeSelection()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{66b1304d-dffa-499f-bdff-a344631e29be}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>chartPlaybackRequest()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a2c1e74b-a82c-4814-9e38-d97ea7906fae}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>updateView()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2697,28 +2753,28 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{b83872f0-80da-425a-aedc-d47c0ec95c0d}</uid>
+                    <uid>{bea791cd-df9c-4012-af2a-42302ea6ada6}</uid>
                     <type>1</type>
                     <declaration>loginForm: Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{fd1799da-57e0-4008-81ce-81f0d068ad39}</uid>
+                    <uid>{f1f65296-c58b-49a8-9226-d93e813aa166}</uid>
                     <type>1</type>
                     <declaration>registrationForm: Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{17810bdd-ea96-4f50-a828-d2fab2290f44}</uid>
+                    <uid>{012eb2e9-f560-4310-8196-9dbbba9bd895}</uid>
                     <type>1</type>
                     <declaration>logoutButton: Widgets</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{acf9010c-f34a-485f-b9f2-edfe430b0ae7}</uid>
+                    <uid>{fbe783ae-6d81-40a8-b7f3-239f14d1da8b}</uid>
                     <type>1</type>
                     <declaration>activeUser : User</declaration>
                    </MClassMember>
@@ -2788,14 +2844,14 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{a4f46f3b-88b9-40c0-a9a2-90c90ac26c31}</uid>
+                    <uid>{0f8b1e0f-8fa4-4672-bdb4-55be300a8548}</uid>
                     <type>1</type>
                     <declaration>query : SearchQuery</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c8b438be-eb30-440f-a7e4-07700cc0ccf1}</uid>
+                    <uid>{b16f7943-276d-4af0-80cb-8c9e0b442829}</uid>
                     <type>1</type>
                     <declaration>searchResultsList : Widgets</declaration>
                    </MClassMember>
@@ -2865,30 +2921,46 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{c11ab4a1-5a83-459c-a9fc-65716b2ae3b9}</uid>
+                    <uid>{1c6ee4a9-ec4c-47b6-b23b-eb2196a787e0}</uid>
                     <type>1</type>
                     <declaration>glyphsDictionary</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b3ffe47c-bd65-4622-baa6-24a3d13a8d8a}</uid>
+                    <uid>{a4487bd2-4953-4320-b071-cafd14879a5a}</uid>
                     <type>1</type>
                     <declaration>glyphMap : map&lt;Glyph, pos&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e7e48cee-d2e0-45ed-91fb-0e988898d944}</uid>
+                    <uid>{5c7c2c25-a6f0-4881-95b2-d6061e122ace}</uid>
                     <type>1</type>
                     <declaration>Length : size_t</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f95af6b0-d2d8-4ca4-8743-3ec1d957e816}</uid>
+                    <uid>{45c8dece-bc03-4477-bf3a-b7c623c7e4a9}</uid>
                     <type>1</type>
                     <declaration>Selection : Segment idx</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{fd3e5085-c51b-41ce-8f6d-85c95f52a232}</uid>
+                    <type>2</type>
+                    <properties>512</properties>
+                    <declaration>setSelection()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8da5253d-a1f0-4fe4-b21f-1b13d11b06ff}</uid>
+                    <type>2</type>
+                    <properties>256</properties>
+                    <declaration>updated()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -3347,28 +3419,28 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{b184648a-336c-420d-bd2a-ebd46116d9e8}</uid>
+                    <uid>{5874d22c-7ed0-4426-8384-3d9643a949b4}</uid>
                     <type>1</type>
                     <declaration>tonic : Note</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f9ade2c6-2a81-4d66-b060-d741db8e23a8}</uid>
+                    <uid>{589cf230-adbb-44ff-b41f-1a4dc5f19336}</uid>
                     <type>1</type>
                     <declaration>scale : enum</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4b82960e-31a5-4f0b-97bb-5d201455c03f}</uid>
+                    <uid>{33a4dc67-276a-4af6-aef2-ac856a6233d2}</uid>
                     <type>1</type>
                     <declaration>intervals : bool[intervalCount]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{15304e10-bb6c-43c6-9891-87df3009b489}</uid>
+                    <uid>{1b7369ed-dce8-437a-b083-3d0475b86449}</uid>
                     <type>1</type>
                     <declaration>sharpKey : bool</declaration>
                    </MClassMember>
@@ -3401,14 +3473,14 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{1a0f20ac-6652-4982-80d4-5c7f790cbe1f}</uid>
+                    <uid>{8d0de607-7cc9-45da-afb0-b07cb3233bf0}</uid>
                     <type>1</type>
                     <declaration>img : PixMap</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{12a7f7b0-a292-4a84-b498-b6c0195955b5}</uid>
+                    <uid>{2fe83fcf-7f1d-4739-aea7-496f195406af}</uid>
                     <type>1</type>
                     <declaration>id : enum</declaration>
                    </MClassMember>
@@ -3606,49 +3678,49 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{f7e19306-f7e2-4be4-b53c-c70908c852bf}</uid>
+                    <uid>{62c65fc9-9d0f-46d9-a70b-dc20ec5fa7cb}</uid>
                     <type>1</type>
                     <declaration>player : MIDIPlayer</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{49978de9-6dd6-4481-9d94-fa06cad352d6}</uid>
+                    <uid>{37b58b20-01bc-47ef-82bd-c03970a349db}</uid>
                     <type>1</type>
                     <declaration>playerthread : QThread</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{af46bcaa-1c18-4f22-9b83-70753d9565f3}</uid>
+                    <uid>{d8b12293-4426-47b0-a454-2dd3fb0d7827}</uid>
                     <type>1</type>
                     <declaration>synth : fsynth</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c29f470d-6ea7-4146-b350-6292f48cf503}</uid>
+                    <uid>{c3b074bb-a640-4af4-809b-12b36133e095}</uid>
                     <type>1</type>
                     <declaration>settings : fssettings</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{814d5391-7501-46f9-867d-56030d10107b}</uid>
+                    <uid>{b722b0ed-5c9f-4c6f-b0df-1a49a892f0f7}</uid>
                     <type>1</type>
                     <declaration>audiodriver : fsaudiodriver</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3db6decc-3c2b-4f13-9912-9ed956503aa4}</uid>
+                    <uid>{6112dfe8-6660-43c7-8e35-af2a84a30340}</uid>
                     <type>1</type>
                     <declaration>sequencer : fssequencer</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{73dd713b-653e-49aa-b321-67fb9340e6a1}</uid>
+                    <uid>{805d44ec-11ec-4b1a-b16e-f1fd4d5f5990}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>requestPreview(WorkingChord&amp;)</declaration>
@@ -3656,7 +3728,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5ac7cc23-7435-44de-92c7-74e2f919871b}</uid>
+                    <uid>{32f2d567-f5d7-439c-a81d-ea0fc4e998e9}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>requestPlayback(Chart&amp;, index)</declaration>
@@ -3664,7 +3736,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a06ac5c2-9e1c-46ea-9552-248ab714bfcd}</uid>
+                    <uid>{2f19bcf8-f095-4f14-90f9-cd9bce82857d}</uid>
                     <type>2</type>
                     <properties>512</properties>
                     <declaration>requestStopPlayback()</declaration>
@@ -3672,7 +3744,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{77208ae3-c21a-4c38-8d2b-d9291b2729d9}</uid>
+                    <uid>{5c59d78d-df28-44a0-a99d-9f6605a1be1b}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>chordPreviewRequested(Chord&amp;)</declaration>
@@ -3680,7 +3752,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d0c8dcd2-c9fc-466a-bbed-3f22237839bd}</uid>
+                    <uid>{ac58d2d1-5f19-4080-aa31-53af77efc689}</uid>
                     <type>2</type>
                     <properties>256</properties>
                     <declaration>playbackRequested(Chart&amp;, index)</declaration>
