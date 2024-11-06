@@ -8,7 +8,6 @@
 #include <fluidsynth.h>
 
 using namespace std::chrono_literals;
-
 using fsynth = fluid_synth_t;
 using fssettings = fluid_settings_t;
 using fsdriver = fluid_audio_driver_t;
@@ -16,8 +15,6 @@ using fsdriver = fluid_audio_driver_t;
 class MIDIPlayer : public QObject {
     Q_OBJECT
 public:
-    explicit MIDIPlayer(QObject *parent = nullptr);
-    ~MIDIPlayer();
     void interruptPlayback() { m_interrupted = true; }
 signals:
 
@@ -43,39 +40,39 @@ class MIDIController : public QObject {
 public:
     explicit MIDIController(QObject *parent = nullptr)
         : QObject(parent) {
-        settings = new_fluid_settings();
-        fluid_settings_setint(settings, "synth.polyphony", 128);
-        fluid_settings_setnum(settings, "synth.gain", 1);
-        synth = new_fluid_synth(settings);
-        adriver = new_fluid_audio_driver(settings, synth);
-        fluid_synth_sfload(synth, "GU-GS.sf2", 1);
-        player.moveToThread(&playerthread);
-        connect(&playerthread, &QThread::finished, &player, &QObject::deleteLater);
-        connect(this, &MIDIController::previewRequested, &player, &MIDIPlayer::previewChord);
-        playerthread.start();
+        m_fssettings = new_fluid_settings();
+        fluid_settings_setint(m_fssettings, "synth.polyphony", 128);
+        fluid_settings_setnum(m_fssettings, "synth.gain", 1);
+        m_fsynth        = new_fluid_synth(m_fssettings);
+        m_fsaudiodriver = new_fluid_audio_driver(m_fssettings, m_fsynth);
+        fluid_synth_sfload(m_fsynth, "GU-GS.sf2", 1);
+        m_player.moveToThread(&m_playerthread);
+        connect(this, &MIDIController::previewRequested, &m_player, &MIDIPlayer::previewChord);
+        // uncomment this if m_player ever becomes a pointer again
+        // connect(&playerthread, &QThread::finished, &m_player, &QObject::deleteLater);
+        m_playerthread.start();
     }
     ~MIDIController() {
-        playerthread.quit();
-        playerthread.wait();
-        delete_fluid_audio_driver(adriver);
-        delete_fluid_synth(synth);
-        delete_fluid_settings(settings);
+        m_playerthread.quit();
+        m_playerthread.wait();
+        delete_fluid_audio_driver(m_fsaudiodriver);
+        delete_fluid_synth(m_fsynth);
+        delete_fluid_settings(m_fssettings);
     }
 public slots:
     void requestPreview(const WorkingChord &chord) {
-        player.interruptPlayback();
-        emit previewRequested(chord.getChord(), synth);
+        m_player.interruptPlayback();
+        emit previewRequested(chord.getChord(), m_fsynth);
     }
 signals:
     void previewRequested(const Chord &chord, fsynth *synth);
 
 private:
-    QThread playerthread;
-    QTime lastrequest;
-    MIDIPlayer player;
-    fsynth *synth;
-    fsdriver *adriver;
-    fssettings *settings;
+    QThread m_playerthread;
+    MIDIPlayer m_player;
+    fsynth *m_fsynth;
+    fsdriver *m_fsaudiodriver;
+    fssettings *m_fssettings;
 };
 
 #endif // MIDIPLAYER_H
