@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&start, &StartupWindow::windowClosed, this, &MainWindow::on_start_windowClosed);
     connect(this, &MainWindow::chordPreviewed, &m_midi, &MIDIController::requestPreview);
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
-    m_midi.blockSignals(true);
+    //m_midi.blockSignals(true);
 }
 
 void MainWindow::startUp() {
@@ -52,6 +52,7 @@ void MainWindow::startUp() {
 }
 
 void MainWindow::on_start_windowClosed(int) {
+    m_midi.blockSignals(true);
     ui->customRootCBox->setCurrentIndex(Notes::NOTE_Bflat);
     m_chord.setBass(Notes::NOTES[Notes::NOTE_Bflat]);
     ui->qualMajBtn->setChecked(true);
