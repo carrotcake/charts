@@ -44,7 +44,7 @@ enum interval {
 };
 
 enum class Letter { C = 0, D, E, F, G, A, B };
-enum class Octave { A0 = 1, A1, A2, A3, A4, A5, A6, A7 };
+enum Octave { A0 = 1, A1, A2, A3, A4, A5, A6, A7 };
 
 const std::array<const std::string, COUNT> str_ROMANMAJ
     = {"I", "♭II", "II", "♭III", "III", "IV", "bV", "V", "♭VI", "VI", "♭VII", "VII"};

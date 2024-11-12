@@ -39,97 +39,103 @@
         <LetterName> ::= A | A# | Bb | B | C | C# | Db | D | D# | Eb | E | F | F# | Gb | G | G# | Ab
         <null> ::=
 */
+namespace Chords {
+typedef std::array<bool, Notes::COUNT> interval_set;
+enum quality { maj = 0, dom, min, dim, minMaj };
+const std::array<const std::string, 5> str_QUALITY = {"Maj", "", "min", "dim", "minMaj"};
+enum extension { triad = 0, seven, nine, eleven, thirteen };
+const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
+enum alteration {
+    no3 = 0,
+    no5,
+    flat5,
+    sharp5,
+    sus2,
+    sus4,
+    flat9,
+    sharp9,
+    add13,
+    add9,
+    sharp11,
+    add11,
+    flat13,
+    ALTCOUNT
+};
+const std::array<const std::string, ALTCOUNT> str_ALTERATION
+    = {"no3", "no5", "♭5", "♯5", "sus2", "sus4", "♭9", "♯9", "add13", "add9", "♯11", "add11", "♭13"};
+typedef std::array<bool, ALTCOUNT> Alterations;
+enum action { R = -1, N = 0, A = 1 }; //remove, no action, add
+
+typedef const std::array<action, Notes::COUNT> action_set;
+//                                                   #9      #11     #5
+//                                           1 b9  9 b3  3 11 b5  5 b13 13 b7 7
+static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},  //maj
+                                            {1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0},  //dom
+                                            {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0},  //min
+                                            {1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0},  //dim
+                                            {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1}}; //dim
+
+static constexpr interval_set EXTSETS[] = {{1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0},  //triad
+                                           {1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //7
+                                           {1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //9
+                                           {1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1},  //11
+                                           {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1}}; //13
+
+static constexpr action_set ALTSETS[] = {
+    {N, N, N, R, R, N, N, N, N, N, N, N}, //no3 / 5
+    {N, N, N, N, N, N, R, R, N, N, N, N}, //no5
+    {N, N, N, N, N, N, A, R, N, N, N, N}, //b5
+    {N, N, N, N, N, N, R, R, A, N, N, N}, //#5
+    {N, N, A, R, R, N, N, N, N, N, N, N}, //sus2
+    {N, N, N, R, R, A, N, N, N, N, N, N}, //sus4 / sus
+    {N, A, R, N, N, N, N, N, N, N, N, N}, //b9
+    {N, N, R, A, N, N, N, N, N, N, N, N}, //#9
+    {N, N, N, N, N, N, N, N, N, A, N, N}, //add13
+    {N, N, A, N, N, N, N, N, N, N, N, N}, //add9
+    {N, N, N, N, N, R, A, N, N, N, N, N}, //#11
+    {N, N, N, N, N, A, N, N, N, N, N, N}, //add11
+    {N, N, N, N, N, N, N, N, A, N, N, N}, //b13
+}; //add13
+} // namespace Chords
 
 class Chord {
 public:
-    typedef std::array<bool, Notes::COUNT> interval_set;
-    enum quality { maj = 0, dom, min, dim, minMaj };
-    const std::array<const std::string, 5> str_QUALITY = {"Maj", "", "min", "dim", "minMaj"};
-    enum extension { triad = 0, seven, nine, eleven, thirteen };
-    const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
-    enum alteration {
-        no3 = 0,
-        no5,
-        flat5,
-        sharp5,
-        sus2,
-        sus4,
-        flat9,
-        sharp9,
-        add13,
-        add9,
-        sharp11,
-        add11,
-        flat13,
-        ALTCOUNT
-    };
-    const std::array<const std::string, ALTCOUNT> str_ALTERATION = {
-        "no3", "no5", "♭5", "♯5", "sus2", "sus4", "♭9", "♯9", "add13", "add9", "♯11", "add11", "♭13"};
-    typedef std::array<bool, ALTCOUNT> Alterations;
     Chord();
-    Chord(const Notes::Note root, const quality qual, const extension ext);
-    Chord(const Notes::Note root, const quality qual, const extension ext,
-          const Alterations& alts, const Notes::Note bass);
+    Chord(const Notes::Note root, const Chords::quality qual, const Chords::extension ext);
+    Chord(const Notes::Note root,
+          const Chords::quality qual,
+          const Chords::extension ext,
+          const Chords::Alterations &alts,
+          const Notes::Note bass);
     auto notes() const { return m_noteslist; }
     const auto& name() const { return m_namestr; }
     Notes::Note root() const {return m_rootnote;}
     Notes::Note bass() const {return m_bassnote;}
-    quality qual() const {return m_quality;}
-    extension extensionLevel() const { return m_extlevel; }
+    Chords::quality qual() const { return m_quality; }
+    Chords::extension extensionLevel() const { return m_extlevel; }
 
-    bool canAddAlteration(const alteration alt) const;
-    bool hasAlteration(const alteration alt) const {return m_alts[alt];}
+    bool canAddAlteration(const Chords::alteration alt) const;
+    bool hasAlteration(const Chords::alteration alt) const { return m_alts[alt]; }
     void setRoot(const Notes::Note root, bool rebuild = true);
     void setBass(const Notes::Note bass, bool rebuild = true);
-    void setQuality(const quality newqual, bool rebuild = true);
-    void setExtension(const extension newlevel, bool rebuild = true);
-    void addAlteration(const alteration newalt, bool rebuild = true);
-    void removeAlteration(const alteration alt, bool rebuild = true);
+    void setQuality(const Chords::quality newqual, bool rebuild = true);
+    void setExtension(const Chords::extension newlevel, bool rebuild = true);
+    void addAlteration(const Chords::alteration newalt, bool rebuild = true);
+    void removeAlteration(const Chords::alteration alt, bool rebuild = true);
     void removeAllAlterations(bool rebuild = true);
 
 private:
     void constructChord();
     void nameChord();
-    enum action{R=-1,N=0,A=1}; //remove, no action, add
 
-    typedef const std::array<action, Notes::COUNT> action_set;
-    //                                                   #9      #11     #5
-    //                                           1 b9  9 b3  3 11 b5  5 b13 13 b7 7
-    static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},  //maj
-                                                {1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0},  //dom
-                                                {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0},  //min
-                                                {1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0},  //dim
-                                                {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1}}; //dim
-
-    static constexpr interval_set EXTSETS[] = {{1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0},  //triad
-                                               {1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //7
-                                               {1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1},  //9
-                                               {1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1},  //11
-                                               {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1}}; //13
-
-    static constexpr action_set ALTSETS[] = {
-        {N, N, N, R, R, N, N, N, N, N, N, N}, //no3 / 5
-        {N, N, N, N, N, N, R, R, N, N, N, N}, //no5
-        {N, N, N, N, N, N, A, R, N, N, N, N}, //b5
-        {N, N, N, N, N, N, R, R, A, N, N, N}, //#5
-        {N, N, A, R, R, N, N, N, N, N, N, N}, //sus2
-        {N, N, N, R, R, A, N, N, N, N, N, N}, //sus4 / sus
-        {N, A, R, N, N, N, N, N, N, N, N, N}, //b9
-        {N, N, R, A, N, N, N, N, N, N, N, N}, //#9
-        {N, N, N, N, N, N, N, N, N, A, N, N}, //add13
-        {N, N, A, N, N, N, N, N, N, N, N, N}, //add9
-        {N, N, N, N, N, R, A, N, N, N, N, N}, //#11
-        {N, N, N, N, N, A, N, N, N, N, N, N}, //add11
-        {N, N, N, N, N, N, N, N, A, N, N, N}, //b13
-    }; //add13
     std::string m_namestr;
     std::vector<PitchedNote> m_noteslist;
     Notes::Note m_rootnote;
     Notes::Note m_bassnote;
-    quality m_quality;
-    extension m_extlevel;
-    Alterations m_alts = {0};
-    interval_set m_intervals;
+    Chords::quality m_quality;
+    Chords::extension m_extlevel;
+    Chords::Alterations m_alts = {0};
+    Chords::interval_set m_intervals;
 };
 
 #endif // CHORD_H

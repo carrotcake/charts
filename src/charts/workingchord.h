@@ -14,24 +14,24 @@ public:
     auto bass() const { return m_chord.bass(); }
     auto qual() const { return m_chord.qual(); }
     auto extensionLevel() const { return m_chord.extensionLevel(); }
-    bool canAddAlteration(Chord::alteration alt) const { return m_chord.canAddAlteration(alt); }
-    bool hasAlteration(Chord::alteration alt) const { return m_chord.hasAlteration(alt); }
+    bool canAddAlteration(Chords::alteration alt) const { return m_chord.canAddAlteration(alt); }
+    bool hasAlteration(Chords::alteration alt) const { return m_chord.hasAlteration(alt); }
     const auto& getChord() const { return m_chord; }
     void setRoot(const Notes::Note root);
     void setBass(const Notes::Note bass);
-    void setQuality(Chord::quality qual);
-    void setExtension(Chord::extension ext);
-    void addAlteration(Chord::alteration alt);
-    void removeAlteration(Chord::alteration alt);
+    void setQuality(Chords::quality qual);
+    void setExtension(Chords::extension ext);
+    void addAlteration(Chords::alteration alt);
+    void removeAlteration(Chords::alteration alt);
     void removeAllAlterations();
 
 signals:
     void rootChanged(Notes::Value root);
     void bassChanged(Notes::Value bass);
-    void extensionChanged(Chord::extension ext);
-    void qualityChanged(Chord::quality qual);
-    void alterationAdded(Chord::alteration alt);
-    void alterationRemoved(Chord::alteration alt);
+    void extensionChanged(Chords::extension ext);
+    void qualityChanged(Chords::quality qual);
+    void alterationAdded(Chords::alteration alt);
+    void alterationRemoved(Chords::alteration alt);
     void alterationsReset();
     void rebuilt();
 

@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     src/charts/chart.cpp \
+    src/charts/glyph.cpp \
     src/charts/measure.cpp \
     src/charts/midiplayer.cpp \
     src/charts/printingmodel.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 
 HEADERS += \
     src/charts/chart.h \
+    src/charts/glyph.h \
     src/charts/measure.h \
     src/charts/midiplayer.h \
     src/charts/printingmodel.h \

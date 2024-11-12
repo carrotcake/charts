@@ -1,5 +1,7 @@
 #include "chord.h"
 
+using namespace Chords;
+
 void Chord::constructChord(){
     auto& qualintervals = QUALSETS[m_quality];
     auto& extintervals = EXTSETS[m_extlevel];
@@ -98,8 +100,8 @@ void Chord::nameChord(){
 Chord::Chord()
     : m_rootnote(Notes::NOTES[Notes::NOTE_C])
     , m_bassnote(Notes::NOTES[Notes::NOTE_C])
-    , m_quality(Chord::maj)
-    , m_extlevel(Chord::triad) {
+    , m_quality(maj)
+    , m_extlevel(triad) {
     constructChord();
 }
 
@@ -111,10 +113,15 @@ Chord::Chord(const Notes::Note root, const quality qual, const extension ext)
     constructChord();
 }
 
-Chord::Chord(const Notes::Note root, const quality qual, const extension ext,
-             const Alterations& alts, const Notes::Note bass) :
-    m_rootnote(root), m_bassnote(bass), m_quality(qual), m_extlevel(ext)
-{
+Chord::Chord(const Notes::Note root,
+             const quality qual,
+             const extension ext,
+             const Alterations& alts,
+             const Notes::Note bass)
+    : m_rootnote(root)
+    , m_bassnote(bass)
+    , m_quality(qual)
+    , m_extlevel(ext) {
     for (size_t i = 0; i < ALTCOUNT; ++i) {
         m_alts[i] = alts[i];
     }

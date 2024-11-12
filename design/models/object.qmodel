@@ -49,8 +49,8 @@
                          </base-DElement>
                          <object>{516cdc2c-f0a9-4f74-8170-549f9eee1983}</object>
                          <name>Chart</name>
-                         <pos>x:220;y:165</pos>
-                         <rect>x:-90;y:-110;w:180;h:220</rect>
+                         <pos>x:210;y:150</pos>
+                         <rect>x:-80;y:-110;w:160;h:220</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -72,7 +72,7 @@
                          <object>{7c1cacd5-43c6-454d-9511-93a37c2526b4}</object>
                          <name>Chord</name>
                          <pos>x:715;y:570</pos>
-                         <rect>x:-105;y:-150;w:210;h:300</rect>
+                         <rect>x:-90;y:-150;w:180;h:300</rect>
                          <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
@@ -94,7 +94,7 @@
                          <object>{be87c1aa-279a-4043-93d1-449d73c2c9a4}</object>
                          <name>Note</name>
                          <pos>x:920;y:375</pos>
-                         <rect>x:-60;y:-65;w:120;h:130</rect>
+                         <rect>x:-55;y:-65;w:110;h:130</rect>
                          <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
@@ -141,7 +141,7 @@
                          <object>{f948f00b-d10d-43f6-8061-ddc0e9114415}</object>
                          <name>PitchedNote</name>
                          <pos>x:920;y:560</pos>
-                         <rect>x:-55;y:-60;w:110;h:120</rect>
+                         <rect>x:-50;y:-55;w:100;h:110</rect>
                          <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
@@ -227,8 +227,8 @@
                          </base-DElement>
                          <object>{f46e2bca-70d8-42f6-b7fd-a3b70071d3dc}</object>
                          <name>Measure</name>
-                         <pos>x:225;y:370</pos>
-                         <rect>x:-80;y:-65;w:160;h:130</rect>
+                         <pos>x:215;y:355</pos>
+                         <rect>x:-70;y:-65;w:140;h:130</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -249,8 +249,8 @@
                          </base-DElement>
                          <object>{9ef5f6ae-dd7e-406d-a179-8edc120cabe1}</object>
                          <name>Segment</name>
-                         <pos>x:450;y:410</pos>
-                         <rect>x:-55;y:-65;w:110;h:130</rect>
+                         <pos>x:440;y:395</pos>
+                         <rect>x:-50;y:-65;w:100;h:130</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -397,7 +397,7 @@
                          <object>{0d83e656-d64d-47d6-b2df-fe391bb4e024}</object>
                          <name>MainWindow</name>
                          <pos>x:-45;y:345</pos>
-                         <rect>x:-85;y:-75;w:170;h:150</rect>
+                         <rect>x:-75;y:-75;w:150;h:150</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -419,7 +419,7 @@
                          <object>{cb56c579-715d-48b9-b6b5-71a5408409b7}</object>
                          <name>StartupDialog</name>
                          <pos>x:-260;y:215</pos>
-                         <rect>x:-90;y:-45;w:180;h:90</rect>
+                         <rect>x:-80;y:-45;w:160;h:90</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -441,7 +441,7 @@
                          <object>{03b5c964-1365-4710-a1c7-d885fe64aa55}</object>
                          <name>ScorePanel</name>
                          <pos>x:-40;y:185</pos>
-                         <rect>x:-80;y:-70;w:160;h:140</rect>
+                         <rect>x:-70;y:-70;w:140;h:140</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -523,7 +523,7 @@
                         </DElement>
                        </base-DElement>
                        <text>Core Application</text>
-                       <pos>x:335;y:440</pos>
+                       <pos>x:325;y:425</pos>
                        <rect>x:-230;y:-555;w:460;h:1110</rect>
                       </DBoundary>
                      </instance>
@@ -555,7 +555,7 @@
                          <object>{d0dd13a2-0dc1-46a8-b1e1-090831777039}</object>
                          <name>Account Dialog</name>
                          <pos>x:-260;y:400</pos>
-                         <rect>x:-80;y:-60;w:160;h:120</rect>
+                         <rect>x:-70;y:-60;w:140;h:120</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -577,7 +577,7 @@
                          <object>{89901dd5-cd37-4ee5-9eec-e4a2b59e6138}</object>
                          <name>DB Search Dialog</name>
                          <pos>x:-45;y:485</pos>
-                         <rect>x:-85;y:-45;w:170;h:90</rect>
+                         <rect>x:-75;y:-45;w:150;h:90</rect>
                          <visual-role>6</visual-role>
                         </DObject>
                        </base-DObject>
@@ -673,7 +673,7 @@
                          </base-DElement>
                          <object>{f2c654ef-2774-4bce-a990-224a4c6a3282}</object>
                          <name>PrintingModel</name>
-                         <pos>x:450;y:105</pos>
+                         <pos>x:440;y:90</pos>
                          <rect>x:-90;y:-75;w:180;h:150</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>8</visual-role>
@@ -721,8 +721,8 @@
                          </base-DElement>
                          <object>{4a41c2c7-e29b-42de-b4bf-55532aa3fba5}</object>
                          <name>WorkingChord</name>
-                         <pos>x:230;y:495</pos>
-                         <rect>x:-50;y:-50;w:100;h:100</rect>
+                         <pos>x:220;y:480</pos>
+                         <rect>x:-45;y:-50;w:90;h:100</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -809,7 +809,7 @@
                          <object>{384f2398-68ed-4450-b5c4-ec89d8b18dc5}</object>
                          <name>ChartEntry</name>
                          <pos>x:-45;y:875</pos>
-                         <rect>x:-70;y:-85;w:140;h:170</rect>
+                         <rect>x:-60;y:-85;w:120;h:170</rect>
                          <visual-role>9</visual-role>
                         </DObject>
                        </base-DObject>
@@ -881,7 +881,7 @@
                          <object>{f4cecede-9095-4aec-adfd-37f2df6d5774}</object>
                          <name>SearchQuery</name>
                          <pos>x:-45;y:680</pos>
-                         <rect>x:-90;y:-60;w:180;h:120</rect>
+                         <rect>x:-75;y:-60;w:150;h:120</rect>
                          <visual-role>9</visual-role>
                         </DObject>
                        </base-DObject>
@@ -967,7 +967,7 @@
                          <object>{8302b8ec-75c6-44e0-8e90-a27058834f66}</object>
                          <name>KeySig</name>
                          <pos>x:715;y:345</pos>
-                         <rect>x:-90;y:-60;w:180;h:120</rect>
+                         <rect>x:-75;y:-60;w:150;h:120</rect>
                          <visual-role>7</visual-role>
                         </DObject>
                        </base-DObject>
@@ -988,8 +988,8 @@
                          </base-DElement>
                          <object>{5cb9326f-2588-4a9c-a6d9-d6e752280df0}</object>
                          <name>Glyph</name>
-                         <pos>x:450;y:-40</pos>
-                         <rect>x:-45;y:-45;w:90;h:90</rect>
+                         <pos>x:440;y:-55</pos>
+                         <rect>x:-40;y:-45;w:80;h:90</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1035,8 +1035,8 @@
                          </base-DElement>
                          <object>{4683a073-13ca-4da0-988c-9d00ea037e56}</object>
                          <name>Repeat</name>
-                         <pos>x:230;y:-40</pos>
-                         <rect>x:-90;y:-45;w:180;h:90</rect>
+                         <pos>x:220;y:-55</pos>
+                         <rect>x:-80;y:-45;w:160;h:90</rect>
                          <visual-role>8</visual-role>
                         </DObject>
                        </base-DObject>
@@ -1147,7 +1147,7 @@
                         </DElement>
                        </base-DElement>
                        <text>MIDI Handler (FluidSynth Wrapper)</text>
-                       <pos>x:335;y:775</pos>
+                       <pos>x:325;y:760</pos>
                        <rect>x:-220;y:-215;w:440;h:430</rect>
                       </DBoundary>
                      </instance>
@@ -1164,7 +1164,7 @@
                          </base-DElement>
                          <object>{03a83374-3907-4bc4-864c-9c7a9fd394bf}</object>
                          <name>MIDIController</name>
-                         <pos>x:265;y:705</pos>
+                         <pos>x:255;y:690</pos>
                          <rect>x:-110;y:-110;w:220;h:220</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>5</visual-role>
@@ -1187,7 +1187,7 @@
                          </base-DElement>
                          <object>{f2885f03-da1a-4ed4-9ffd-d65595c5968a}</object>
                          <name>MIDIPlayer</name>
-                         <pos>x:430;y:915</pos>
+                         <pos>x:420;y:900</pos>
                          <rect>x:-95;y:-65;w:190;h:130</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>5</visual-role>
@@ -1288,7 +1288,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1730856438277</last-modified>
+                  <last-modified>1731375700241</last-modified>
                   <toolbarid>Classes</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -3601,14 +3601,14 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{65a8c1df-3f85-4af6-a6f0-61117bb2c414}</uid>
+                    <uid>{bcc4dce6-7594-4a05-a50a-3c958e10195b}</uid>
                     <type>1</type>
                     <declaration>start : Segment idx</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{bd09af19-7411-46c6-b03d-aa3e0a3987b6}</uid>
+                    <uid>{8dce2903-c73b-4589-a0f7-9f167ecf9c3f}</uid>
                     <type>1</type>
                     <declaration>endPoints : List&lt;Segment idx&gt;</declaration>
                    </MClassMember>
