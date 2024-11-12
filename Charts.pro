@@ -9,7 +9,10 @@ CONFIG += c++17
 
 
 SOURCES += \
+    src/charts/chart.cpp \
+    src/charts/measure.cpp \
     src/charts/midiplayer.cpp \
+    src/charts/printingmodel.cpp \
     src/charts/workingchord.cpp \
     src/main.cpp \
     src/music/chord.cpp \
@@ -18,12 +21,16 @@ SOURCES += \
     src/ui/startupwindow.cpp
 
 HEADERS += \
+    src/charts/chart.h \
+    src/charts/measure.h \
     src/charts/midiplayer.h \
+    src/charts/printingmodel.h \
     src/charts/workingchord.h \
     src/music/chord.h \
     src/music/meter.h \
     src/music/note.h \
     src/music/notes.h \
+    src/music/scales.h \
     src/ui/mainwindow.h \
     src/ui/scorewidget.h \
     src/ui/startupwindow.h \
