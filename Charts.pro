@@ -41,12 +41,18 @@ FORMS += \
     src/ui/mainwindow.ui \
     src/ui/startupwindow.ui
 
+APP_SF2_FILE.files = tools/fs/GU-GS.sf2
+
+
 TRANSLATIONS += \
     Charts_en_US.ts
 CONFIG += lrelease
 CONFIG += embed_translations
-macx: QMAKE_MACOSX_DEPLOYMENT_TARGET = 14
-
+macx:{
+    QMAKE_MACOSX_DEPLOYMENT_TARGET = 14
+    APP_SF2_FILE.path = Contents/MacOS/
+    QMAKE_BUNDLE_DATA += APP_SF2_FILE
+    }
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
