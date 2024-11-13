@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , m_midi(this)
-    , m_chord(this) {
+    , m_chord(this)
+    , chart(this) {
     ui->setupUi(this);
 
     ui->qualityButtons->setId(ui->qualMajBtn, Chords::maj);
@@ -45,14 +46,16 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     ui->bassAnyNoteCBox->setCurrentIndex(-1);
+
+    connect(&chart.view(), &PrintingModel::viewUpdated, ui->chartWidget, &ChartWidget::updatePixmap);
     connect(&start, &StartupWindow::windowClosed, this, &MainWindow::on_start_windowClosed);
     connect(this, &MainWindow::chordPreviewed, &m_midi, &MIDIController::requestPreview);
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
-    //m_midi.blockSignals(true);
 }
 
 void MainWindow::startUp() {
     start.show();
+    chart.init();
     this->setDisabled(true);
 }
 

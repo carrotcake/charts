@@ -231,7 +231,7 @@
                <x>0</x>
                <y>0</y>
                <width>442</width>
-               <height>569</height>
+               <height>562</height>
               </rect>
              </property>
              <attribute name="label">
@@ -1144,7 +1144,7 @@
                <x>0</x>
                <y>0</y>
                <width>456</width>
-               <height>326</height>
+               <height>342</height>
               </rect>
              </property>
              <attribute name="label">
@@ -1158,7 +1158,7 @@
                <x>0</x>
                <y>0</y>
                <width>456</width>
-               <height>326</height>
+               <height>342</height>
               </rect>
              </property>
              <attribute name="label">
@@ -1456,7 +1456,7 @@
      <widget class="QWidget" name="rightSideFrame" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
-        <widget class="ScoreWidget" name="chartWidget" native="true">
+        <widget class="ChartWidget" name="chartWidget" native="true">
          <property name="minimumSize">
           <size>
            <width>640</width>
@@ -1576,7 +1576,7 @@
      <x>0</x>
      <y>0</y>
      <width>1198</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1655,7 +1655,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ScoreWidget</class>
+   <class>ChartWidget</class>
    <extends>QWidget</extends>
    <header location="global">src/ui/scorewidget.h</header>
    <container>1</container>
@@ -1664,9 +1664,9 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="extensionButtons"/>
-  <buttongroup name="qualityButtons"/>
-  <buttongroup name="alterationButtons"/>
   <buttongroup name="scaleDegreeButtons"/>
+  <buttongroup name="extensionButtons"/>
+  <buttongroup name="alterationButtons"/>
+  <buttongroup name="qualityButtons"/>
  </buttongroups>
 </ui>

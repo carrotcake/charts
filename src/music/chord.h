@@ -1,7 +1,7 @@
 #ifndef CHORD_H
 #define CHORD_H
 
-#include "note.h"
+#include "pitchednote.h"
 #include <array>
 #include <string>
 #include <vector>

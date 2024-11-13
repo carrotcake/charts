@@ -1,11 +1,11 @@
-#ifndef NOTE_H
-#define NOTE_H
+#ifndef PITCHEDNOTE_H
+#define PITCHEDNOTE_H
 
 #include "notes.h"
 
 struct PitchedNote {
 public:
-    PitchedNote(const Notes::Note val, Notes::Octave oct)
+    PitchedNote(Notes::Note val, Notes::Octave oct)
         : m_note(val)
         , m_octave(oct) {}
     Notes::Note note() const { return m_note; }
@@ -13,8 +13,8 @@ public:
     int MIDIValue() const { return 12 * static_cast<int>(m_octave) + m_note.val; }
 
 private:
-    const Notes::Note m_note;
+    Notes::Note m_note;
     Notes::Octave m_octave;
 };
 
-#endif // NOTE_H
+#endif // PITCHEDNOTE_H

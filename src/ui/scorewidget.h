@@ -3,12 +3,17 @@
 
 #include <QWidget>
 
-class ScoreWidget : public QWidget {
+class ChartWidget : public QWidget {
     Q_OBJECT
 public:
-    explicit ScoreWidget(QWidget *parent = nullptr);
+    explicit ChartWidget(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *) override;
+public slots:
+    void updatePixmap(const QPixmap &pix);
 signals:
+
+private:
+    QPixmap m_pix;
 };
 
 #endif // SCOREWIDGET_H

@@ -5,6 +5,7 @@
 #include <QMainWindow>
 #include <QThread>
 #include "external/include/fluidsynth.h"
+#include "src/charts/chart.h"
 #include "src/charts/midiplayer.h"
 #include "src/music/chord.h"
 #include "startupwindow.h"
@@ -45,5 +46,6 @@ private:
     StartupWindow start;
     MIDIController m_midi;
     WorkingChord m_chord;
+    Chart chart;
 };
 #endif // MAINWINDOW_H

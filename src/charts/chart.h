@@ -15,8 +15,13 @@ class Chart : public QObject {
 
 public:
     explicit Chart(QObject *parent = nullptr);
+    void init();
+    void addMeasure();
+    PrintingModel &view() { return m_view; }
 
 signals:
+    void chartUpdated();
+
 private:
     std::vector<Measure> m_measures;
     PrintingModel m_view;

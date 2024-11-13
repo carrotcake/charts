@@ -30,8 +30,8 @@ HEADERS += \
     src/charts/workingchord.h \
     src/music/chord.h \
     src/music/meter.h \
-    src/music/note.h \
     src/music/notes.h \
+    src/music/pitchednote.h \
     src/music/scales.h \
     src/ui/mainwindow.h \
     src/ui/scorewidget.h \
