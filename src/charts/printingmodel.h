@@ -1,13 +1,13 @@
 #ifndef PRINTINGMODEL_H
 #define PRINTINGMODEL_H
 
-#include <QObject>
+#include <QGraphicsScene>
 #include <QPainter>
 #include <QPixmap>
 #include <QtTypes>
 #include "src/charts/measure.h"
 
-class PrintingModel : public QObject {
+class PrintingModel : public QGraphicsScene {
     Q_OBJECT
 public:
     explicit PrintingModel(const std::vector<Measure> &measures, QObject *parent = nullptr);
@@ -15,7 +15,7 @@ public:
 public slots:
     void updateView();
 signals:
-    void viewUpdated(const QPixmap &pix);
+    void viewUpdated();
 
 private:
     const std::vector<Measure> &m_measures;

@@ -46,8 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     ui->bassAnyNoteCBox->setCurrentIndex(-1);
-
-    connect(&chart.view(), &PrintingModel::viewUpdated, ui->chartWidget, &ChartWidget::updatePixmap);
+    ui->chartWidget->setScene(&chart.view());
     connect(&start, &StartupWindow::windowClosed, this, &MainWindow::on_start_windowClosed);
     connect(this, &MainWindow::chordPreviewed, &m_midi, &MIDIController::requestPreview);
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
@@ -66,6 +65,7 @@ void MainWindow::on_start_windowClosed(int) {
     ui->qualMajBtn->setChecked(true);
     ui->ext5Btn->setChecked(true);
     ui->altAdd13CBtn->setCheckState(Qt::Checked);
+    ui->chartWidget->show();
     this->setDisabled(false);
     m_midi.blockSignals(false);
 }

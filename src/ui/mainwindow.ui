@@ -231,7 +231,7 @@
                <x>0</x>
                <y>0</y>
                <width>442</width>
-               <height>562</height>
+               <height>569</height>
               </rect>
              </property>
              <attribute name="label">
@@ -1144,7 +1144,7 @@
                <x>0</x>
                <y>0</y>
                <width>456</width>
-               <height>342</height>
+               <height>326</height>
               </rect>
              </property>
              <attribute name="label">
@@ -1158,7 +1158,7 @@
                <x>0</x>
                <y>0</y>
                <width>456</width>
-               <height>342</height>
+               <height>326</height>
               </rect>
              </property>
              <attribute name="label">
@@ -1576,7 +1576,7 @@
      <x>0</x>
      <y>0</y>
      <width>1198</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1657,16 +1657,16 @@
   <customwidget>
    <class>ChartWidget</class>
    <extends>QWidget</extends>
-   <header location="global">src/ui/scorewidget.h</header>
+   <header location="global">src/ui/chartwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>
  <connections/>
  <buttongroups>
+  <buttongroup name="qualityButtons"/>
   <buttongroup name="scaleDegreeButtons"/>
   <buttongroup name="extensionButtons"/>
   <buttongroup name="alterationButtons"/>
-  <buttongroup name="qualityButtons"/>
  </buttongroups>
 </ui>

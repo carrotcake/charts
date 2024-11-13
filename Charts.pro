@@ -17,8 +17,8 @@ SOURCES += \
     src/charts/workingchord.cpp \
     src/main.cpp \
     src/music/chord.cpp \
+    src/ui/chartwidget.cpp \
     src/ui/mainwindow.cpp \
-    src/ui/scorewidget.cpp \
     src/ui/startupwindow.cpp
 
 HEADERS += \
@@ -33,8 +33,8 @@ HEADERS += \
     src/music/notes.h \
     src/music/pitchednote.h \
     src/music/scales.h \
+    src/ui/chartwidget.h \
     src/ui/mainwindow.h \
-    src/ui/scorewidget.h \
     src/ui/startupwindow.h \
     external/include/fluidsynth.h
 FORMS += \
@@ -45,6 +45,7 @@ TRANSLATIONS += \
     Charts_en_US.ts
 CONFIG += lrelease
 CONFIG += embed_translations
+macx: QMAKE_MACOSX_DEPLOYMENT_TARGET = 14
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
