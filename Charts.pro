@@ -11,9 +11,9 @@ CONFIG += c++17
 SOURCES += \
     src/charts/chart.cpp \
     src/charts/glyph.cpp \
-    src/charts/measure.cpp \
     src/charts/midiplayer.cpp \
     src/charts/printingmodel.cpp \
+    src/charts/segment.cpp \
     src/charts/workingchord.cpp \
     src/main.cpp \
     src/music/chord.cpp \
@@ -24,9 +24,9 @@ SOURCES += \
 HEADERS += \
     src/charts/chart.h \
     src/charts/glyph.h \
-    src/charts/measure.h \
     src/charts/midiplayer.h \
     src/charts/printingmodel.h \
+    src/charts/segment.h \
     src/charts/workingchord.h \
     src/music/chord.h \
     src/music/meter.h \

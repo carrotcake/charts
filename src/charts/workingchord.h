@@ -16,7 +16,7 @@ public:
     auto extensionLevel() const { return m_chord.extensionLevel(); }
     bool canAddAlteration(Chords::alteration alt) const { return m_chord.canAddAlteration(alt); }
     bool hasAlteration(Chords::alteration alt) const { return m_chord.hasAlteration(alt); }
-    const auto& getChord() const { return m_chord; }
+    const auto& chord() const { return m_chord; }
     void setRoot(const Notes::Note root);
     void setBass(const Notes::Note bass);
     void setQuality(Chords::quality qual);

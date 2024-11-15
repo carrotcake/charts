@@ -30,6 +30,9 @@ class MIDIController : public QObject {
 public:
     explicit MIDIController(QObject *parent = nullptr);
     ~MIDIController();
+    MIDIController(MIDIController &other) = delete;
+    MIDIController(MIDIController &&other) = delete;
+    MIDIController &operator=(const MIDIController &other) = delete;
 
 public slots:
     void requestPreview(const WorkingChord &chord);

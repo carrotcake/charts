@@ -3,6 +3,7 @@
 
 #include "pitchednote.h"
 #include <array>
+#include <bitset>
 #include <string>
 #include <vector>
 /*
@@ -107,12 +108,14 @@ public:
           const Chords::extension ext,
           const Chords::Alterations &alts,
           const Notes::Note bass);
-    auto notes() const { return m_noteslist; }
+    std::vector<PitchedNote> notes() const;
     const auto& name() const { return m_namestr; }
     Notes::Note root() const {return m_rootnote;}
     Notes::Note bass() const {return m_bassnote;}
     Chords::quality qual() const { return m_quality; }
     Chords::extension extensionLevel() const { return m_extlevel; }
+    bool slashChord() const { return m_rootnote != m_bassnote; }
+    auto noteCount() const;
 
     bool canAddAlteration(const Chords::alteration alt) const;
     bool hasAlteration(const Chords::alteration alt) const { return m_alts[alt]; }
@@ -129,7 +132,6 @@ private:
     void nameChord();
 
     std::string m_namestr;
-    std::vector<PitchedNote> m_noteslist;
     Notes::Note m_rootnote;
     Notes::Note m_bassnote;
     Chords::quality m_quality;

@@ -8,13 +8,13 @@ void MIDIPlayer::interruptPlayback() {
 
 void MIDIPlayer::previewChord(const Chord &chord, fsynth *synth) {
     const auto notes = chord.notes();
-    m_interrupted = false;
+    m_interrupted = false; // hack
     for (auto note : notes)
         fluid_synth_noteon(synth, 0, note.MIDIValue(), 100);
     for (size_t i = 0; i < 15 && !m_interrupted; ++i)
-        QThread::sleep(50ms);
+        QThread::sleep(50ms); // big time hack
     fluid_synth_all_notes_off(synth, 0);
-    m_interrupted = false;
+    m_interrupted = false; // still hacking
 }
 
 MIDIController::MIDIController(QObject *parent)
@@ -40,7 +40,7 @@ MIDIController::~MIDIController() {
     delete_fluid_settings(m_fssettings);
 }
 
-void MIDIController::requestPreview(const WorkingChord &chord) {
-    m_player.interruptPlayback();
-    emit previewRequested(chord.getChord(), m_fsynth);
+void MIDIController::requestPreview(const WorkingChord &tempchord) {
+    m_player.interruptPlayback();                       //runs in the main thread
+    emit previewRequested(tempchord.chord(), m_fsynth); //runs in playerthread
 }

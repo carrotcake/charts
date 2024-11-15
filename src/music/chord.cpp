@@ -1,4 +1,5 @@
 #include "chord.h"
+#include <algorithm>
 
 using namespace Chords;
 
@@ -26,24 +27,36 @@ void Chord::constructChord(){
             }
         }
     }
+    nameChord();
+}
 
-    m_noteslist.clear();
-    m_noteslist.emplace_back(PitchedNote(m_bassnote, Notes::Octave::A3));
-    for (size_t i = 0; i < Notes::COUNT; ++i) {
-        Notes::Octave oct = Notes::Octave::A4;
+auto Chord::noteCount() const {
+    auto count = slashChord() ? 1 : 0;
+    for (auto interval : m_intervals)
+        if (interval)
+            count++;
+    return count;
+}
+
+std::vector<PitchedNote> Chord::notes() const {
+    auto list = std::vector<PitchedNote>();
+    list.reserve(noteCount());
+    list.emplace_back(PitchedNote(m_bassnote, Notes::Octave::A3));
+    for (size_t i = slashChord() ? 0 : 1; i < Notes::COUNT; ++i) {
+        auto oct = Notes::Octave::A4;
         if (!m_intervals[i])
             continue;
         auto val = (m_rootnote.val + i) % Notes::COUNT;
-        switch(static_cast<Notes::interval>(i)){
+        switch (static_cast<Notes::interval>(i)) {
         case Notes::MINSECOND:
             oct = Notes::Octave::A5;
             break;
         case Notes::MAJSECOND:
-            if(!m_alts[sus2])
+            if (!m_alts[sus2])
                 oct = Notes::Octave::A5;
             break;
         case Notes::PERFOURTH:
-            if(!m_alts[sus4])
+            if (!m_alts[sus4])
                 oct = Notes::Octave::A5;
             break;
         case Notes::AUGFOURTH:
@@ -51,23 +64,23 @@ void Chord::constructChord(){
                 oct = Notes::Octave::A5;
             break;
         case Notes::AUGSECOND:
-            if(m_alts[sharp9])
+            if (m_alts[sharp9])
                 oct = Notes::Octave::A5;
             break;
         case Notes::AUGFIFTH:
-            if(m_alts[flat13])
+            if (m_alts[flat13])
                 oct = Notes::Octave::A5;
             break;
         case Notes::MAJSIXTH:
-            if(m_extlevel > seven && m_quality != dim)
+            if (m_extlevel > seven && m_quality != dim)
                 oct = Notes::Octave::A5;
             break;
         default:
             break;
         }
-        m_noteslist.emplace_back(PitchedNote(Notes::NOTES[val], oct));
+        list.emplace_back(PitchedNote(Notes::NOTES[val], oct));
     }
-    nameChord();
+    return list;
 }
 
 void Chord::nameChord(){

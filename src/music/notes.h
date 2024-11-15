@@ -78,6 +78,10 @@ struct Note {
             return true;
         }
     }
+
+    bool operator==(const Note& other) const { return val == other.val; }
+    bool operator!=(const Note& other) const { return val != other.val; }
+
     Value val;
 };
 

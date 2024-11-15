@@ -2,8 +2,8 @@
 #define CHART_H
 
 #include <QObject>
-#include "src/charts/measure.h"
 #include "src/charts/printingmodel.h"
+#include "src/charts/segment.h"
 
 class Chart : public QObject {
     Q_OBJECT
@@ -23,7 +23,7 @@ signals:
     void chartUpdated();
 
 private:
-    std::vector<Measure> m_measures;
+    std::vector<Segment> m_segments;
     PrintingModel m_view;
     Scales::KeySig m_key;
     Meter::TimeSig m_timesig;
