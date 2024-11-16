@@ -37,9 +37,9 @@ public:
             }
         }
     }
-    Notes::Note tonic() const { return m_tonic; }
-    ScaleType quality() const { return m_quality; }
-    ModeType mode() const { return m_mode; }
+    auto tonic() const { return m_tonic; }
+    auto quality() const { return m_quality; }
+    auto mode() const { return m_mode; }
     const auto& notes() const { return m_notes; }
 
 private:

@@ -35,3 +35,8 @@ void WorkingChord::removeAllAlterations() {
     emit alterationsReset();
     emit rebuilt();
 }
+
+void WorkingChord::set(const Chord& chord) {
+    m_chord = chord;
+    emit rebuilt();
+}

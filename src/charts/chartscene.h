@@ -1,5 +1,5 @@
-#ifndef PRINTINGMODEL_H
-#define PRINTINGMODEL_H
+#ifndef CHARTSCENE_H
+#define CHARTSCENE_H
 
 #include <QGraphicsScene>
 #include <QPainter>
@@ -7,10 +7,10 @@
 #include <QtTypes>
 #include "src/charts/segment.h"
 
-class PrintingModel : public QGraphicsScene {
+class ChartScene : public QGraphicsScene {
     Q_OBJECT
 public:
-    explicit PrintingModel(QObject *parent = nullptr);
+    explicit ChartScene(QObject *parent = nullptr);
 
 public slots:
     void updateView();
@@ -18,7 +18,6 @@ signals:
     void viewUpdated();
 
 private:
-    QPixmap m_pix;
 };
 
-#endif // PRINTINGMODEL_H
+#endif // CHARTSCENE_H

@@ -95,17 +95,15 @@ void Chord::nameChord(){
     for (size_t i = 0; i < ALTCOUNT; ++i) {
         if (!m_alts[i])
             continue;
-        if (i == add13 && m_extlevel == triad) {
+        if (i == add13 && m_extlevel == triad)
             namestr.append("6");
-        } else if (i == add9 && m_extlevel == triad && m_alts[add13]) {
+        else if (i == add9 && m_extlevel == triad && m_alts[add13])
             namestr.append("/9");
-        } else {
+        else
             namestr.append(str_ALTERATION[i]);
-        }
     }
     if (m_rootnote.val != m_bassnote.val) {
-        namestr.append("/");
-        namestr.append(m_bassnote.flatName());
+        namestr.append("/" + m_bassnote.flatName());
     }
     m_namestr.assign(namestr);
 }
@@ -129,15 +127,13 @@ Chord::Chord(const Notes::Note root, const quality qual, const extension ext)
 Chord::Chord(const Notes::Note root,
              const quality qual,
              const extension ext,
-             const Alterations& alts,
+             Alterations&& alts,
              const Notes::Note bass)
     : m_rootnote(root)
     , m_bassnote(bass)
     , m_quality(qual)
-    , m_extlevel(ext) {
-    for (size_t i = 0; i < ALTCOUNT; ++i) {
-        m_alts[i] = alts[i];
-    }
+    , m_extlevel(ext)
+    , m_alts(alts) {
     constructChord();
 }
 
@@ -211,8 +207,7 @@ void Chord::removeAlteration(const alteration alt, bool rebuild) {
 }
 
 void Chord::removeAllAlterations(bool rebuild) {
-    for (size_t i = 0; i < ALTCOUNT; ++i)
-        m_alts[i] = false;
+    m_alts.fill(false);
     if (rebuild)
         constructChord();
 }

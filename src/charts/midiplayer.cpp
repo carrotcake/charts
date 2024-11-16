@@ -6,7 +6,7 @@ void MIDIPlayer::interruptPlayback() {
     m_interrupted = true;
 }
 
-void MIDIPlayer::previewChord(const Chord &chord, fsynth *synth) {
+void MIDIPlayer::previewChord(const Chord &chord, FSynth *synth) {
     const auto notes = chord.notes();
     m_interrupted = false; // hack
     for (auto note : notes)
@@ -19,12 +19,14 @@ void MIDIPlayer::previewChord(const Chord &chord, fsynth *synth) {
 
 MIDIController::MIDIController(QObject *parent)
     : QObject(parent) {
+    // fluidsynth initialization
     m_fssettings = new_fluid_settings();
     fluid_settings_setint(m_fssettings, "synth.polyphony", 128);
-    fluid_settings_setnum(m_fssettings, "synth.gain", 1);
+    fluid_settings_setnum(m_fssettings, "synth.gain", .8);
     m_fsynth = new_fluid_synth(m_fssettings);
     m_fsaudiodriver = new_fluid_audio_driver(m_fssettings, m_fsynth);
     fluid_synth_sfload(m_fsynth, "GU-GS.sf2", 1);
+    //midi sequencing happens in its own thread so we can wait w/o blocking ui input
     m_player.moveToThread(&m_playerthread);
     connect(this, &MIDIController::previewRequested, &m_player, &MIDIPlayer::previewChord);
     // uncomment this if m_player ever becomes a pointer again
@@ -41,6 +43,6 @@ MIDIController::~MIDIController() {
 }
 
 void MIDIController::requestPreview(const WorkingChord &tempchord) {
-    m_player.interruptPlayback();                       //runs in the main thread
+    m_player.interruptPlayback();                       //runs in main thread
     emit previewRequested(tempchord.chord(), m_fsynth); //runs in playerthread
 }

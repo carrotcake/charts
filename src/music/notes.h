@@ -85,18 +85,18 @@ struct Note {
     Value val;
 };
 
-static constexpr Note NOTES[] = {Note{NOTE_C},
-                                 Note{NOTE_Dflat},
-                                 Note{NOTE_D},
-                                 Note{NOTE_Eflat},
-                                 Note{NOTE_E},
-                                 Note{NOTE_F},
-                                 Note{NOTE_Gflat},
-                                 Note{NOTE_G},
-                                 Note{NOTE_Aflat},
-                                 Note{NOTE_A},
-                                 Note{NOTE_Bflat},
-                                 Note{NOTE_B}};
+constexpr Note NOTES[] = {Note{NOTE_C},
+                          Note{NOTE_Dflat},
+                          Note{NOTE_D},
+                          Note{NOTE_Eflat},
+                          Note{NOTE_E},
+                          Note{NOTE_F},
+                          Note{NOTE_Gflat},
+                          Note{NOTE_G},
+                          Note{NOTE_Aflat},
+                          Note{NOTE_A},
+                          Note{NOTE_Bflat},
+                          Note{NOTE_B}};
 
 } // namespace Notes
 

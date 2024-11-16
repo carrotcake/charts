@@ -2,29 +2,24 @@
 #define CHART_H
 
 #include <QObject>
-#include "src/charts/printingmodel.h"
+#include <QVector>
+#include "src/charts/chartscene.h"
 #include "src/charts/segment.h"
 
 class Chart : public QObject {
     Q_OBJECT
-
-    struct Repeat {
-        qsizetype start;
-        std::vector<qsizetype> endpoints;
-    };
-
 public:
-    explicit Chart(QObject *parent = nullptr);
+    explicit Chart(QObject *parent = nullptr, size_t measures = 32);
     void init();
     void addMeasure();
-    PrintingModel &view() { return m_view; }
+    ChartScene &view() { return m_view; }
 
 signals:
     void chartUpdated();
 
 private:
-    std::vector<Segment> m_segments;
-    PrintingModel m_view;
+    QVector<Segment *> m_segments;
+    ChartScene m_view;
     Scales::KeySig m_key;
     Meter::TimeSig m_timesig;
 };

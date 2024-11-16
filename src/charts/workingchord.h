@@ -5,9 +5,9 @@
 class WorkingChord : public QObject {
     Q_OBJECT
 public:
-    explicit WorkingChord(QObject* parent = nullptr)
+    explicit WorkingChord(QObject* parent = nullptr, Chord chord = Chord())
         : QObject(parent)
-        , m_chord() {}
+        , m_chord(chord) {}
     auto notes() const { return m_chord.notes(); }
     const auto& name() const { return m_chord.name(); }
     auto root() const { return m_chord.root(); }
@@ -24,6 +24,7 @@ public:
     void addAlteration(Chords::alteration alt);
     void removeAlteration(Chords::alteration alt);
     void removeAllAlterations();
+    void set(const Chord& chord);
 
 signals:
     void rootChanged(Notes::Value root);

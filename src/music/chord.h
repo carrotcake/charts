@@ -3,7 +3,6 @@
 
 #include "pitchednote.h"
 #include <array>
-#include <bitset>
 #include <string>
 #include <vector>
 /*
@@ -43,7 +42,7 @@
 namespace Chords {
 typedef std::array<bool, Notes::COUNT> interval_set;
 enum quality { maj = 0, dom, min, dim, minMaj };
-const std::array<const std::string, 5> str_QUALITY = {"Maj", "", "min", "dim", "minMaj"};
+const std::array<const std::string, 5> str_QUALITY = {"Δ", "", "-", "°", "-Δ"};
 enum extension { triad = 0, seven, nine, eleven, thirteen };
 const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
 enum alteration {
@@ -106,15 +105,15 @@ public:
     Chord(const Notes::Note root,
           const Chords::quality qual,
           const Chords::extension ext,
-          const Chords::Alterations &alts,
+          Chords::Alterations &&alts,
           const Notes::Note bass);
     std::vector<PitchedNote> notes() const;
     const auto& name() const { return m_namestr; }
-    Notes::Note root() const {return m_rootnote;}
-    Notes::Note bass() const {return m_bassnote;}
-    Chords::quality qual() const { return m_quality; }
-    Chords::extension extensionLevel() const { return m_extlevel; }
-    bool slashChord() const { return m_rootnote != m_bassnote; }
+    auto root() const { return m_rootnote; }
+    auto bass() const { return m_bassnote; }
+    auto qual() const { return m_quality; }
+    auto extensionLevel() const { return m_extlevel; }
+    auto slashChord() const { return m_rootnote != m_bassnote; }
     auto noteCount() const;
 
     bool canAddAlteration(const Chords::alteration alt) const;

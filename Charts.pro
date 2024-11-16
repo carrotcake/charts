@@ -10,22 +10,22 @@ CONFIG += c++17
 
 SOURCES += \
     src/charts/chart.cpp \
-    src/charts/glyph.cpp \
+    src/charts/chartscene.cpp \
     src/charts/midiplayer.cpp \
-    src/charts/printingmodel.cpp \
     src/charts/segment.cpp \
     src/charts/workingchord.cpp \
     src/main.cpp \
     src/music/chord.cpp \
+    src/ui/barlineitem.cpp \
     src/ui/chartwidget.cpp \
+    src/ui/chorditem.cpp \
     src/ui/mainwindow.cpp \
     src/ui/startupwindow.cpp
 
 HEADERS += \
     src/charts/chart.h \
-    src/charts/glyph.h \
+    src/charts/chartscene.h \
     src/charts/midiplayer.h \
-    src/charts/printingmodel.h \
     src/charts/segment.h \
     src/charts/workingchord.h \
     src/music/chord.h \
@@ -33,7 +33,9 @@ HEADERS += \
     src/music/notes.h \
     src/music/pitchednote.h \
     src/music/scales.h \
+    src/ui/barlineitem.h \
     src/ui/chartwidget.h \
+    src/ui/chorditem.h \
     src/ui/mainwindow.h \
     src/ui/startupwindow.h \
     external/include/fluidsynth.h
