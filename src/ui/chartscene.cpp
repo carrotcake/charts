@@ -1,24 +1,44 @@
 #include "chartscene.h"
 #include <QCursor>
 #include <QGraphicsItem>
+#include "src/charts/segment.h"
+#include "src/ui/barlineitem.h"
 #include "src/ui/chorditem.h"
-
-const static size_t h = 1000, w = 700, margin = 50, cellw = 150, cellh = 60;
+#include "src/ui/labelitem.h"
 
 ChartScene::ChartScene(QObject *parent)
     : QGraphicsScene{parent} {
     this->setBackgroundBrush(Qt::darkGray);
-    this->setSceneRect(0, 0, w, h);
-    this->addRect(0, 0, w, h, QPen(Qt::black), QBrush(Qt::white));
+    this->setSceneRect(0, 0, W, H);
+    this->addRect(0, 0, W, H, QPen(Qt::black), QBrush(Qt::white));
+}
+
+void ChartScene::addChordItem(int id, const ChordSeg &seg) {
+    const auto str = QString::fromStdString(seg.chord().name());
+    auto ptr = new ChordItem(str, id, seg.measure(), seg.beat());
+    addItem(ptr);
+}
+void ChartScene::addBarlineItem(int id, const BarlineSeg &seg) {
+    auto ptr = new BarlineItem(id, seg.measure());
+    addItem(ptr);
+}
+
+void ChartScene::addDittoItem(int id, const DittoSeg &seg) {
+    const auto firstBeat = seg.beat() == 0;
+    const auto str = QString(firstBeat ? "%" : "   ");
+    auto ptr = new ChordItem(str, id, seg.measure(), seg.beat());
+    addItem(ptr);
+}
+
+void ChartScene::addLabelItem(int id, const LabelSeg &seg) {
+    auto ptr = new LabelItem(seg.name(), id, seg.measure());
+    addItem(ptr);
 }
 
 void ChartScene::updateView() {
-    auto coords = QPoint(0, 0);
-    auto &x = coords.rx(), &y = coords.ry(), bars = -1, chords = 0;
-    QFont f;
-    f.setPointSize(16);
-    this->clear();
-    this->addRect(0, 0, w, h, QPen(Qt::black), QBrush(Qt::white));
+    // f.setPointSize(16);
+    //this->clear();
+    //this->addRect(0, 0, w, h, QPen(Qt::black), QBrush(Qt::white));
     // for (auto i = 0; i < m_segments.size(); ++i) {
     //     auto seg = m_segments.at(i);
     //     switch (seg->segType()) {
@@ -64,6 +84,5 @@ void ChartScene::updateView() {
     //     x = (bars % 4) * cellw + chords * (cellw / 4) + margin;
     //     y = (bars / 4) * cellh + margin;
     // }
-
     emit viewUpdated();
 }

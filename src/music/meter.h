@@ -13,29 +13,28 @@ enum Subdiv {
     WHOLE = 64
 };
 
-inline auto subdivFromDenominator(short denom) {
-    switch (denom) {
-    case 1:
-        return WHOLE;
-    case 2:
-        return HALF;
-    case 8:
-        return EIGTH;
-    case 16:
-        return SIXTEENTH;
-    case 32:
-        return THIRTYSECOND;
-    case 64:
-        return SIXTYFOURTH;
-    default:
-        return QUARTER;
-    }
-}
-
 const static double DOTTED = 1.5, TRIPLE = 2. / 3.;
 
 struct TimeSig {
 public:
+    inline auto subdiv() {
+        switch (lower) {
+        case 1:
+            return WHOLE;
+        case 2:
+            return HALF;
+        case 8:
+            return EIGTH;
+        case 16:
+            return SIXTEENTH;
+        case 32:
+            return THIRTYSECOND;
+        case 64:
+            return SIXTYFOURTH;
+        default:
+            return QUARTER;
+        }
+    }
     const short upper, lower;
 };
 

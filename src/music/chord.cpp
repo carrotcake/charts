@@ -1,5 +1,4 @@
 #include "chord.h"
-#include <algorithm>
 
 using namespace Chords;
 

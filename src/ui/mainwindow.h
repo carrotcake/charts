@@ -4,10 +4,8 @@
 #include <QButtonGroup>
 #include <QMainWindow>
 #include <QThread>
-#include "external/include/fluidsynth.h"
 #include "src/charts/chart.h"
 #include "src/charts/midiplayer.h"
-#include "src/music/chord.h"
 #include "startupwindow.h"
 
 QT_BEGIN_NAMESPACE

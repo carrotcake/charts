@@ -1,0 +1,5 @@
+[CppEditor.QuickFix]
+GettersOutsideClassFrom=-1
+ReturnNonValueTypesByConstRef=true
+SetterAsSlot=true
+SettersOutsideClassFrom=-1
