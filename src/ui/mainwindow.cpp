@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , m_midi(this)
     , m_chord(this)
-    , chart(m_midi, this) {
+    , chart(this) {
     ui->setupUi(this);
 
     ui->qualityButtons->setId(ui->qualMajBtn, Chords::maj);
@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->bassAnyNoteCBox->setCurrentIndex(-1);
     ui->chartWidget->setScene(&chart.view());
+    connect(&chart, &Chart::chordClicked, this, &MainWindow::changeWorkingChord);
     connect(&start, &StartupWindow::windowClosed, this, &MainWindow::on_start_windowClosed);
     connect(this, &MainWindow::chordPreviewed, &m_midi, &MIDIController::requestPreview);
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
@@ -74,20 +75,45 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
+void MainWindow::changeWorkingChord(const WorkingChord &chord) {
+    m_chord.set(chord.chord());
+}
 
-void MainWindow::updateChord(){
+void MainWindow::updateChord() {
+    const auto qual = m_chord.qual();
+    const auto ext = m_chord.extensionLevel();
+    const auto rootVal = m_chord.root().val;
+    const auto bassVal = m_chord.bass().val;
+    const auto namestr = QString::fromStdString(m_chord.name());
+
     this->blockSignals(true);
     ui->alterationButtons->blockSignals(true);
+    ui->qualityButtons->blockSignals(true);
+    ui->customRootCBox->blockSignals(true);
+    ui->bassAnyNoteCBox->blockSignals(true);
+    auto chordblock = m_chord.blockSignals(true);
+    auto midiblock = m_midi.blockSignals(true);
+
+    ui->qualityButtons->button(qual)->setChecked(true);
+    ui->extensionButtons->button(ext)->setChecked(true);
+    ui->customRootCBox->setCurrentIndex(rootVal);
+    ui->bassAnyNoteCBox->setCurrentIndex(bassVal);
     for (size_t i = 0; i < Chords::ALTCOUNT; ++i) {
-        auto alt = static_cast<Chords::alteration>(i);
+        const auto alt = static_cast<Chords::alteration>(i);
         bool canAdd = m_chord.canAddAlteration(alt);
         bool hasAlt = m_chord.hasAlteration(alt) && canAdd;
         ui->alterationButtons->button(i)->setChecked(hasAlt);
         ui->alterationButtons->button(i)->setEnabled(canAdd);
     }
+    ui->chordNameTxt->setText(namestr);
+
+    ui->qualityButtons->blockSignals(false);
+    ui->customRootCBox->blockSignals(false);
+    ui->bassAnyNoteCBox->blockSignals(false);
+    m_midi.blockSignals(midiblock);
+    m_chord.blockSignals(chordblock);
     ui->alterationButtons->blockSignals(false);
     this->blockSignals(false);
-    ui->chordNameTxt->setText(QString::fromStdString(m_chord.name()));
     emit chordPreviewed(m_chord);
 }
 
@@ -111,10 +137,10 @@ void MainWindow::on_alterationButtons_buttonToggled(QAbstractButton *btn, bool c
 
 void MainWindow::on_customRootCBox_currentIndexChanged(int index) {
     auto val = static_cast<Notes::Value>(ui->customRootCBox->itemData(index).toUInt());
-    m_chord.blockSignals(true);
+    auto blocked = m_chord.blockSignals(true);
     m_chord.setRoot(Notes::NOTES[val]);
     ui->bassAnyNoteCBox->setCurrentIndex(-1);
-    m_chord.blockSignals(false);
+    m_chord.blockSignals(blocked);
     m_chord.setBass(Notes::NOTES[val]);
 }
 
@@ -126,4 +152,8 @@ void MainWindow::on_bassAnyNoteCBox_currentIndexChanged(int index) {
 
 void MainWindow::on_chordPreviewBtn_pressed(){
     emit chordPreviewed(m_chord);
+}
+
+void MainWindow::on_addChordBtn_clicked() {
+    chart.addChord(m_chord.chord(), chart.selected());
 }

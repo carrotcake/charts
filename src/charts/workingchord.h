@@ -10,6 +10,9 @@ public:
         , m_chord(chord) {}
     auto notes() const { return m_chord.notes(); }
     const auto& name() const { return m_chord.name(); }
+    const auto& rootStr() const { return m_chord.rootStr(); };
+    const auto& extStr() const { return m_chord.extStr(); };
+    const auto& bassStr() const { return m_chord.bassStr(); };
     auto root() const { return m_chord.root(); }
     auto bass() const { return m_chord.bass(); }
     auto qual() const { return m_chord.qual(); }

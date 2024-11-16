@@ -83,28 +83,32 @@ std::vector<PitchedNote> Chord::notes() const {
 }
 
 void Chord::nameChord(){
+    m_namestr = m_rootstr = m_extstr = m_bassstr = "";
     if (m_rootnote.val == Notes::ERRNOTE) {
         m_namestr.assign("N.C.");
+        m_rootstr.assign("N.C.");
         return;
     }
-    std::string namestr(m_rootnote.flatName());
+    m_rootstr = m_rootnote.flatName();
     if (!(m_quality == maj && m_extlevel == triad))
-        namestr.append(str_QUALITY[m_quality]);
-    namestr.append(str_EXTENSION[m_extlevel]);
+        m_rootstr.append(str_QUALITY[m_quality]);
+    if (m_quality == minMaj && m_extlevel > triad)
+        m_extstr.append("Δ");
+    m_extstr.append(str_EXTENSION[m_extlevel]);
     for (size_t i = 0; i < ALTCOUNT; ++i) {
         if (!m_alts[i])
             continue;
         if (i == add13 && m_extlevel == triad)
-            namestr.append("6");
+            m_extstr.append("6");
         else if (i == add9 && m_extlevel == triad && m_alts[add13])
-            namestr.append("/9");
+            m_extstr.append("/9");
         else
-            namestr.append(str_ALTERATION[i]);
+            m_extstr.append(str_ALTERATION[i]);
     }
     if (m_rootnote.val != m_bassnote.val) {
-        namestr.append("/" + m_bassnote.flatName());
+        m_bassstr.append("/" + m_bassnote.flatName());
     }
-    m_namestr.assign(namestr);
+    m_namestr.assign(m_rootstr + m_extstr + m_bassstr);
 }
 
 Chord::Chord()

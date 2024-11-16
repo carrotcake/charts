@@ -42,7 +42,7 @@
 namespace Chords {
 typedef std::array<bool, Notes::COUNT> interval_set;
 enum quality { maj = 0, dom, min, dim, minMaj };
-const std::array<const std::string, 5> str_QUALITY = {"Δ", "", "-", "°", "-Δ"};
+const std::array<const std::string, 5> str_QUALITY = {"Δ", "", "-", "°", "-"};
 enum extension { triad = 0, seven, nine, eleven, thirteen };
 const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
 enum alteration {
@@ -109,6 +109,9 @@ public:
           const Notes::Note bass);
     std::vector<PitchedNote> notes() const;
     const auto& name() const { return m_namestr; }
+    const auto& rootStr() const { return m_rootstr; };
+    const auto& extStr() const { return m_extstr; };
+    const auto& bassStr() const { return m_bassstr; };
     auto root() const { return m_rootnote; }
     auto bass() const { return m_bassnote; }
     auto qual() const { return m_quality; }
@@ -130,7 +133,7 @@ private:
     void constructChord();
     void nameChord();
 
-    std::string m_namestr;
+    std::string m_namestr, m_rootstr, m_extstr, m_bassstr;
     Notes::Note m_rootnote;
     Notes::Note m_bassnote;
     Chords::quality m_quality;

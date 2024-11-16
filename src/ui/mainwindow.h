@@ -28,7 +28,7 @@ signals:
 public slots:
     void on_start_windowClosed(int result);
     void updateChord();
-
+    void changeWorkingChord(const WorkingChord &chord);
 private slots:
     void on_qualityButtons_buttonClicked(QAbstractButton *btn);
     void on_extensionButtons_buttonClicked(QAbstractButton *btn);
@@ -38,6 +38,8 @@ private slots:
     void on_bassAnyNoteCBox_currentIndexChanged(int index);
 
     void on_chordPreviewBtn_pressed();
+
+    void on_addChordBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

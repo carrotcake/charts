@@ -20,6 +20,7 @@ public:
     virtual size_t length() const { return m_length; }
     void setLength(size_t len) { m_length = len; }
     auto segType() const { return m_type; }
+    auto id() const { return m_id; }
 
 protected:
     Segment(segtype type, size_t len, size_t segID, QObject *parent = nullptr)

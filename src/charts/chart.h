@@ -4,24 +4,24 @@
 #include <QObject>
 #include <QVector>
 #include "src/charts/../ui/chartscene.h"
-#include "src/charts/midiplayer.h"
 #include "src/charts/segment.h"
 #include "src/charts/workingchord.h"
 #include "src/music/meter.h"
 #include "src/music/scales.h"
-#include <cstddef>
 
 class Chart : public QObject {
     Q_OBJECT
 public:
-    explicit Chart(MIDIController &midi, QObject *parent = nullptr, size_t measures = 32);
+    explicit Chart(QObject *parent = nullptr, size_t measures = 32);
     void init();
     void addMeasure();
     ChartScene &view() { return m_view; }
     void addChord(const Chord &chord, size_t measure, size_t beat, int idx = -1);
+    void addChord(const Chord &chord, int idx);
     void addBarline(size_t measure, int idx = -1);
     void addDitto(size_t measure, size_t beat, int idx = -1);
     void addLabel(const QString &str, size_t measure, int idx = -1);
+    auto selected() const { return m_selected; }
 public slots:
     void changeSelection(size_t id);
 
@@ -39,7 +39,7 @@ private:
     ChartScene m_view;
     Scales::KeySig m_key;
     Meter::TimeSig m_timesig;
-    MIDIController &m_midi;
+    size_t m_selected = -1, masterIdx = 0;
 };
 
 #endif // CHART_H
