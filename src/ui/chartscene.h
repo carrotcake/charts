@@ -15,7 +15,7 @@ public:
     explicit ChartScene(QObject *parent = nullptr);
 
 public slots:
-    void updateView();
+    void updateView() {};
     void addChordItem(int id, const ChordSeg &seg);
     void addBarlineItem(int id, const BarlineSeg &seg);
     void addDittoItem(int id, const DittoSeg &seg);

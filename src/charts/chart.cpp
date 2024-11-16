@@ -1,20 +1,22 @@
 #include "chart.h"
 #include <QRandomGenerator>
+#include "src/charts/midiplayer.h"
 
 using namespace Scales;
 using namespace Notes;
 using namespace Meter;
 
-Chart::Chart(QObject *parent, size_t numMeasures)
+Chart::Chart(MIDIController &midi, QObject *parent, size_t numMeasures)
     : QObject{parent}
     , m_view(this)
     , m_key(NOTES[NOTE_C], Scales::major, ionian)
-    , m_timesig(TIMESIGS[FOURFOUR]) {
+    , m_timesig(TIMESIGS[FOURFOUR])
+    , m_midi(midi) {
     const auto numBeats = m_timesig.upper;
     const auto segcount = numMeasures * m_timesig.upper;
     m_segments.reserve(segcount + numMeasures);
 
-    connect(this, &Chart::chartUpdated, &m_view, &ChartScene::updateView);
+    connect(this, &Chart::chordClicked, &m_midi, &MIDIController::requestPreview);
     connect(this, &Chart::chordSegAdded, &m_view, &ChartScene::addChordItem);
     connect(this, &Chart::barlineSegAdded, &m_view, &ChartScene::addBarlineItem);
     connect(this, &Chart::dittoSegAdded, &m_view, &ChartScene::addDittoItem);
@@ -48,6 +50,7 @@ void Chart::addChord(const Chord &chord, size_t measure, size_t beat, int idx) {
     if (idx == -1)
         idx = m_segments.size();
     auto ptr = new ChordSeg(chord, beatlength, m_segments.size(), measure, beat, this);
+    connect(ptr, &ChordSeg::segmentSelected, this, &Chart::changeSelection);
     m_segments.emplace(idx, ptr);
     emit chordSegAdded(idx, *ptr);
 }
@@ -79,4 +82,11 @@ void Chart::addLabel(const QString &str, size_t measure, int idx) {
 
 void Chart::init() {
     emit chartUpdated();
+}
+
+void Chart::changeSelection(size_t id) {
+    auto seg = dynamic_cast<ChordSeg *>(m_segments[id]);
+    if (!seg)
+        return;
+    emit chordClicked(seg->chord());
 }

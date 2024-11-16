@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , m_midi(this)
     , m_chord(this)
-    , chart(this) {
+    , chart(m_midi, this) {
     ui->setupUi(this);
 
     ui->qualityButtons->setId(ui->qualMajBtn, Chords::maj);

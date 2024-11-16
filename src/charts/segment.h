@@ -27,8 +27,6 @@ protected:
         , m_type(type)
         , m_length(len)
         , m_id(segID) {}
-
-private:
     const segtype m_type;
     size_t m_length;
     const size_t m_id;
@@ -59,6 +57,12 @@ public:
     void setMeasure(size_t measure) { m_measure = measure; }
     auto beat() const { return m_beat; }
     void setBeat(size_t beat) { m_beat = beat; }
+
+public slots:
+    void selected();
+
+signals:
+    void segmentSelected(size_t id);
 
 private:
     WorkingChord m_chord;
@@ -127,7 +131,6 @@ private:
     bool m_isEnd;
     int m_endings;
     int m_id;
-    Q_PROPERTY(bool isEnd READ isEnd CONSTANT FINAL)
 };
 
 #endif // SEGMENT_H

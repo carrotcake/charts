@@ -1,7 +1,7 @@
 #include "labelitem.h"
 #include <QCursor>
+#include <QGraphicsItem>
 #include "chartscene.h"
-#include "qgraphicsitem.h"
 
 LabelItem::LabelItem(const QString &str, size_t id, size_t measure)
     : m_id(id)
