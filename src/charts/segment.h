@@ -1,7 +1,6 @@
 #pragma once
 
 #include "src/charts/workingchord.h"
-#include "src/music/chord.h"
 
 /*
  *  Segment type: 

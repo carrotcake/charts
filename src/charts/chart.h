@@ -2,11 +2,10 @@
 
 #include <QObject>
 #include <QVector>
-#include "src/charts/../ui/chartscene.h"
-#include "src/charts/segment.h"
-#include "src/charts/workingchord.h"
 #include "src/music/meter.h"
 #include "src/music/scales.h"
+#include "src/ui/chartscene.h"
+#include "workingchord.h"
 
 class Chart : public QObject {
     Q_OBJECT
