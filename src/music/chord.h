@@ -1,5 +1,4 @@
-#ifndef CHORD_H
-#define CHORD_H
+#pragma once
 
 #include "pitchednote.h"
 #include <array>
@@ -142,4 +141,3 @@ private:
     Chords::interval_set m_intervals;
 };
 
-#endif // CHORD_H

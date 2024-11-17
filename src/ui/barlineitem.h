@@ -1,5 +1,5 @@
-#ifndef BARLINEITEM_H
-#define BARLINEITEM_H
+#pragma once
+
 #include <QGraphicsLineItem>
 
 class BarlineItem : public QGraphicsLineItem {
@@ -9,5 +9,3 @@ public:
 private:
     size_t m_id, m_measure;
 };
-
-#endif // BARLINEITEM_H

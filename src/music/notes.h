@@ -1,5 +1,4 @@
-#ifndef NOTES_H
-#define NOTES_H
+#pragma once
 
 #include <string>
 #include <array>
@@ -99,5 +98,3 @@ constexpr Note NOTES[] = {Note{NOTE_C},
                           Note{NOTE_B}};
 
 } // namespace Notes
-
-#endif // NOTES_H

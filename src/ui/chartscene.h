@@ -1,5 +1,4 @@
-#ifndef CHARTSCENE_H
-#define CHARTSCENE_H
+#pragma once
 
 #include <QGraphicsScene>
 #include <QPainter>
@@ -26,4 +25,3 @@ signals:
 private:
 };
 
-#endif // CHARTSCENE_H

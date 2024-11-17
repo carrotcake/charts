@@ -1,5 +1,5 @@
-#ifndef WORKINGCHORD_H
-#define WORKINGCHORD_H
+#pragma once
+
 #include <QObject>
 #include "src/music/chord.h"
 class WorkingChord : public QObject {
@@ -43,4 +43,3 @@ private:
     Chord m_chord;
 };
 
-#endif // WORKINGCHORD_H

@@ -1,5 +1,4 @@
-#ifndef PITCHEDNOTE_H
-#define PITCHEDNOTE_H
+#pragma once
 
 #include "notes.h"
 
@@ -16,5 +15,3 @@ private:
     Notes::Note m_note;
     Notes::Octave m_octave;
 };
-
-#endif // PITCHEDNOTE_H

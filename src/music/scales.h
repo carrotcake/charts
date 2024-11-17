@@ -1,5 +1,4 @@
-#ifndef SCALES_H
-#define SCALES_H
+#pragma once
 
 #include "notes.h"
 #include <vector>
@@ -51,5 +50,3 @@ private:
 };
 
 } // namespace Scales
-
-#endif // SCALES_H

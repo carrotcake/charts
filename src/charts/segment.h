@@ -1,5 +1,4 @@
-#ifndef SEGMENT_H
-#define SEGMENT_H
+#pragma once
 
 #include "src/charts/workingchord.h"
 #include "src/music/chord.h"
@@ -138,5 +137,3 @@ private:
     int m_endings;
     int m_id;
 };
-
-#endif // SEGMENT_H

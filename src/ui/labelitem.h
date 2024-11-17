@@ -1,5 +1,4 @@
-#ifndef LABELITEM_H
-#define LABELITEM_H
+#pragma once
 
 #include <QGraphicsSimpleTextItem>
 
@@ -15,4 +14,3 @@ private:
     size_t m_id, m_measure;
 };
 
-#endif // LABELITEM_H

@@ -1,5 +1,4 @@
-#ifndef STARTUPWINDOW_H
-#define STARTUPWINDOW_H
+#pragma once
 
 #include <QDialog>
 
@@ -23,5 +22,3 @@ private slots:
 private:
     Ui::StartupWindow *ui;
 };
-
-#endif // STARTUPWINDOW_H

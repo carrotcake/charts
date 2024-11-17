@@ -1,5 +1,4 @@
-#ifndef MIDIPLAYER_H
-#define MIDIPLAYER_H
+#pragma once
 
 #include <QObject>
 #include <QThread>
@@ -49,5 +48,3 @@ private:
     FSynthDriver *m_fsaudiodriver;
     FSynthSettings *m_fssettings;
 };
-
-#endif // MIDIPLAYER_H

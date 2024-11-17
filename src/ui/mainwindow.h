@@ -1,5 +1,4 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include <QButtonGroup>
 #include <QMainWindow>
@@ -48,4 +47,3 @@ private:
     WorkingChord m_chord;
     Chart chart;
 };
-#endif // MAINWINDOW_H

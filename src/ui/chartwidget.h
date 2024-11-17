@@ -1,5 +1,4 @@
-#ifndef CHARTWIDGET_H
-#define CHARTWIDGET_H
+#pragma once
 
 #include <QGraphicsView>
 #include <QWidget>
@@ -15,5 +14,3 @@ signals:
 
 private:
 };
-
-#endif // CHARTWIDGET_H

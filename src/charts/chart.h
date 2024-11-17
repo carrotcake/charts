@@ -1,5 +1,4 @@
-#ifndef CHART_H
-#define CHART_H
+#pragma once
 
 #include <QObject>
 #include <QVector>
@@ -41,5 +40,3 @@ private:
     Meter::TimeSig m_timesig;
     size_t m_selected = -1, masterIdx = 0;
 };
-
-#endif // CHART_H

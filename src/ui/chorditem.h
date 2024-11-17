@@ -1,5 +1,4 @@
-#ifndef CHORDITEM_H
-#define CHORDITEM_H
+#pragma once
 
 #include <QGraphicsSimpleTextItem>
 #include <QPen>
@@ -40,4 +39,3 @@ private:
     Q_PROPERTY(size_t id READ id FINAL CONSTANT)
 };
 
-#endif // CHORDITEM_H
