@@ -1,5 +1,6 @@
 #include "midisequence.h"
 #include "src/music/meter.h"
+#include <sstream>
 
 MIDISequence::MIDISequence(QObject *parent)
     : QObject{parent} {
@@ -22,6 +23,17 @@ void MIDISequence::clearSequence() {
     m_file.clear();
 }
 
+std::string MIDISequence::getRawDataAsString() {
+    std::stringstream stream;
+    if (!m_file.write(stream))
+        return "";
+    return stream.str();
+}
+
 void MIDISequence::writeToFile() {
+    std::stringstream stream;
+    if (!m_file.write(stream))
+        return;
+    std::cout << stream.str() << std::endl;
     m_file.write("test.mid");
 }

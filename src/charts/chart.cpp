@@ -121,6 +121,15 @@ void Chart::changeSelection(size_t id) {
     emit chordClicked(seg->chord());
 }
 
+void Chart::initiatePlayback() {
+    generateMIDISequence();
+    auto data = m_sequence.getRawDataAsString();
+    if (data.empty())
+        return;
+    std::cout << "request" << std::endl;
+    emit playbackRequested(data.c_str(), data.length());
+}
+
 void Chart::generateMIDISequence() {
     m_sequence.clearSequence();
     Chord temp;

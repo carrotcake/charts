@@ -1,4 +1,6 @@
 #include "midiplayer.h"
+#include <fluidsynth/midi.h>
+#include <iostream>
 
 using namespace std::chrono_literals;
 
@@ -17,6 +19,11 @@ void MIDIPlayer::previewChord(const Chord &chord, FSynth *synth) {
     m_interrupted = false; // still hacking
 }
 
+void MIDIPlayer::playbackData(FSynthPlayer *player) {
+    fluid_player_play(player);
+    fluid_player_join(player);
+}
+
 MIDIController::MIDIController(QObject *parent)
     : QObject(parent) {
     // fluidsynth initialization
@@ -24,11 +31,13 @@ MIDIController::MIDIController(QObject *parent)
     fluid_settings_setint(m_fssettings, "synth.polyphony", 128);
     fluid_settings_setnum(m_fssettings, "synth.gain", .8);
     m_fsynth = new_fluid_synth(m_fssettings);
+    m_fsplayer = new_fluid_player(m_fsynth);
     m_fsaudiodriver = new_fluid_audio_driver(m_fssettings, m_fsynth);
     fluid_synth_sfload(m_fsynth, "GU-GS.sf2", 1);
     //midi sequencing happens in its own thread so we can wait w/o blocking ui input
     m_player.moveToThread(&m_playerthread);
     connect(this, &MIDIController::previewRequested, &m_player, &MIDIPlayer::previewChord);
+    connect(this, &MIDIController::playbackRequested, &m_player, &MIDIPlayer::playbackData);
     // uncomment this if m_player ever becomes a pointer again
     // connect(&playerthread, &QThread::finished, &m_player, &QObject::deleteLater);
     m_playerthread.start();
@@ -38,6 +47,7 @@ MIDIController::~MIDIController() {
     m_playerthread.quit();
     m_playerthread.wait();
     delete_fluid_audio_driver(m_fsaudiodriver);
+    delete_fluid_player(m_fsplayer);
     delete_fluid_synth(m_fsynth);
     delete_fluid_settings(m_fssettings);
 }
@@ -45,4 +55,14 @@ MIDIController::~MIDIController() {
 void MIDIController::requestPreview(const WorkingChord &tempchord) {
     m_player.interruptPlayback();                       //runs in main thread
     emit previewRequested(tempchord.chord(), m_fsynth); //runs in playerthread
+}
+
+void MIDIController::requestPlayback(const char *data, size_t len) {
+    fluid_player_add_mem(m_fsplayer, data, len);
+    std::cout << "request " << sizeof(data) << std::endl;
+    emit playbackRequested(m_fsplayer);
+}
+
+void MIDIController::stopPlayback() {
+    fluid_player_stop(m_fsplayer);
 }

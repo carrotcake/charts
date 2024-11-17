@@ -23,6 +23,7 @@ public:
     auto selected() const { return m_selected; }
 public slots:
     void changeSelection(size_t id);
+    void initiatePlayback();
 signals:
     void chartUpdated();
     void chordClicked(const WorkingChord &chord);
@@ -31,6 +32,7 @@ signals:
     void dittoSegAdded(int idx, const DittoSeg &seg);
     void labelSegAdded(int idx, const LabelSeg &seg);
     void repeatSegAdded(int idx, const RepeatSeg &seg);
+    void playbackRequested(const char *data, size_t len);
 
 private:
     void generateMIDISequence();

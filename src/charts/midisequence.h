@@ -15,6 +15,7 @@ public:
     void addChord(const Chord &chord, int measure, int beat, int duration);
     void clearSequence();
     void writeToFile();
+    std::string getRawDataAsString();
 signals:
 
 private:

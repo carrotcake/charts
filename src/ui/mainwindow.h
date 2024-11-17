@@ -40,6 +40,10 @@ private slots:
 
     void on_addChordBtn_clicked();
 
+    void on_playBtn_clicked();
+
+    void on_stopBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     StartupWindow start;
