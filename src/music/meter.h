@@ -34,7 +34,7 @@ public:
             return QUARTER;
         }
     }
-    const short upper, lower;
+    short upper, lower;
 };
 
 enum timesigs {

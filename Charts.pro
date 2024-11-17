@@ -2,15 +2,21 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++20
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 
 
 SOURCES += \
+    external/midifile/src/Binasc.cpp \
+    external/midifile/src/MidiEvent.cpp \
+    external/midifile/src/MidiEventList.cpp \
+    external/midifile/src/MidiFile.cpp \
+    external/midifile/src/MidiMessage.cpp \
     src/charts/chart.cpp \
     src/charts/midiplayer.cpp \
+    src/charts/midisequence.cpp \
     src/charts/segment.cpp \
     src/charts/workingchord.cpp \
     src/main.cpp \
@@ -22,10 +28,33 @@ SOURCES += \
     src/ui/labelitem.cpp \
     src/ui/mainwindow.cpp \
     src/ui/startupwindow.cpp
-
 HEADERS += \
+    external/fluidsynth/include/fluidsynth.h \
+    external/fluidsynth/include/audio.h \
+    external/fluidsynth/include/event.h \
+    external/fluidsynth/include/gen.h \
+    external/fluidsynth/include/ladspa.h \
+    external/fluidsynth/include/log.h \
+    external/fluidsynth/include/midi.h \
+    external/fluidsynth/include/misc.h \
+    external/fluidsynth/include/mod.h \
+    external/fluidsynth/include/seq.h \
+    external/fluidsynth/include/seqbind.h \
+    external/fluidsynth/include/settings.h \
+    external/fluidsynth/include/sfont.h \
+    external/fluidsynth/include/shell.h \
+    external/fluidsynth/include/synth.h \
+    external/fluidsynth/include/types.h \
+    external/fluidsynth/include/version.h \
+    external/fluidsynth/include/voice.h \
+    external/midifile/include/Binasc.h \
+    external/midifile/include/MidiEvent.h \
+    external/midifile/include/MidiEventList.h \
+    external/midifile/include/MidiFile.h \
+    external/midifile/include/MidiMessage.h \
     src/charts/chart.h \
     src/charts/midiplayer.h \
+    src/charts/midisequence.h \
     src/charts/segment.h \
     src/charts/workingchord.h \
     src/music/chord.h \
@@ -39,8 +68,7 @@ HEADERS += \
     src/ui/chorditem.h \
     src/ui/labelitem.h \
     src/ui/mainwindow.h \
-    src/ui/startupwindow.h \
-    external/include/fluidsynth.h
+    src/ui/startupwindow.h
 FORMS += \
     src/ui/mainwindow.ui \
     src/ui/startupwindow.ui
@@ -73,8 +101,9 @@ unix: PKGCONFIG += fluidsynth
 
 win32: LIBS += -L$$PWD/external/lib/ -lfluidsynth
 
-INCLUDEPATH += $$PWD/external/include/fluidsynth
-DEPENDPATH += $$PWD/external/include/fluidsynth
+INCLUDEPATH += $$PWD/external/fluidsynth/include \
+$$PWD/external/midifile/include
+DEPENDPATH += $$PWD/external/include
 win32-g++: PRE_TARGETDEPS += $$PWD/external/lib/libfluidsynth.a
 
 RESOURCES +=

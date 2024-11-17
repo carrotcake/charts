@@ -2,6 +2,7 @@
 
 #include <QObject>
 #include <QVector>
+#include "src/charts/midisequence.h"
 #include "src/music/meter.h"
 #include "src/music/scales.h"
 #include "src/ui/chartscene.h"
@@ -22,7 +23,6 @@ public:
     auto selected() const { return m_selected; }
 public slots:
     void changeSelection(size_t id);
-
 signals:
     void chartUpdated();
     void chordClicked(const WorkingChord &chord);
@@ -33,8 +33,10 @@ signals:
     void repeatSegAdded(int idx, const RepeatSeg &seg);
 
 private:
+    void generateMIDISequence();
     QVector<Segment *> m_segments;
     ChartScene m_view;
+    MIDISequence m_sequence;
     Scales::KeySig m_key;
     Meter::TimeSig m_timesig;
     size_t m_selected = -1, masterIdx = 0;

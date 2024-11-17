@@ -2,6 +2,7 @@
 #include <QRandomGenerator>
 #include "src/charts/segment.h"
 #include "src/music/chord.h"
+#include <utility>
 
 using namespace Scales;
 using namespace Notes;
@@ -43,10 +44,13 @@ Chart::Chart(QObject *parent, size_t numMeasures)
             }
         }
     }
+    m_sequence.setMeter(m_timesig);
+    m_sequence.setTempo(120);
+    generateMIDISequence();
 }
 
 void Chart::addChord(const Chord &chord, size_t measure, size_t beat, int idx) {
-    const auto beatlength = m_timesig.subdiv();
+    const auto beatlength = m_timesig.subdiv() * 2;
     if (idx == -1)
         idx = masterIdx++;
     else
@@ -115,4 +119,37 @@ void Chart::changeSelection(size_t id) {
     if (!seg)
         return;
     emit chordClicked(seg->chord());
+}
+
+void Chart::generateMIDISequence() {
+    m_sequence.clearSequence();
+    Chord temp;
+    for (auto seg : std::as_const(m_segments)) {
+        size_t measure, beat, duration;
+        if (!seg)
+            continue;
+        switch (seg->segType()) {
+        case Segment::CHORD:
+            {
+                auto cseg = dynamic_cast<ChordSeg *>(seg);
+                temp = cseg->chord().chord();
+                measure = cseg->measure();
+                duration = cseg->length();
+                beat = cseg->beat();
+                break;
+            }
+        case Segment::DITTO:
+            {
+                auto dseg = dynamic_cast<DittoSeg *>(seg);
+                measure = dseg->measure();
+                duration = dseg->length();
+                beat = dseg->beat();
+                break;
+            }
+        default:
+            continue;
+        }
+        m_sequence.addChord(temp, measure, beat, duration);
+    }
+    m_sequence.writeToFile();
 }

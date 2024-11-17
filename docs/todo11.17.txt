@@ -1,0 +1,5 @@
+-refactor segments
+-playback sequencing
+-scale integration
+-chart serialization
+-fix text color rendering
