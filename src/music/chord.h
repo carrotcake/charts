@@ -42,7 +42,7 @@
 namespace Chords {
 typedef std::array<bool, Notes::COUNT> interval_set;
 enum quality { maj = 0, dom, min, dim, minMaj };
-const std::array<const std::string, 5> str_QUALITY = {"Δ", "", "-", "°", "-"};
+const std::array<const std::string, 5> str_QUALITY = {"Δ", "", "-", "°", "-Δ"};
 enum extension { triad = 0, seven, nine, eleven, thirteen };
 const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
 enum alteration {

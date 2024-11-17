@@ -4,7 +4,7 @@
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+    : QMainWindow{parent}
     , ui(new Ui::MainWindow)
     , m_midi(this)
     , m_chord(this)
@@ -44,13 +44,14 @@ MainWindow::MainWindow(QWidget *parent)
         ui->customRootCBox->addItem(QString::fromStdString(Notes::str_BOTHNAMES[i]), i);
         ui->bassAnyNoteCBox->addItem(QString::fromStdString(Notes::str_BOTHNAMES[i]), i);
     }
-
     ui->bassAnyNoteCBox->setCurrentIndex(-1);
     ui->chartWidget->setScene(&chart.view());
+
     connect(&chart, &Chart::chordClicked, this, &MainWindow::changeWorkingChord);
     connect(&start, &StartupWindow::windowClosed, this, &MainWindow::on_start_windowClosed);
     connect(this, &MainWindow::chordPreviewed, &m_midi, &MIDIController::requestPreview);
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
+    connect(ui->actionExit_Charts, &QAction::triggered, this, &MainWindow::close);
 }
 
 void MainWindow::startUp() {
@@ -155,5 +156,5 @@ void MainWindow::on_chordPreviewBtn_pressed(){
 }
 
 void MainWindow::on_addChordBtn_clicked() {
-    chart.addChord(m_chord.chord(), chart.selected());
+    chart.setChord(m_chord.chord(), chart.selected());
 }

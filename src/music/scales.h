@@ -1,5 +1,6 @@
 #ifndef SCALES_H
 #define SCALES_H
+
 #include "notes.h"
 #include <vector>
 

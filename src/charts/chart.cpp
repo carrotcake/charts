@@ -1,10 +1,7 @@
 #include "chart.h"
 #include <QRandomGenerator>
-#include "qttypetraits.h"
-#include "src/charts/midiplayer.h"
 #include "src/charts/segment.h"
 #include "src/music/chord.h"
-#include <iostream>
 
 using namespace Scales;
 using namespace Notes;
@@ -23,7 +20,7 @@ Chart::Chart(QObject *parent, size_t numMeasures)
     connect(this, &Chart::dittoSegAdded, &m_view, &ChartScene::addDittoItem);
     connect(this, &Chart::labelSegAdded, &m_view, &ChartScene::addLabelItem);
     auto r = QRandomGenerator::global();
-    QChar c = 'A';
+    auto c = QChar('A');
     for (size_t measure = 0; measure < numMeasures; ++measure) {
         addBarline(measure);
         if (measure % 8 == 0) {
@@ -60,7 +57,7 @@ void Chart::addChord(const Chord &chord, size_t measure, size_t beat, int idx) {
     emit chordSegAdded(idx, *ptr);
 }
 
-void Chart::addChord(const Chord &chord, int idx) {
+void Chart::setChord(const Chord &chord, int idx) {
     if (idx < 0 || idx > m_segments.size())
         return;
     auto seg = m_segments[idx];
@@ -87,6 +84,7 @@ void Chart::addDitto(size_t measure, size_t beat, int idx) {
     if (idx == -1)
         idx = masterIdx++;
     auto ptr = new DittoSeg(beatlength, idx, measure, beat, this);
+    connect(ptr, &DittoSeg::segmentSelected, this, &Chart::changeSelection);
     m_segments[idx] = ptr;
     emit dittoSegAdded(idx, *ptr);
 }
@@ -112,9 +110,9 @@ void Chart::init() {
 }
 
 void Chart::changeSelection(size_t id) {
+    m_selected = id;
     auto seg = dynamic_cast<ChordSeg *>(m_segments[id]);
     if (!seg)
         return;
-    m_selected = id;
     emit chordClicked(seg->chord());
 }

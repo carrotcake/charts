@@ -1,7 +1,7 @@
-
 #include "src/charts/segment.h"
 void ChordSeg::selected() {
-    if (this->isNoChord())
-        return;
+    emit segmentSelected(m_id);
+}
+void DittoSeg::selected() {
     emit segmentSelected(m_id);
 }

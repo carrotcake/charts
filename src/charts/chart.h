@@ -17,7 +17,7 @@ public:
     void addMeasure();
     ChartScene &view() { return m_view; }
     void addChord(const Chord &chord, size_t measure, size_t beat, int idx = -1);
-    void addChord(const Chord &chord, int idx);
+    void setChord(const Chord &chord, int idx);
     void addBarline(size_t measure, int idx = -1);
     void addDitto(size_t measure, size_t beat, int idx = -1);
     void addLabel(const QString &str, size_t measure, int idx = -1);

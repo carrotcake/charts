@@ -91,9 +91,7 @@ void Chord::nameChord(){
     }
     m_rootstr = m_rootnote.flatName();
     if (!(m_quality == maj && m_extlevel == triad))
-        m_rootstr.append(str_QUALITY[m_quality]);
-    if (m_quality == minMaj && m_extlevel > triad)
-        m_extstr.append("Δ");
+        m_extstr.append(str_QUALITY[m_quality]);
     m_extstr.append(str_EXTENSION[m_extlevel]);
     for (size_t i = 0; i < ALTCOUNT; ++i) {
         if (!m_alts[i])

@@ -28,9 +28,14 @@ void ChartScene::addBarlineItem(int id, const BarlineSeg &seg) {
 }
 
 void ChartScene::addDittoItem(int id, const DittoSeg &seg) {
+    for (auto o : children()) {
+        if (o->property("id") == id)
+            o->deleteLater();
+    }
     const auto firstBeat = seg.beat() == 0;
     const auto str = QString(firstBeat ? "%" : "   ");
     auto ptr = new ChordItem(str, id, seg.measure(), seg.beat(), this);
+    connect(ptr, &ChordItem::itemSelected, &seg, &DittoSeg::selected);
     addItem(ptr);
 }
 

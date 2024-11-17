@@ -53,7 +53,7 @@ const std::array<const std::string, COUNT> str_ROMANMIN
 const std::array<const std::string, COUNT> str_NASHVILLE
     = {"1", "♭2", "2", "b3", "3", "4", "♭5", "5", "♭6", "6", "♭7", "7"};
 const std::array<const std::string, COUNT> str_FLATNAMES
-    = { "C", "Db", "D", "E♭", "E", "F", "Gb", "G", "A♭","A", "B♭", "B"};
+    = {"C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B"};
 const std::array<const std::string, COUNT> str_SHARPNAMES
     = { "C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G#","A", "A♯", "B",};
 const std::array<const std::string, COUNT> str_BOTHNAMES

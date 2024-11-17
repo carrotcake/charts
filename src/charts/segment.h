@@ -83,6 +83,11 @@ public:
     void setMeasure(size_t measure) { m_measure = measure; }
     auto beat() const { return m_beat; }
     void setBeat(size_t beat) { m_beat = beat; }
+public slots:
+    void selected();
+
+signals:
+    void segmentSelected(size_t id);
 
 private:
     size_t m_measure;
