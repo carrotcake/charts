@@ -32,7 +32,7 @@ signals:
     void dittoSegAdded(int idx, const DittoSeg &seg);
     void labelSegAdded(int idx, const LabelSeg &seg);
     void repeatSegAdded(int idx, const RepeatSeg &seg);
-    void playbackRequested(const char *data, size_t len);
+    void sequenceGenerated(const char *data, size_t len);
 
 private:
     void generateMIDISequence();

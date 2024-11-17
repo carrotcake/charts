@@ -4,8 +4,9 @@
 
 using namespace std::chrono_literals;
 
-void MIDIPlayer::interruptPlayback() {
+void MIDIPlayer::interruptPlayback(FSynthPlayer *player) {
     m_interrupted = true;
+    fluid_player_stop(player);
 }
 
 void MIDIPlayer::previewChord(const Chord &chord, FSynth *synth) {
@@ -53,14 +54,21 @@ MIDIController::~MIDIController() {
 }
 
 void MIDIController::requestPreview(const WorkingChord &tempchord) {
-    m_player.interruptPlayback();                       //runs in main thread
+    m_player.interruptPlayback(m_fsplayer);             //runs in main thread
     emit previewRequested(tempchord.chord(), m_fsynth); //runs in playerthread
 }
-
-void MIDIController::requestPlayback(const char *data, size_t len) {
+void MIDIController::loadData(const char *data, size_t len) {
+    if (fluid_player_get_total_ticks(m_fsplayer) > 0) {
+        delete_fluid_player(m_fsplayer);
+        m_fsplayer = new_fluid_player(m_fsynth);
+    }
     fluid_player_add_mem(m_fsplayer, data, len);
-    std::cout << "request " << sizeof(data) << std::endl;
-    emit playbackRequested(m_fsplayer);
+}
+
+void MIDIController::requestPlayback() {
+    auto status = fluid_player_get_status(m_fsplayer);
+    if (status == FLUID_PLAYER_READY || status == FLUID_PLAYER_DONE)
+        emit playbackRequested(m_fsplayer);
 }
 
 void MIDIController::stopPlayback() {

@@ -46,7 +46,6 @@ Chart::Chart(QObject *parent, size_t numMeasures)
     }
     m_sequence.setMeter(m_timesig);
     m_sequence.setTempo(120);
-    generateMIDISequence();
 }
 
 void Chart::addChord(const Chord &chord, size_t measure, size_t beat, int idx) {
@@ -59,6 +58,7 @@ void Chart::addChord(const Chord &chord, size_t measure, size_t beat, int idx) {
     connect(ptr, &ChordSeg::segmentSelected, this, &Chart::changeSelection);
     m_segments[idx] = ptr;
     emit chordSegAdded(idx, *ptr);
+    init();
 }
 
 void Chart::setChord(const Chord &chord, int idx) {
@@ -91,6 +91,7 @@ void Chart::addDitto(size_t measure, size_t beat, int idx) {
     connect(ptr, &DittoSeg::segmentSelected, this, &Chart::changeSelection);
     m_segments[idx] = ptr;
     emit dittoSegAdded(idx, *ptr);
+    init();
 }
 
 void Chart::addBarline(size_t measure, int idx) {
@@ -99,6 +100,7 @@ void Chart::addBarline(size_t measure, int idx) {
     auto ptr = new BarlineSeg(idx, measure, this);
     m_segments[idx] = ptr;
     emit barlineSegAdded(idx, *ptr);
+    init();
 }
 
 void Chart::addLabel(const QString &str, size_t measure, int idx) {
@@ -107,9 +109,11 @@ void Chart::addLabel(const QString &str, size_t measure, int idx) {
     auto ptr = new LabelSeg(str, idx, measure, this);
     m_segments[idx] = ptr;
     emit labelSegAdded(idx, *ptr);
+    init();
 }
 
 void Chart::init() {
+    generateMIDISequence();
     emit chartUpdated();
 }
 
@@ -122,12 +126,7 @@ void Chart::changeSelection(size_t id) {
 }
 
 void Chart::initiatePlayback() {
-    generateMIDISequence();
-    auto data = m_sequence.getRawDataAsString();
-    if (data.empty())
-        return;
     std::cout << "request" << std::endl;
-    emit playbackRequested(data.c_str(), data.length());
 }
 
 void Chart::generateMIDISequence() {
@@ -160,5 +159,6 @@ void Chart::generateMIDISequence() {
         }
         m_sequence.addChord(temp, measure, beat, duration);
     }
-    m_sequence.writeToFile();
+    auto data = m_sequence.getRawDataAsString();
+    emit sequenceGenerated(data.c_str(), data.length());
 }

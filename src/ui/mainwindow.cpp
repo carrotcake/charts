@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(this, &MainWindow::chordPreviewed, &m_midi, &MIDIController::requestPreview);
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
     connect(ui->actionExit_Charts, &QAction::triggered, this, &MainWindow::close);
-    connect(&chart, &Chart::playbackRequested, &m_midi, &MIDIController::requestPlayback);
+    connect(&chart, &Chart::sequenceGenerated, &m_midi, &MIDIController::loadData);
 }
 
 void MainWindow::startUp() {
@@ -162,6 +162,7 @@ void MainWindow::on_addChordBtn_clicked() {
 
 void MainWindow::on_playBtn_clicked() {
     chart.initiatePlayback();
+    m_midi.requestPlayback();
 }
 
 void MainWindow::on_stopBtn_clicked() {

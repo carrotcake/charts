@@ -18,7 +18,7 @@ class MIDIPlayer : public QObject {
 public:
     explicit MIDIPlayer(QObject *parent = nullptr)
         : QObject{parent} {}
-    void interruptPlayback();
+    void interruptPlayback(FSynthPlayer *player);
 
 public slots:
     void previewChord(const Chord &chord, FSynth *synth);
@@ -40,7 +40,8 @@ public:
 
 public slots:
     void requestPreview(const WorkingChord &chord);
-    void requestPlayback(const char *data, size_t len);
+    void loadData(const char *data, size_t len);
+    void requestPlayback();
     void stopPlayback();
 
 signals:
