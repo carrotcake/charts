@@ -29,6 +29,7 @@ protected:
                const QStyleOptionGraphicsItem *option,
                QWidget *widget) Q_DECL_OVERRIDE;
     void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) Q_DECL_OVERRIDE;
+    QRectF boundingRect() const Q_DECL_OVERRIDE;
 signals:
     void itemSelected(void);
 

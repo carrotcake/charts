@@ -5,6 +5,7 @@
 #include "chartscene.h"
 #include "qgraphicsitem.h"
 #include "qnamespace.h"
+#include <algorithm>
 
 void ChordItem::init() {
     const auto margin = ChartScene::MARGIN, width = ChartScene::CELLW, height = ChartScene::CELLH,
@@ -70,11 +71,12 @@ QVariant ChordItem::itemChange(GraphicsItemChange change, const QVariant &value)
 }
 void ChordItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     QFont f;
+    auto rect = QGraphicsSimpleTextItem::boundingRect();
     f.setPointSize(12);
-    painter->setPen(Qt::black);
+    painter->setPen(brush().color());
     painter->setFont(f);
-    painter->drawText(boundingRect().topRight() + QPoint{0, 16}, m_extstr);
-    painter->drawText(boundingRect().topRight() + QPoint{0, 32}, m_bassstr);
+    painter->drawText(rect.topRight() + QPoint{0, 16}, m_extstr);
+    painter->drawText(rect.topRight() + QPoint{0, 32}, m_bassstr);
     QGraphicsSimpleTextItem::paint(painter, option, widget);
 }
 void ChordItem::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) {
@@ -84,4 +86,16 @@ void ChordItem::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) {
         emit itemSelected();
         QGraphicsItem::mousePressEvent(mouseEvent);
     }
+}
+
+QRectF ChordItem::boundingRect() const {
+    auto rect = QGraphicsSimpleTextItem::boundingRect();
+    if (!m_extstr.isEmpty() || !m_bassstr.isEmpty()) {
+        auto length = std::max(m_extstr.length(), m_bassstr.length());
+        auto botRight = rect.bottomRight();
+        botRight.rx() += length * 10;
+        botRight.ry() += m_bassstr.isEmpty() ? 0 : 8;
+        rect.setBottomRight(botRight);
+    }
+    return rect;
 }

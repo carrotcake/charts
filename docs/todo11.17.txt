@@ -1,5 +1,12 @@
 -refactor segments
+  - all -> chordseg -> segment
+
 -playback sequencing
+  - style
+
 -scale integration
+  -fix notenames
+
 -chart serialization
+
 -fix text color rendering
