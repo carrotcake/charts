@@ -29,22 +29,30 @@ MIDIController::MIDIController(QObject *parent)
     // fluidsynth initialization
     m_fssettings = new_fluid_settings();
     fluid_settings_setint(m_fssettings, "synth.polyphony", 128);
-    /* there's like a 1/10 chance that the audio driver initializing
-       creates an artifact and makes my speakers pop if I don't do this
-       ok never mind it doesn't even work (linux only?) */
     fluid_settings_setnum(m_fssettings, "synth.gain", 0);
+
+    // recommended fluidsynth setttings for GeneralUser-GS soundfont
+    // from: https://github.com/mrbumpy409/GeneralUser-GS/tree/main/documentation#302-fluidsynth
+    fluid_settings_setnum(m_fssettings, "synth.reverb.damp", 0.3);
+    fluid_settings_setnum(m_fssettings, "synth.reverb.level", 0.7);
+    fluid_settings_setnum(m_fssettings, "synth.reverb.room-size", 0.5);
+    fluid_settings_setnum(m_fssettings, "synth.reverb.width", 0.8);
+    fluid_settings_setnum(m_fssettings, "synth.chorus.depth", 3.6);
+    fluid_settings_setnum(m_fssettings, "synth.chorus.level", 0.55);
+    fluid_settings_setint(m_fssettings, "synth.chorus.nr", 4);
+    fluid_settings_setnum(m_fssettings, "synth.chorus.speed", 0.36);
 
     m_fsynth = new_fluid_synth(m_fssettings);
     m_fsplayer = new_fluid_player(m_fsynth);
     m_fsaudiodriver = new_fluid_audio_driver(m_fssettings, m_fsynth);
     fluid_synth_sfload(m_fsynth, "GU-GS.sf2", 1);
     fluid_settings_setnum(m_fssettings, "synth.gain", 1);
+
     //midi sequencing happens in its own thread so we can wait w/o blocking ui input
     m_player.moveToThread(&m_playerthread);
     connect(this, &MIDIController::previewRequested, &m_player, &MIDIPlayer::previewChord);
     connect(this, &MIDIController::playbackRequested, &m_player, &MIDIPlayer::playbackData);
-    // uncomment this if m_player ever becomes a pointer again
-    // connect(&playerthread, &QThread::finished, &m_player, &QObject::deleteLater);
+
     m_playerthread.start();
 }
 
