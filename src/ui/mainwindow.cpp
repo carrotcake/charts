@@ -172,3 +172,8 @@ void MainWindow::on_stopBtn_clicked() {
 void MainWindow::on_tempoBox_valueChanged(int tempo) {
     m_chart.setTempo(tempo);
 }
+
+void MainWindow::on_volumeSlider_valueChanged(int value) {
+    auto gain = value / 100.0;
+    m_midi.setGain(gain);
+}

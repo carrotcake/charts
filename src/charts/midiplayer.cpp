@@ -1,12 +1,11 @@
 #include "midiplayer.h"
 #include <fluidsynth/midi.h>
-#include <iostream>
 
 using namespace std::chrono_literals;
 
 void MIDIPlayer::interruptPlayback(FSynthPlayer *player) {
-    m_interrupted = true;
     fluid_player_stop(player);
+    m_interrupted = true;
 }
 
 void MIDIPlayer::previewChord(const Chord &chord, FSynth *synth) {
@@ -26,14 +25,13 @@ void MIDIPlayer::playbackData(FSynthPlayer *player) {
 }
 
 MIDIController::MIDIController(QObject *parent)
-    : QObject(parent) {
+    : QObject{parent} {
     // fluidsynth initialization
     m_fssettings = new_fluid_settings();
     fluid_settings_setint(m_fssettings, "synth.polyphony", 128);
     /* there's like a 1/10 chance that the audio driver initializing
        creates an artifact and makes my speakers pop if I don't do this
-       ok never mind it doesn't even work
-       (linux only?) */
+       ok never mind it doesn't even work (linux only?) */
     fluid_settings_setnum(m_fssettings, "synth.gain", 0);
 
     m_fsynth = new_fluid_synth(m_fssettings);
@@ -80,4 +78,8 @@ void MIDIController::requestPlayback() {
 
 void MIDIController::stopPlayback() {
     fluid_player_stop(m_fsplayer);
+}
+
+void MIDIController::setGain(double gain) {
+    fluid_settings_setnum(m_fssettings, "synth.gain", gain);
 }

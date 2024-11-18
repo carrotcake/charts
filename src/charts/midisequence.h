@@ -15,7 +15,8 @@ public:
     void addChord(const Chord &chord, int measure, int beat, int duration);
     void clearSequence();
     void writeToFile();
-    std::string getRawDataAsString();
+    const char *getRawData();
+    auto dataLength() const { return m_data.length(); }
 signals:
 
 private:
@@ -23,6 +24,7 @@ private:
     int m_tempo;
     Meter::TimeSig m_meter;
     smf::MidiFile m_file;
+    std::string m_data;
 };
 
 #endif // MIDISEQUENCE_H

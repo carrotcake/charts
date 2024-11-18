@@ -164,6 +164,7 @@ void Chart::generateMIDISequence() {
         }
         m_sequence.addChord(temp, measure, beat, duration);
     }
-    auto data = m_sequence.getRawDataAsString();
-    emit sequenceGenerated(data.c_str(), data.length());
+    auto data    = m_sequence.getRawData();
+    auto dataLen = m_sequence.dataLength();
+    emit sequenceGenerated(data, dataLen);
 }

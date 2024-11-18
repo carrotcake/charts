@@ -25,7 +25,7 @@ public slots:
     void playbackData(FSynthPlayer *player);
 
 private:
-    volatile bool m_interrupted;
+    std::atomic_bool m_interrupted;
 };
 
 class MIDIController : public QObject {
@@ -43,6 +43,7 @@ public slots:
     void loadData(const char *data, size_t len);
     void requestPlayback();
     void stopPlayback();
+    void setGain(double gain);
 
 signals:
     void previewRequested(const Chord &chord, FSynth *synth);

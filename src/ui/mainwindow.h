@@ -46,6 +46,8 @@ private slots:
 
     void on_tempoBox_valueChanged(int arg1);
 
+    void on_volumeSlider_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
     StartupWindow start;
