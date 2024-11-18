@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , m_midi(this)
     , m_chord(this)
-    , chart(this) {
+    , m_chart(this) {
     ui->setupUi(this);
 
     ui->qualityButtons->setId(ui->qualMajBtn, Chords::maj);
@@ -45,20 +45,20 @@ MainWindow::MainWindow(QWidget *parent)
         ui->bassAnyNoteCBox->addItem(QString::fromStdString(Notes::str_BOTHNAMES[i]), i);
     }
     ui->bassAnyNoteCBox->setCurrentIndex(-1);
-    ui->chartWidget->setScene(&chart.view());
+    ui->chartWidget->setScene(&m_chart.view());
 
-    connect(&chart, &Chart::chordClicked, this, &MainWindow::changeWorkingChord);
+    connect(&m_chart, &Chart::chordClicked, this, &MainWindow::changeWorkingChord);
     connect(&start, &StartupWindow::windowClosed, this, &MainWindow::on_start_windowClosed);
     connect(this, &MainWindow::chordPreviewed, &m_midi, &MIDIController::requestPreview);
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
     connect(ui->actionExit_Charts, &QAction::triggered, this, &MainWindow::close);
-    connect(&chart, &Chart::sequenceGenerated, &m_midi, &MIDIController::loadData);
+    connect(&m_chart, &Chart::sequenceGenerated, &m_midi, &MIDIController::loadData);
 }
 
 void MainWindow::startUp() {
     start.show();
-    chart.init();
-    this->setDisabled(true);
+    m_chart.init();
+    setDisabled(true);
 }
 
 void MainWindow::on_start_windowClosed(int) {
@@ -69,7 +69,7 @@ void MainWindow::on_start_windowClosed(int) {
     ui->ext5Btn->setChecked(true);
     ui->altAdd13CBtn->setCheckState(Qt::Checked);
     ui->chartWidget->show();
-    this->setDisabled(false);
+    setDisabled(false);
     m_midi.blockSignals(false);
 }
 
@@ -88,7 +88,7 @@ void MainWindow::updateChord() {
     const auto bassVal = m_chord.bass().val;
     const auto namestr = QString::fromStdString(m_chord.name());
 
-    this->blockSignals(true);
+    blockSignals(true);
     ui->alterationButtons->blockSignals(true);
     ui->qualityButtons->blockSignals(true);
     ui->customRootCBox->blockSignals(true);
@@ -115,7 +115,8 @@ void MainWindow::updateChord() {
     m_midi.blockSignals(midiblock);
     m_chord.blockSignals(chordblock);
     ui->alterationButtons->blockSignals(false);
-    this->blockSignals(false);
+    blockSignals(false);
+
     emit chordPreviewed(m_chord);
 }
 
@@ -151,20 +152,23 @@ void MainWindow::on_bassAnyNoteCBox_currentIndexChanged(int index) {
     m_chord.setBass(Notes::NOTES[val]);
 }
 
-
 void MainWindow::on_chordPreviewBtn_pressed(){
     emit chordPreviewed(m_chord);
 }
 
 void MainWindow::on_addChordBtn_clicked() {
-    chart.setChord(m_chord.chord(), chart.selected());
+    m_chart.setChord(m_chord.chord(), m_chart.selected());
 }
 
 void MainWindow::on_playBtn_clicked() {
-    chart.initiatePlayback();
+    m_chart.initiatePlayback();
     m_midi.requestPlayback();
 }
 
 void MainWindow::on_stopBtn_clicked() {
     m_midi.stopPlayback();
+}
+
+void MainWindow::on_tempoBox_valueChanged(int tempo) {
+    m_chart.setTempo(tempo);
 }

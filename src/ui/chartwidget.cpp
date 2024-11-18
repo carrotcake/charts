@@ -7,9 +7,9 @@ ChartWidget::ChartWidget(QWidget *parent)
     : QGraphicsView{parent} {
     setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform
                    | QPainter::TextAntialiasing | QPainter::LosslessImageRendering);
-    setResizeAnchor(QGraphicsView::AnchorViewCenter);
+    setResizeAnchor(AnchorViewCenter);
 }
 
 void ChartWidget::updatePixmap() {
-    this->update();
+    update();
 }

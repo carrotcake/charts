@@ -24,6 +24,7 @@ public:
 public slots:
     void changeSelection(size_t id);
     void initiatePlayback();
+    void setTempo(size_t tempo);
 signals:
     void chartUpdated();
     void chordClicked(const WorkingChord &chord);

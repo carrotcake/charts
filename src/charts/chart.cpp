@@ -45,7 +45,7 @@ Chart::Chart(QObject *parent, size_t numMeasures)
         }
     }
     m_sequence.setMeter(m_timesig);
-    m_sequence.setTempo(120);
+    m_sequence.setTempo(200);
 }
 
 void Chart::addChord(const Chord &chord, size_t measure, size_t beat, int idx) {
@@ -126,7 +126,12 @@ void Chart::changeSelection(size_t id) {
 }
 
 void Chart::initiatePlayback() {
-    std::cout << "request" << std::endl;
+    //std::cout << "request" << std::endl;
+}
+
+void Chart::setTempo(size_t tempo) {
+    std::cout << tempo << std::endl;
+    m_sequence.setTempo(tempo);
 }
 
 void Chart::generateMIDISequence() {

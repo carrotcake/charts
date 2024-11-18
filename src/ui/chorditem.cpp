@@ -69,6 +69,7 @@ QVariant ChordItem::itemChange(GraphicsItemChange change, const QVariant &value)
     }
     return QGraphicsSimpleTextItem::itemChange(change, value);
 }
+
 void ChordItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     QFont f;
     auto rect = QGraphicsSimpleTextItem::boundingRect();
@@ -79,6 +80,7 @@ void ChordItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     painter->drawText(rect.topRight() + QPoint{0, 32}, m_bassstr);
     QGraphicsSimpleTextItem::paint(painter, option, widget);
 }
+
 void ChordItem::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) {
     if (mouseEvent->modifiers() & Qt::ControlModifier) {
         mouseEvent->ignore();

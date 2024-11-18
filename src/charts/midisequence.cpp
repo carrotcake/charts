@@ -3,8 +3,14 @@
 #include <sstream>
 
 MIDISequence::MIDISequence(QObject *parent)
-    : QObject{parent} {
+    : QObject{parent}
+    , m_tempo(200) {
     m_file.makeDeltaTicks();
+    m_file.addTempo(0, 0, m_tempo);
+}
+
+void MIDISequence::setTempo(int tempo) {
+    m_tempo = tempo;
 }
 
 void MIDISequence::addChord(const Chord &chord, int measure, int beat, int duration) {
@@ -21,6 +27,8 @@ void MIDISequence::addChord(const Chord &chord, int measure, int beat, int durat
 }
 void MIDISequence::clearSequence() {
     m_file.clear();
+    m_file.addTempo(0, 0, m_tempo);
+    m_file.sortTracks();
 }
 
 std::string MIDISequence::getRawDataAsString() {

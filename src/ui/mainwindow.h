@@ -44,10 +44,12 @@ private slots:
 
     void on_stopBtn_clicked();
 
+    void on_tempoBox_valueChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     StartupWindow start;
     MIDIController m_midi;
     WorkingChord m_chord;
-    Chart chart;
+    Chart m_chart;
 };

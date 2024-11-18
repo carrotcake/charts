@@ -17,8 +17,8 @@ LabelItem::LabelItem(const QString &str, size_t id, size_t measure)
     setFont(f);
     setText(str);
     setPos(coords);
-    setCursor(Qt::CursorShape::PointingHandCursor);
-    setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
+    setCursor(Qt::PointingHandCursor);
+    setFlags(ItemIsSelectable | ItemIsFocusable);
 }
 
 QRectF LabelItem::boundingRect() const {
@@ -35,6 +35,6 @@ QRectF LabelItem::boundingRect() const {
 
 void LabelItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     painter->setPen(Qt::black);
-    painter->drawRect(this->boundingRect());
+    painter->drawRect(boundingRect());
     QGraphicsSimpleTextItem::paint(painter, option, widget);
 }

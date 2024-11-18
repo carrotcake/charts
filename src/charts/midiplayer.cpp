@@ -30,11 +30,16 @@ MIDIController::MIDIController(QObject *parent)
     // fluidsynth initialization
     m_fssettings = new_fluid_settings();
     fluid_settings_setint(m_fssettings, "synth.polyphony", 128);
-    fluid_settings_setnum(m_fssettings, "synth.gain", .8);
+    /* there's like a 1/10 chance that the audio driver initializing
+       creates an artifact and makes my speakers pop if I don't do this
+       (linux only?) */
+    fluid_settings_setnum(m_fssettings, "synth.gain", 0);
+
     m_fsynth = new_fluid_synth(m_fssettings);
     m_fsplayer = new_fluid_player(m_fsynth);
     m_fsaudiodriver = new_fluid_audio_driver(m_fssettings, m_fsynth);
     fluid_synth_sfload(m_fsynth, "GU-GS.sf2", 1);
+    fluid_settings_setnum(m_fssettings, "synth.gain", 1);
     //midi sequencing happens in its own thread so we can wait w/o blocking ui input
     m_player.moveToThread(&m_playerthread);
     connect(this, &MIDIController::previewRequested, &m_player, &MIDIPlayer::previewChord);
@@ -45,6 +50,7 @@ MIDIController::MIDIController(QObject *parent)
 }
 
 MIDIController::~MIDIController() {
+    fluid_player_stop(m_fsplayer);
     m_playerthread.quit();
     m_playerthread.wait();
     delete_fluid_audio_driver(m_fsaudiodriver);

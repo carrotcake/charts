@@ -10,7 +10,7 @@ class MIDISequence : public QObject {
     Q_OBJECT
 public:
     explicit MIDISequence(QObject *parent = nullptr);
-    void setTempo(int tempo) { m_tempo = tempo; }
+    void setTempo(int tempo);
     void setMeter(const Meter::TimeSig meter) { m_meter = meter; }
     void addChord(const Chord &chord, int measure, int beat, int duration);
     void clearSequence();

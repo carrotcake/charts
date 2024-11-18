@@ -1409,7 +1409,29 @@
                </property>
                <layout class="QGridLayout" name="gridLayout_7">
                 <item row="0" column="0">
-                 <widget class="QSpinBox" name="spinBox"/>
+                 <widget class="QSpinBox" name="tempoBox">
+                  <property name="wrapping">
+                   <bool>true</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
+                  </property>
+                  <property name="buttonSymbols">
+                   <enum>QAbstractSpinBox::ButtonSymbols::PlusMinus</enum>
+                  </property>
+                  <property name="suffix">
+                   <string/>
+                  </property>
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>400</number>
+                  </property>
+                  <property name="value">
+                   <number>100</number>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -1666,7 +1688,7 @@
  <buttongroups>
   <buttongroup name="extensionButtons"/>
   <buttongroup name="qualityButtons"/>
-  <buttongroup name="scaleDegreeButtons"/>
   <buttongroup name="alterationButtons"/>
+  <buttongroup name="scaleDegreeButtons"/>
  </buttongroups>
 </ui>
