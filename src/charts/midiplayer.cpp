@@ -32,6 +32,7 @@ MIDIController::MIDIController(QObject *parent)
     fluid_settings_setint(m_fssettings, "synth.polyphony", 128);
     /* there's like a 1/10 chance that the audio driver initializing
        creates an artifact and makes my speakers pop if I don't do this
+       ok never mind it doesn't even work
        (linux only?) */
     fluid_settings_setnum(m_fssettings, "synth.gain", 0);
 

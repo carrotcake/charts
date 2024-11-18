@@ -126,7 +126,7 @@ void Chart::changeSelection(size_t id) {
 }
 
 void Chart::initiatePlayback() {
-    //std::cout << "request" << std::endl;
+    
 }
 
 void Chart::setTempo(size_t tempo) {
