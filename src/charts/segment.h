@@ -1,7 +1,6 @@
 #pragma once
 
 #include "src/charts/workingchord.h"
-#include <string_view>
 
 /*
  *  Segment type: 

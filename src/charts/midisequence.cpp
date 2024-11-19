@@ -30,14 +30,7 @@ void MIDISequence::clearSequence() {
     m_file.addTempo(0, 0, m_tempo);
     m_file.sortTracks();
 }
-/*
- * 	VERY LARGE std::string COPIED OUT OF THIS FUNCTION
- * 	 - CONTAINS ENTIRE MIDI FILE
- *   - this terrifies the c++ deveolper
- * 	 - YES THIS IS 'EXPENSIVE'
- *   - could just hold the string as a member and return the const char* data
- * 	 - WILL FIX IF IT ENDS UP BEING A PROBLEM
- */
+
 const char *MIDISequence::getRawData() {
     std::stringstream stream;
     if (!m_file.write(stream))
