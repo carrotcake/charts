@@ -19,6 +19,8 @@ public:
     void setLength(size_t len) { m_length = len; }
     auto segType() const { return m_type; }
     auto id() const { return m_id; }
+    auto tick() const { return m_tick; }
+    void setTick(int tick) { m_tick = tick; }
 
 protected:
     Segment(segtype type, size_t len, size_t segID, QObject *parent = nullptr)
@@ -29,6 +31,7 @@ protected:
     const segtype m_type;
     size_t m_length;
     const size_t m_id;
+    size_t m_tick;
 };
 
 class ChordSeg : public Segment {
@@ -66,6 +69,7 @@ public:
     void setLabel(const QString &str) { m_label = str; };
     auto hasLabel() const { return !m_label.isEmpty(); }
     auto label() const { return m_label; }
+
 public slots:
     void selected();
 

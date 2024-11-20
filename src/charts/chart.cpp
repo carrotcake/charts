@@ -130,7 +130,6 @@ void Chart::initiatePlayback() {
 }
 
 void Chart::setTempo(size_t tempo) {
-    std::cout << tempo << std::endl;
     m_sequence.setTempo(tempo);
 }
 
@@ -162,7 +161,8 @@ void Chart::generateMIDISequence() {
         default:
             continue;
         }
-        m_sequence.addChord(temp, measure, beat, duration);
+        auto tick = m_sequence.addChord(temp, measure, beat, duration);
+        seg->setTick(tick);
     }
     auto data    = m_sequence.getRawData();
     auto dataLen = m_sequence.dataLength();
