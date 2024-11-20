@@ -3,7 +3,7 @@
 #include "src/charts/workingchord.h"
 
 /*
- *  Segment type: 
+ *  Segment: 
  *      - barline
  *      - chord / no chord
  *      - ditto
@@ -17,9 +17,9 @@ public:
     enum segtype { CHORD, DITTO, NOCHORD };
     Segment(segtype type, size_t len, size_t segID, QObject *parent = nullptr)
         : QObject{parent}
+        , m_id(segID)
         , m_type(type)
-        , m_length(len)
-        , m_id(segID) {}
+        , m_length(len) {}
     size_t length() const { return m_length; }
     void setLength(size_t len) { m_length = len; }
     auto segType() const { return m_type; }
@@ -34,6 +34,7 @@ public:
     void setChord(const Chord &chord) {
         m_isDitto = false;
         m_noChord = false;
+        m_type = CHORD;
         m_chord.set(chord);
     }
     auto measure() const { return m_measure; }
@@ -52,14 +53,14 @@ signals:
     void segmentSelected(size_t id);
 
 private:
+    const size_t m_id;
     segtype m_type;
+    size_t m_measure;
+    size_t m_beat;
     size_t m_length;
     size_t m_tick;
-    const size_t m_id;
-    WorkingChord m_chord;
     bool m_noChord;
     bool m_isDitto;
     QString m_label;
-    size_t m_measure;
-    size_t m_beat;
+    WorkingChord m_chord;
 };

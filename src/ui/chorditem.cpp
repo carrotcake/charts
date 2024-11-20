@@ -48,6 +48,13 @@ ChordItem::ChordItem(const QString &str, size_t id, size_t measure, size_t beat,
     init();
 }
 
+void ChordItem::changeChord(const WorkingChord &chord) {
+    m_rootstr = QString::fromStdString(chord.rootStr());
+    m_extstr = QString::fromStdString(chord.extStr());
+    m_bassstr = QString::fromStdString(chord.bassStr());
+    setText(m_rootstr);
+}
+
 void ChordItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event) {
     setBrush(Qt::darkGray);
     QGraphicsSimpleTextItem::hoverEnterEvent(event);
@@ -82,10 +89,10 @@ void ChordItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 }
 
 void ChordItem::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) {
+    emit itemSelected();
     if (mouseEvent->modifiers() & Qt::ControlModifier) {
         mouseEvent->ignore();
     } else {
-        emit itemSelected();
         QGraphicsItem::mousePressEvent(mouseEvent);
     }
 }

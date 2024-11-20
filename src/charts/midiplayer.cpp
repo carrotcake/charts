@@ -1,5 +1,6 @@
 #include "midiplayer.h"
 #include <fluidsynth/midi.h>
+#include <iostream>
 
 using namespace std::chrono_literals;
 
@@ -77,11 +78,11 @@ void MIDIController::requestPreview(const WorkingChord &tempchord) {
     emit previewRequested(tempchord.chord(), m_fsynth); //runs in playerthread
 }
 void MIDIController::loadData(const char *data, size_t len) {
-    if (fluid_player_get_total_ticks(m_fsplayer) > 0) {
         delete_fluid_player(m_fsplayer);
         m_fsplayer = new_fluid_player(m_fsynth);
-    }
-    fluid_player_add_mem(m_fsplayer, data, len);
+        fluid_player_set_tick_callback(m_fsplayer, &handlePlayerTick, this);
+        std::cout << "loaded" << std::endl;
+        fluid_player_add_mem(m_fsplayer, data, len);
 }
 
 void MIDIController::requestPlayback() {

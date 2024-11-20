@@ -19,7 +19,7 @@ public:
     void setChord(const Chord &chord, int idx);
     void addBarline(size_t measure, int idx = -1);
     void addDitto(size_t measure, size_t beat, int idx = -1);
-    void addLabel(const QString &str, size_t measure, int idx = -1);
+    void addLabel(const QString &str, int idx);
     auto selected() const { return m_selected; }
 public slots:
     void changeSelection(size_t id);
@@ -29,10 +29,10 @@ public slots:
 signals:
     void chartUpdated();
     void chordClicked(const WorkingChord &chord);
-    void chordSegAdded(int idx, const Segment &seg);
+    void chordSegAdded(const Segment &seg);
     void barlineSegAdded(int idx, const Segment &seg);
     void dittoSegAdded(int idx, const Segment &seg);
-    void labelSegAdded(int idx, const Segment &seg);
+    void labelAdded(int idx, const Segment &seg);
     void repeatSegAdded(int idx, const Segment &seg);
     void sequenceGenerated(const char *data, size_t len);
     void seekToTick(int tick);

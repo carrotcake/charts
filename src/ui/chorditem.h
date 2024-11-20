@@ -20,6 +20,7 @@ public:
     ChordItem(const QString &str, size_t id, size_t measure, size_t beat, QObject *parent = nullptr);
 
     size_t id() const { return m_id; }
+    void changeChord(const WorkingChord &chord);
 
 protected:
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;

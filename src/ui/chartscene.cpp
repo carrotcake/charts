@@ -13,11 +13,19 @@ ChartScene::ChartScene(QObject *parent)
     this->addRect(0, 0, W, H, QPen(Qt::black), QBrush(Qt::white));
 }
 
-void ChartScene::addChordItem(int id, const Segment &seg) {
-    auto ptr = new ChordItem(seg.chord(), id, seg.measure(), seg.beat(), this);
-    connect(ptr, &ChordItem::itemSelected, &seg, &Segment::selected);
-    connect(&seg, &Segment::destroyed, ptr, &ChordItem::deleteLater);
-    addItem(ptr);
+void ChartScene::addChordItem(const Segment &seg) {
+    auto id = seg.id();
+    auto ptr = getItemByID(id);
+    if (ptr) {
+        auto item = dynamic_cast<ChordItem *>(ptr);
+        item->changeChord(seg.chord());
+    } else {
+        auto item = new ChordItem(seg.chord(), id, seg.measure(), seg.beat(), this);
+        connect(item, &ChordItem::itemSelected, &seg, &Segment::selected);
+        connect(&seg, &Segment::destroyed, item, &ChordItem::deleteLater);
+        addItem(item);
+        ptr = item;
+    }
     clearSelection();
     ptr->setSelected(true);
 }
