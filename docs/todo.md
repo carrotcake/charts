@@ -12,7 +12,6 @@
    - drum track?
 
 - seek buttons
-   - rewind to beginning
    - seek 1 segment fwd / back
 
 - set no chord / ditto
