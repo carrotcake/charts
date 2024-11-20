@@ -12,7 +12,7 @@ public:
     explicit MIDISequence(QObject *parent = nullptr);
     void setTempo(int tempo);
     void setMeter(const Meter::TimeSig meter) { m_meter = meter; }
-    void addChord(const Chord &chord, int measure, int beat, int duration);
+    int addChord(const Chord &chord, int measure, int beat, int duration);
     void clearSequence();
     void writeToFile();
     const char *getRawData();

@@ -18,6 +18,7 @@ void ChartScene::addChordItem(int id, const ChordSeg &seg) {
     connect(ptr, &ChordItem::itemSelected, &seg, &ChordSeg::selected);
     connect(&seg, &ChordSeg::destroyed, ptr, &ChordItem::deleteLater);
     addItem(ptr);
+    clearSelection();
 }
 
 void ChartScene::addBarlineItem(int id, const BarlineSeg &seg) {

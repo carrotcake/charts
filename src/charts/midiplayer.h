@@ -23,6 +23,7 @@ public:
 public slots:
     void previewChord(const Chord &chord, FSynth *synth);
     void playbackData(FSynthPlayer *player);
+    bool seek(FSynthPlayer *player, int tick);
 
 private:
     std::atomic_bool m_interrupted;
@@ -44,10 +45,11 @@ public slots:
     void requestPlayback();
     void stopPlayback();
     void setGain(double gain);
-
+    void requestRewind();
 signals:
     void previewRequested(const Chord &chord, FSynth *synth);
     void playbackRequested(FSynthPlayer *player);
+    void seekRequested(FSynthPlayer *player, int tick);
 
 private:
     QThread m_playerthread;

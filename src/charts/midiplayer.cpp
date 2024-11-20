@@ -24,6 +24,10 @@ void MIDIPlayer::playbackData(FSynthPlayer *player) {
     fluid_player_join(player);
 }
 
+bool MIDIPlayer::seek(FSynthPlayer *player, int tick) {
+    return fluid_player_seek(player, tick) == FLUID_OK;
+}
+
 MIDIController::MIDIController(QObject *parent)
     : QObject{parent} {
     // fluidsynth initialization
@@ -52,7 +56,7 @@ MIDIController::MIDIController(QObject *parent)
     m_player.moveToThread(&m_playerthread);
     connect(this, &MIDIController::previewRequested, &m_player, &MIDIPlayer::previewChord);
     connect(this, &MIDIController::playbackRequested, &m_player, &MIDIPlayer::playbackData);
-
+    connect(this, &MIDIController::seekRequested, &m_player, &MIDIPlayer::seek);
     m_playerthread.start();
 }
 
@@ -90,4 +94,8 @@ void MIDIController::stopPlayback() {
 
 void MIDIController::setGain(double gain) {
     fluid_settings_setnum(m_fssettings, "synth.gain", gain);
+}
+
+void MIDIController::requestRewind() {
+    emit seekRequested(m_fsplayer, 0);
 }

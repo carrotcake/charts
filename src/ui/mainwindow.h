@@ -48,6 +48,8 @@ private slots:
 
     void on_volumeSlider_valueChanged(int value);
 
+    void on_rewindBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     StartupWindow start;

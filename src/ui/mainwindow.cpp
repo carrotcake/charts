@@ -177,3 +177,7 @@ void MainWindow::on_volumeSlider_valueChanged(int value) {
     auto gain = value / 100.0;
     m_midi.setGain(gain);
 }
+
+void MainWindow::on_rewindBtn_clicked() {
+    m_midi.requestRewind();
+}

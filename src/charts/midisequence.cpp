@@ -13,7 +13,7 @@ void MIDISequence::setTempo(int tempo) {
     m_tempo = tempo;
 }
 
-void MIDISequence::addChord(const Chord &chord, int measure, int beat, int duration) {
+int MIDISequence::addChord(const Chord &chord, int measure, int beat, int duration) {
     auto tpq = m_file.getTPQ();
     auto pnotes = chord.notes();
     auto startTick = tpq * beat + tpq * measure * 4;
@@ -24,6 +24,7 @@ void MIDISequence::addChord(const Chord &chord, int measure, int beat, int durat
         m_file.addNoteOff(0, endTick, CHORDCHANNEL, key);
     }
     m_file.sortTracks();
+    return startTick;
 }
 void MIDISequence::clearSequence() {
     m_file.clear();
