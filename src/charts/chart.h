@@ -29,17 +29,17 @@ public slots:
 signals:
     void chartUpdated();
     void chordClicked(const WorkingChord &chord);
-    void chordSegAdded(int idx, const ChordSeg &seg);
-    void barlineSegAdded(int idx, const BarlineSeg &seg);
-    void dittoSegAdded(int idx, const DittoSeg &seg);
-    void labelSegAdded(int idx, const LabelSeg &seg);
-    void repeatSegAdded(int idx, const RepeatSeg &seg);
+    void chordSegAdded(int idx, const Segment &seg);
+    void barlineSegAdded(int idx, const Segment &seg);
+    void dittoSegAdded(int idx, const Segment &seg);
+    void labelSegAdded(int idx, const Segment &seg);
+    void repeatSegAdded(int idx, const Segment &seg);
     void sequenceGenerated(const char *data, size_t len);
     void seekToTick(int tick);
 
 private:
     void generateMIDISequence();
-    int getSegmentByTick(int tick);
+    int getSegmentByTick(size_t tick);
     QVector<Segment *> m_segments;
     ChartScene m_view;
     MIDISequence m_sequence;

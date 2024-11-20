@@ -13,33 +13,33 @@ ChartScene::ChartScene(QObject *parent)
     this->addRect(0, 0, W, H, QPen(Qt::black), QBrush(Qt::white));
 }
 
-void ChartScene::addChordItem(int id, const ChordSeg &seg) {
+void ChartScene::addChordItem(int id, const Segment &seg) {
     auto ptr = new ChordItem(seg.chord(), id, seg.measure(), seg.beat(), this);
-    connect(ptr, &ChordItem::itemSelected, &seg, &ChordSeg::selected);
-    connect(&seg, &ChordSeg::destroyed, ptr, &ChordItem::deleteLater);
+    connect(ptr, &ChordItem::itemSelected, &seg, &Segment::selected);
+    connect(&seg, &Segment::destroyed, ptr, &ChordItem::deleteLater);
     addItem(ptr);
     clearSelection();
     ptr->setSelected(true);
 }
 
-void ChartScene::addBarlineItem(int id, const BarlineSeg &seg) {
+void ChartScene::addBarlineItem(int id, const Segment &seg) {
     auto ptr = new BarlineItem(id, seg.measure());
     addItem(ptr);
 }
 
-void ChartScene::addDittoItem(int id, const DittoSeg &seg) {
+void ChartScene::addDittoItem(int id, const Segment &seg) {
     const auto firstBeat = seg.beat() == 0;
     const auto str = QString(firstBeat ? "%" : "   ");
     auto ptr = new ChordItem(str, id, seg.measure(), seg.beat(), this);
-    connect(ptr, &ChordItem::itemSelected, &seg, &DittoSeg::selected);
-    connect(&seg, &DittoSeg::destroyed, ptr, &ChordItem::deleteLater);
+    connect(ptr, &ChordItem::itemSelected, &seg, &Segment::selected);
+    connect(&seg, &Segment::destroyed, ptr, &ChordItem::deleteLater);
     addItem(ptr);
     clearSelection();
     ptr->setSelected(true);
 }
 
-void ChartScene::addLabelItem(int id, const LabelSeg &seg) {
-    auto ptr = new LabelItem(seg.name(), id, seg.measure());
+void ChartScene::addLabelItem(int id, const Segment &seg) {
+    auto ptr = new LabelItem(seg.label(), id, seg.measure());
     addItem(ptr);
 }
 

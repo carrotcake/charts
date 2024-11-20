@@ -52,11 +52,8 @@ void Chart::addChord(const Chord &chord, size_t measure, size_t beat, int idx) {
     const auto beatlength = m_timesig.subdiv() * 2;
     if (idx == -1)
         idx = masterIdx++;
-    else
-        m_segments[idx]->deleteLater();
-    auto ptr = new ChordSeg(chord, beatlength, idx, measure, beat, this);
-    connect(ptr, &ChordSeg::segmentSelected, this, &Chart::changeSelection);
-    m_segments[idx] = ptr;
+    auto ptr = m_segments[idx];
+    connect(ptr, &Segment::segmentSelected, this, &Chart::changeSelection);
     emit chordSegAdded(idx, *ptr);
     init();
 }
@@ -65,31 +62,19 @@ void Chart::setChord(const Chord &chord, int idx) {
     if (idx < 0 || idx > m_segments.size())
         return;
     auto seg = m_segments[idx];
-    switch (seg->segType()) {
-    case Segment::CHORD:
-        {
-            auto cseg = dynamic_cast<ChordSeg *>(seg);
-            addChord(chord, cseg->measure(), cseg->beat(), idx);
-            break;
-        }
-    case Segment::DITTO:
-        {
-            auto dseg = dynamic_cast<DittoSeg *>(seg);
-            addChord(chord, dseg->measure(), dseg->beat(), idx);
-            break;
-        }
-    default:
-        break;
-    }
+    if (!seg)
+        return;
+    addChord(chord, seg->measure(), seg->beat(), idx);
 }
 
 void Chart::addDitto(size_t measure, size_t beat, int idx) {
     const auto beatlength = m_timesig.subdiv() * 2;
     if (idx == -1)
         idx = masterIdx++;
-    auto ptr = new DittoSeg(beatlength, idx, measure, beat, this);
-    connect(ptr, &DittoSeg::segmentSelected, this, &Chart::changeSelection);
-    m_segments[idx] = ptr;
+    auto ptr = m_segments[idx];
+    if (!ptr)
+        return;
+    connect(ptr, &Segment::segmentSelected, this, &Chart::changeSelection);
     emit dittoSegAdded(idx, *ptr);
     init();
 }
@@ -97,8 +82,9 @@ void Chart::addDitto(size_t measure, size_t beat, int idx) {
 void Chart::addBarline(size_t measure, int idx) {
     if (idx == -1)
         idx = masterIdx++;
-    auto ptr = new BarlineSeg(idx, measure, this);
-    m_segments[idx] = ptr;
+    auto ptr = m_segments[idx];
+    if (!ptr)
+        return;
     emit barlineSegAdded(idx, *ptr);
     init();
 }
@@ -106,8 +92,10 @@ void Chart::addBarline(size_t measure, int idx) {
 void Chart::addLabel(const QString &str, size_t measure, int idx) {
     if (idx == -1)
         idx = masterIdx++;
-    auto ptr = new LabelSeg(str, idx, measure, this);
-    m_segments[idx] = ptr;
+    auto ptr = m_segments[idx];
+    if (!ptr)
+        return;
+    ptr->setLabel(str);
     emit labelSegAdded(idx, *ptr);
     init();
 }
@@ -119,7 +107,7 @@ void Chart::init() {
 
 void Chart::changeSelection(size_t id) {
     m_selected = id;
-    auto seg = dynamic_cast<ChordSeg *>(m_segments[id]);
+    auto seg   = m_segments[id];
     if (!seg)
         return;
     auto approxTick = (seg->measure() * m_timesig.lower + seg->beat())
@@ -150,27 +138,11 @@ void Chart::generateMIDISequence() {
         size_t measure, beat, duration;
         if (!seg)
             continue;
-        switch (seg->segType()) {
-        case Segment::CHORD:
-            {
-                auto cseg = dynamic_cast<ChordSeg *>(seg);
-                temp = cseg->chord().chord();
-                measure = cseg->measure();
-                duration = cseg->length();
-                beat = cseg->beat();
-                break;
-            }
-        case Segment::DITTO:
-            {
-                auto dseg = dynamic_cast<DittoSeg *>(seg);
-                measure = dseg->measure();
-                duration = dseg->length();
-                beat = dseg->beat();
-                break;
-            }
-        default:
-            continue;
-        }
+        if (seg->segType() == Segment::CHORD)
+            temp = seg->chord().chord();
+        measure   = seg->measure();
+        duration  = seg->length();
+        beat      = seg->beat();
         auto tick = m_sequence.addChord(temp, measure, beat, duration);
         seg->setTick(tick);
     }
@@ -179,34 +151,15 @@ void Chart::generateMIDISequence() {
     emit sequenceGenerated(data, dataLen);
 }
 
-int Chart::getSegmentByTick(int tick) {
+int Chart::getSegmentByTick(size_t tick) {
     auto idx    = tick / m_sequence.ticksPerQuarterNote();
     auto lastID = -1;
     for (auto seg : std::as_const(m_segments)) {
-        auto measure = -1, beat = -1;
         if (!seg)
             continue;
-        switch (seg->segType()) {
-            case Segment::CHORD:
-                {
-                    auto cseg = dynamic_cast<ChordSeg *>(seg);
-                    measure   = cseg->measure();
-                    beat      = cseg->beat();
-                    break;
-                }
-            case Segment::DITTO:
-                {
-                    auto dseg = dynamic_cast<DittoSeg *>(seg);
-                    measure   = dseg->measure();
-                    beat      = dseg->beat();
-                    break;
-                }
-            default:
-                break;
-        }
-        if (measure == -1)
-            continue;
-        auto segIdx = measure * m_timesig.lower + beat;
+        auto measure = seg->measure();
+        auto beat    = seg->beat();
+        auto segIdx  = measure * m_timesig.lower + beat;
         if (segIdx > idx) {
             return lastID;
         }
