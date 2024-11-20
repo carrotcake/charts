@@ -122,6 +122,9 @@ void Chart::changeSelection(size_t id) {
     auto seg = dynamic_cast<ChordSeg *>(m_segments[id]);
     if (!seg)
         return;
+    auto approxTick = (seg->measure() * m_timesig.lower + seg->beat())
+                      * m_sequence.ticksPerQuarterNote();
+    emit seekToTick(approxTick);
     emit chordClicked(seg->chord());
 }
 
@@ -131,6 +134,13 @@ void Chart::initiatePlayback() {
 
 void Chart::setTempo(size_t tempo) {
     m_sequence.setTempo(tempo);
+}
+
+void Chart::processMIDITick(int tick) {
+    auto segID = getSegmentByTick(tick);
+    if (segID < 0)
+        return;
+    m_view.selectItem(segID);
 }
 
 void Chart::generateMIDISequence() {
@@ -167,4 +177,40 @@ void Chart::generateMIDISequence() {
     auto data    = m_sequence.getRawData();
     auto dataLen = m_sequence.dataLength();
     emit sequenceGenerated(data, dataLen);
+}
+
+int Chart::getSegmentByTick(int tick) {
+    auto idx    = tick / m_sequence.ticksPerQuarterNote();
+    auto lastID = -1;
+    for (auto seg : std::as_const(m_segments)) {
+        auto measure = -1, beat = -1;
+        if (!seg)
+            continue;
+        switch (seg->segType()) {
+            case Segment::CHORD:
+                {
+                    auto cseg = dynamic_cast<ChordSeg *>(seg);
+                    measure   = cseg->measure();
+                    beat      = cseg->beat();
+                    break;
+                }
+            case Segment::DITTO:
+                {
+                    auto dseg = dynamic_cast<DittoSeg *>(seg);
+                    measure   = dseg->measure();
+                    beat      = dseg->beat();
+                    break;
+                }
+            default:
+                break;
+        }
+        if (measure == -1)
+            continue;
+        auto segIdx = measure * m_timesig.lower + beat;
+        if (segIdx > idx) {
+            return lastID;
+        }
+        lastID = seg->id();
+    }
+    return lastID;
 }

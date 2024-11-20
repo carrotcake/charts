@@ -17,6 +17,7 @@ public:
     void writeToFile();
     const char *getRawData();
     auto dataLength() const { return m_data.length(); }
+    auto ticksPerQuarterNote() const { return m_file.getTicksPerQuarterNote(); }
 signals:
 
 private:

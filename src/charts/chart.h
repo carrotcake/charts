@@ -25,6 +25,7 @@ public slots:
     void changeSelection(size_t id);
     void initiatePlayback();
     void setTempo(size_t tempo);
+    void processMIDITick(int tick);
 signals:
     void chartUpdated();
     void chordClicked(const WorkingChord &chord);
@@ -34,9 +35,11 @@ signals:
     void labelSegAdded(int idx, const LabelSeg &seg);
     void repeatSegAdded(int idx, const RepeatSeg &seg);
     void sequenceGenerated(const char *data, size_t len);
+    void seekToTick(int tick);
 
 private:
     void generateMIDISequence();
+    int getSegmentByTick(int tick);
     QVector<Segment *> m_segments;
     ChartScene m_view;
     MIDISequence m_sequence;

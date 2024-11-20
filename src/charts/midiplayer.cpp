@@ -24,8 +24,8 @@ void MIDIPlayer::playbackData(FSynthPlayer *player) {
     fluid_player_join(player);
 }
 
-bool MIDIPlayer::seek(FSynthPlayer *player, int tick) {
-    return fluid_player_seek(player, tick) == FLUID_OK;
+int MIDIPlayer::seek(FSynthPlayer *player, int tick) {
+    return fluid_player_seek(player, tick);
 }
 
 MIDIController::MIDIController(QObject *parent)
@@ -51,7 +51,7 @@ MIDIController::MIDIController(QObject *parent)
     m_fsaudiodriver = new_fluid_audio_driver(m_fssettings, m_fsynth);
     fluid_synth_sfload(m_fsynth, "GU-GS.sf2", 1);
     fluid_settings_setnum(m_fssettings, "synth.gain", 1);
-
+    fluid_player_set_tick_callback(m_fsplayer, &handlePlayerTick, this);
     //midi sequencing happens in its own thread so we can wait w/o blocking ui input
     m_player.moveToThread(&m_playerthread);
     connect(this, &MIDIController::previewRequested, &m_player, &MIDIPlayer::previewChord);
@@ -71,6 +71,8 @@ MIDIController::~MIDIController() {
 }
 
 void MIDIController::requestPreview(const WorkingChord &tempchord) {
+    if (fluid_player_get_status(m_fsplayer) == FLUID_PLAYER_PLAYING)
+        return;
     m_player.interruptPlayback(m_fsplayer);             //runs in main thread
     emit previewRequested(tempchord.chord(), m_fsynth); //runs in playerthread
 }
@@ -98,4 +100,16 @@ void MIDIController::setGain(double gain) {
 
 void MIDIController::requestRewind() {
     emit seekRequested(m_fsplayer, 0);
+}
+
+void MIDIController::requestSeek(int tick) {
+    if (tick < 0)
+        return;
+    emit seekRequested(m_fsplayer, tick);
+}
+
+int MIDIController::handlePlayerTick(void *data, int tick) {
+    auto controller = static_cast<MIDIController *>(data);
+    emit controller->ticked(tick);
+    return FLUID_OK;
 }

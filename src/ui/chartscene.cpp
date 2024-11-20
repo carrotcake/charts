@@ -19,6 +19,7 @@ void ChartScene::addChordItem(int id, const ChordSeg &seg) {
     connect(&seg, &ChordSeg::destroyed, ptr, &ChordItem::deleteLater);
     addItem(ptr);
     clearSelection();
+    ptr->setSelected(true);
 }
 
 void ChartScene::addBarlineItem(int id, const BarlineSeg &seg) {
@@ -33,9 +34,28 @@ void ChartScene::addDittoItem(int id, const DittoSeg &seg) {
     connect(ptr, &ChordItem::itemSelected, &seg, &DittoSeg::selected);
     connect(&seg, &DittoSeg::destroyed, ptr, &ChordItem::deleteLater);
     addItem(ptr);
+    clearSelection();
+    ptr->setSelected(true);
 }
 
 void ChartScene::addLabelItem(int id, const LabelSeg &seg) {
     auto ptr = new LabelItem(seg.name(), id, seg.measure());
     addItem(ptr);
+}
+
+void ChartScene::selectItem(int id) {
+    auto ptr = getItemByID(id);
+    if (!ptr)
+        return;
+    clearSelection();
+    ptr->setSelected(true);
+}
+
+QGraphicsItem *ChartScene::getItemByID(int id) {
+    auto items = children();
+    for (auto e : std::as_const(items)) {
+        if (e->property("id") == id)
+            return dynamic_cast<QGraphicsItem *>(e);
+    }
+    return nullptr;
 }

@@ -53,6 +53,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_chord, &WorkingChord::rebuilt, this, &MainWindow::updateChord);
     connect(ui->actionExit_Charts, &QAction::triggered, this, &MainWindow::close);
     connect(&m_chart, &Chart::sequenceGenerated, &m_midi, &MIDIController::loadData);
+    connect(&m_midi, &MIDIController::ticked, &m_chart, &Chart::processMIDITick);
+    connect(&m_chart, &Chart::seekToTick, &m_midi, &MIDIController::requestSeek);
 }
 
 void MainWindow::startUp() {

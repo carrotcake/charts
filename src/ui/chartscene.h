@@ -19,9 +19,11 @@ public slots:
     void addBarlineItem(int id, const BarlineSeg &seg);
     void addDittoItem(int id, const DittoSeg &seg);
     void addLabelItem(int id, const LabelSeg &seg);
+    void selectItem(int id);
 signals:
     void viewUpdated();
 
 private:
+    QGraphicsItem *getItemByID(int id);
 };
 
