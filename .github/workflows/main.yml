@@ -1,0 +1,80 @@
+name: Qt Application Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Job for Windows with MSVC
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up MSVC build tools
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Install Qt
+        run: |
+          choco install qt
+      - name: Install FluidSynth 2
+        run: |
+          choco install fluidsynth
+
+      - name: Configure Qt project with qmake
+        run: |
+          qmake Charts.pro
+
+      - name: Build Qt project with MSVC
+        run: |
+          msbuild your_project.pro /p:Configuration=Release
+
+  # Job for macOS with Clang++
+  macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Qt (Homebrew)
+        run: |
+          brew install qt
+      - name: Install FluidSynth 2 (Homebrew)
+        run: |
+          brew install fluid-synth
+
+      - name: Configure Qt project with qmake
+        run: |
+          qmake Charts.pro
+
+      - name: Build Qt project with Clang++
+        run: |
+          make
+
+  # Job for Linux with Clang++
+  linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Qt and build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools fluidsynth clang make 
+
+      - name: Configure Qt project with qmake
+        run: |
+          qmake Charts.pro
+
+      - name: Build Qt project with Clang++
+        run: |
+          make
