@@ -22,7 +22,6 @@ public:
     auto selected() const { return m_selected; }
 public slots:
     void changeSelection(size_t id);
-    void initiatePlayback();
     void setTempo(size_t tempo);
     void processMIDITick(int tick);
 signals:

@@ -111,10 +111,6 @@ void Chart::changeSelection(size_t id) {
         emit chordClicked(seg->chord());
 }
 
-void Chart::initiatePlayback() {
-    
-}
-
 void Chart::setTempo(size_t tempo) {
     m_sequence.setTempo(tempo);
 }

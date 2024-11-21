@@ -8,9 +8,9 @@
 
 ChartScene::ChartScene(QObject *parent)
     : QGraphicsScene{parent} {
-    this->setBackgroundBrush(Qt::darkGray);
-    this->setSceneRect(0, 0, W, H);
-    this->addRect(0, 0, W, H, QPen(Qt::black), QBrush(Qt::white));
+    setBackgroundBrush(Qt::darkGray);
+    setSceneRect(0, 0, W, H);
+    addRect(0, 0, W, H, QPen(Qt::black), QBrush(Qt::white));
 }
 
 void ChartScene::addChordItem(const Segment &seg) {

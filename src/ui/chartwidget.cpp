@@ -9,7 +9,3 @@ ChartWidget::ChartWidget(QWidget *parent)
                    | QPainter::TextAntialiasing | QPainter::LosslessImageRendering);
     setResizeAnchor(AnchorViewCenter);
 }
-
-void ChartWidget::updatePixmap() {
-    update();
-}
