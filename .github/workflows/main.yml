@@ -17,12 +17,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up MSVC build tools
-        uses: microsoft/setup-msbuild@v1
+      - uses: TheMrMilchmann/setup-msvc-dev@v3
+        with:
+          arch: x64
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4 
-      
+        with:
+          version: 6.7.3
       - name: Install FluidSynth 2
         run: |
           choco install fluidsynth
@@ -42,12 +44,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          version: 6.7.3
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4 
-
+        with:
+          version: 6.7.3
       - name: Install FluidSynth 2 (Homebrew)
         run: |
           brew install fluid-synth
@@ -70,7 +71,8 @@ jobs:
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4 
-
+        with:
+          version: 6.7.3
       - name: Install build dependencies
         run: |
           sudo apt-get update
