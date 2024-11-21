@@ -21,8 +21,8 @@ jobs:
         uses: microsoft/setup-msbuild@v1
 
       - name: Install Qt
-        run: |
-          choco install qt6-base-dev
+        uses: jurplel/install-qt-action@v4 
+      
       - name: Install FluidSynth 2
         run: |
           choco install fluidsynth
@@ -43,9 +43,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Qt (Homebrew)
-        run: |
-          brew install qt6
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4 
+
       - name: Install FluidSynth 2 (Homebrew)
         run: |
           brew install fluid-synth
@@ -66,10 +66,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Qt and build dependencies
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4 
+
+      - name: Install build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt6-base-dev qmake6 qt6-base-dev-tools libfluidsynth-dev clang make 
+          sudo apt-get install -y libfluidsynth-dev 
 
       - name: Configure Qt project with qmake
         run: |
