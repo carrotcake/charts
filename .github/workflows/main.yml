@@ -29,7 +29,7 @@ jobs:
 
       - name: Configure Qt project with qmake
         run: |
-          qmake Charts.pro
+          qmake.exe Charts.pro
 
       - name: Build Qt project with MSVC
         run: |
@@ -69,7 +69,7 @@ jobs:
       - name: Install Qt and build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt6-base-dev qmake6 qt6-base-dev-tools fluidsynth-dev clang make 
+          sudo apt-get install -y qt6-base-dev qmake6 qt6-base-dev-tools libfluidsynth-dev clang make 
 
       - name: Configure Qt project with qmake
         run: |
