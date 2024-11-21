@@ -162,9 +162,7 @@ void MainWindow::on_addChordBtn_clicked() {
     m_chart.setChord(m_chord.chord(), m_chart.selected());
 }
 
-void MainWindow::on_playBtn_clicked() {
-    m_chart.initiatePlayback();
-    m_midi.requestPlayback();
+void MainWindow::on_playBtn_clicked() {    m_midi.requestPlayback();
 }
 
 void MainWindow::on_stopBtn_clicked() {

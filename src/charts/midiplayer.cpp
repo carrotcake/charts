@@ -1,4 +1,5 @@
 #include "midiplayer.h"
+#include "src/music/chord.h"
 #include <fluidsynth/midi.h>
 #include <iostream>
 
