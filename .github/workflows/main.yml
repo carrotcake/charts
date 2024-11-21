@@ -45,7 +45,7 @@ jobs:
 
       - name: Install Qt (Homebrew)
         run: |
-          brew install qt
+          brew install qt6
       - name: Install FluidSynth 2 (Homebrew)
         run: |
           brew install fluid-synth
@@ -69,7 +69,7 @@ jobs:
       - name: Install Qt and build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qtbase6-dev qtchooser qt6-qmake qtbase6-dev-tools fluidsynth-dev clang make 
+          sudo apt-get install -y qt6-base-dev qmake6 qt6-base-dev-tools fluidsynth-dev clang make 
 
       - name: Configure Qt project with qmake
         run: |
