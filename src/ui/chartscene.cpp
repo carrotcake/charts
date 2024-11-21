@@ -14,7 +14,7 @@ ChartScene::ChartScene(QObject *parent)
 }
 
 void ChartScene::addChordItem(const Segment &seg) {
-    auto id = seg.id();
+    const auto id = seg.id();
     auto ptr = getItemByID(id);
     if (ptr) {
         auto item = dynamic_cast<ChordItem *>(ptr);
@@ -30,20 +30,28 @@ void ChartScene::addChordItem(const Segment &seg) {
     ptr->setSelected(true);
 }
 
-void ChartScene::addBarlineItem(int id, const Segment &seg) {
-    auto ptr = new BarlineItem(id, seg.measure());
-    addItem(ptr);
-}
-
-void ChartScene::addDittoItem(int id, const Segment &seg) {
+void ChartScene::addDittoItem(const Segment &seg) {
+    const auto id = seg.id();
     const auto firstBeat = seg.beat() == 0;
     const auto str = QString(firstBeat ? "%" : "   ");
-    auto ptr = new ChordItem(str, id, seg.measure(), seg.beat(), this);
-    connect(ptr, &ChordItem::itemSelected, &seg, &Segment::selected);
-    connect(&seg, &Segment::destroyed, ptr, &ChordItem::deleteLater);
-    addItem(ptr);
+    auto ptr = getItemByID(id);
+    if (ptr) {
+        auto item = dynamic_cast<ChordItem *>(ptr);
+        item->setDitto();
+    } else {
+        auto item = new ChordItem(str, id, seg.measure(), seg.beat(), this);
+        connect(item, &ChordItem::itemSelected, &seg, &Segment::selected);
+        connect(&seg, &Segment::destroyed, item, &ChordItem::deleteLater);
+        addItem(item);
+        ptr = item;
+    }
     clearSelection();
     ptr->setSelected(true);
+}
+
+void ChartScene::addBarlineItem(int measure) {
+    auto ptr = new BarlineItem(measure);
+    addItem(ptr);
 }
 
 void ChartScene::addLabelItem(int id, const Segment &seg) {

@@ -1,9 +1,8 @@
 #include "barlineitem.h"
 #include "chartscene.h"
 
-BarlineItem::BarlineItem(size_t id, size_t measure)
-    : m_id(id)
-    , m_measure(measure) {
+BarlineItem::BarlineItem(size_t measure)
+    : m_measure(measure) {
     const auto margin = ChartScene::MARGIN, width = ChartScene::CELLW, height = ChartScene::CELLH,
                offset = ChartScene::VERTOFFSET;
     auto xIdx = measure % 4, yIdx = measure / 4;

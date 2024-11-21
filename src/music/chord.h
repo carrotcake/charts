@@ -38,12 +38,12 @@
         <LetterName> ::= A | A# | Bb | B | C | C# | Db | D | D# | Eb | E | F | F# | Gb | G | G# | Ab
         <null> ::=
 */
+
 namespace Chords {
-typedef std::array<bool, Notes::COUNT> interval_set;
-enum quality { maj = 0, dom, min, dim, minMaj };
-const std::array<const std::string, 5> str_QUALITY = {"Δ", "", "-", "°", "-Δ"};
-enum extension { triad = 0, seven, nine, eleven, thirteen };
-const std::array<const std::string, 5> str_EXTENSION = {"", "7", "9", "11", "13"};
+
+enum quality { maj = 0, dom, min, dim, minMaj, QUALCOUNT };
+enum extension { triad = 0, seven, nine, eleven, thirteen, EXTCOUNT };
+enum action { R = -1, N = 0, A = 1 }; //remove, no action, add
 enum alteration {
     no3 = 0,
     no5,
@@ -60,12 +60,14 @@ enum alteration {
     flat13,
     ALTCOUNT
 };
-const std::array<const std::string, ALTCOUNT> str_ALTERATION
-    = {"no3", "no5", "♭5", "♯5", "sus2", "sus4", "♭9", "♯9", "add13", "add9", "♯11", "add11", "♭13"};
+typedef std::array<bool, Notes::COUNT> interval_set;
 typedef std::array<bool, ALTCOUNT> Alterations;
-enum action { R = -1, N = 0, A = 1 }; //remove, no action, add
-
 typedef const std::array<action, Notes::COUNT> action_set;
+constexpr std::array<const std::string, QUALCOUNT> str_QUALITY = {"Δ", "", "-", "°", "-Δ"};
+constexpr std::array<const std::string, EXTCOUNT> str_EXTENSION = {"", "7", "9", "11", "13"};
+constexpr std::array<const std::string, ALTCOUNT> str_ALTERATION
+    = {"no3", "no5", "♭5", "♯5", "sus2", "sus4", "♭9", "♯9", "add13", "add9", "♯11", "add11", "♭13"};
+
 //                                                   #9      #11     #5
 //                                           1 b9  9 b3  3 11 b5  5 b13 13 b7 7
 static constexpr interval_set QUALSETS[] = {{1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},  //maj
@@ -94,7 +96,7 @@ static constexpr action_set ALTSETS[] = {
     {N, N, N, N, N, R, A, N, N, N, N, N}, //#11
     {N, N, N, N, N, A, N, N, N, N, N, N}, //add11
     {N, N, N, N, N, N, N, N, A, N, N, N}, //b13
-}; //add13
+};
 } // namespace Chords
 
 class Chord {

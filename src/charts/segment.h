@@ -26,14 +26,15 @@ public:
     auto id() const { return m_id; }
     auto tick() const { return m_tick; }
     void setTick(int tick) { m_tick = tick; }
-    auto isNoChord() const { return m_noChord; }
-    void setNoChord() { m_noChord = false; }
-    auto isDitto() const { return m_isDitto; }
-    auto setDitto() { m_isDitto = true; }
+    auto isChord() const { return m_type == CHORD; }
+    auto isNoChord() const { return m_type == NOCHORD; }
+    void setNoChord() {
+        m_type = NOCHORD;
+    }
+    auto isDitto() const { return m_type == DITTO; }
+    auto setDitto() { m_type = DITTO; }
     const auto &chord() const { return m_chord; }
     void setChord(const Chord &chord) {
-        m_isDitto = false;
-        m_noChord = false;
         m_type = CHORD;
         m_chord.set(chord);
     }
@@ -59,8 +60,6 @@ private:
     size_t m_beat;
     size_t m_length;
     size_t m_tick;
-    bool m_noChord;
-    bool m_isDitto;
     QString m_label;
     WorkingChord m_chord;
 };

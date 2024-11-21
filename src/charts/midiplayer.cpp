@@ -78,11 +78,10 @@ void MIDIController::requestPreview(const WorkingChord &tempchord) {
     emit previewRequested(tempchord.chord(), m_fsynth); //runs in playerthread
 }
 void MIDIController::loadData(const char *data, size_t len) {
-        delete_fluid_player(m_fsplayer);
-        m_fsplayer = new_fluid_player(m_fsynth);
-        fluid_player_set_tick_callback(m_fsplayer, &handlePlayerTick, this);
-        std::cout << "loaded" << std::endl;
-        fluid_player_add_mem(m_fsplayer, data, len);
+    delete_fluid_player(m_fsplayer);
+    m_fsplayer = new_fluid_player(m_fsynth);
+    fluid_player_set_tick_callback(m_fsplayer, &handlePlayerTick, this);
+    fluid_player_add_mem(m_fsplayer, data, len);
 }
 
 void MIDIController::requestPlayback() {

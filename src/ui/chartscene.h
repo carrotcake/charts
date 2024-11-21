@@ -16,8 +16,8 @@ public:
 public slots:
     void updateView() {};
     void addChordItem(const Segment &seg);
-    void addBarlineItem(int id, const Segment &seg);
-    void addDittoItem(int id, const Segment &seg);
+    void addBarlineItem(int measure);
+    void addDittoItem(const Segment &seg);
     void addLabelItem(int id, const Segment &seg);
     void selectItem(int id);
 signals:

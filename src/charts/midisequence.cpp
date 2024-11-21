@@ -1,6 +1,6 @@
 #include "midisequence.h"
 #include "src/music/meter.h"
-#include "src/music/notes.h"
+
 #include <sstream>
 
 MIDISequence::MIDISequence(QObject *parent)
@@ -19,10 +19,8 @@ int MIDISequence::addChord(const Chord &chord, int measure, int beat, int durati
     auto pnotes = chord.notes();
     auto startTick = tpq * beat + tpq * measure * 4;
     auto endTick = startTick + tpq * duration / Meter::QUARTER;
-    std::cout << chord.rootStr() << std::endl;
     for (auto note : pnotes) {
         auto key = note.MIDIValue();
-        std::cout << note.note().flatName() << std::endl;
         m_file.addNoteOn(0, startTick, CHORDCHANNEL, key, 70);
         m_file.addNoteOff(0, endTick, CHORDCHANNEL, key);
     }
@@ -48,6 +46,5 @@ void MIDISequence::writeToFile() {
     std::stringstream stream;
     if (!m_file.write(stream))
         return;
-    std::cout << stream.str() << std::endl;
     m_file.write("test.mid");
 }

@@ -21,6 +21,7 @@ public:
 
     size_t id() const { return m_id; }
     void changeChord(const WorkingChord &chord);
+    void setDitto();
 
 protected:
     void hoverEnterEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;

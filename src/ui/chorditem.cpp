@@ -7,25 +7,6 @@
 #include "qnamespace.h"
 #include <algorithm>
 
-void ChordItem::init() {
-    const auto margin = ChartScene::MARGIN, width = ChartScene::CELLW, height = ChartScene::CELLH,
-               offset = ChartScene::VERTOFFSET;
-    auto xIdx = m_measure % 4, yIdx = m_measure / 4;
-    QFont f;
-    QPoint coords;
-    coords.setX(xIdx * width + m_beat * (width / 4) + margin);
-    coords.setY(yIdx * height + margin + yIdx * offset);
-    f.setPointSize(20);
-    setText(m_rootstr);
-    setFont(f);
-    coords.ry() += 16;
-    coords.rx() += 4;
-    setPos(coords);
-    setCursor(Qt::CursorShape::PointingHandCursor);
-    setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
-    setAcceptHoverEvents(true);
-}
-
 ChordItem::ChordItem(
     const WorkingChord &chord, size_t id, size_t measure, size_t beat, QObject *parent)
     : QObject{parent}
@@ -48,10 +29,36 @@ ChordItem::ChordItem(const QString &str, size_t id, size_t measure, size_t beat,
     init();
 }
 
+void ChordItem::init() {
+    const auto margin = ChartScene::MARGIN, width = ChartScene::CELLW, height = ChartScene::CELLH,
+               offset = ChartScene::VERTOFFSET;
+    auto xIdx = m_measure % 4, yIdx = m_measure / 4;
+    QFont f;
+    QPoint coords;
+    coords.setX(xIdx * width + m_beat * (width / 4) + margin);
+    coords.setY(yIdx * height + margin + yIdx * offset);
+    f.setPointSize(20);
+    setText(m_rootstr);
+    setFont(f);
+    coords.ry() += 16;
+    coords.rx() += 4;
+    setPos(coords);
+    setCursor(Qt::CursorShape::PointingHandCursor);
+    setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
+    setAcceptHoverEvents(true);
+}
+
 void ChordItem::changeChord(const WorkingChord &chord) {
     m_rootstr = QString::fromStdString(chord.rootStr());
     m_extstr = QString::fromStdString(chord.extStr());
     m_bassstr = QString::fromStdString(chord.bassStr());
+    setText(m_rootstr);
+}
+
+void ChordItem::setDitto() {
+    m_rootstr = m_beat == 0 ? "%" : "";
+    m_extstr = "";
+    m_bassstr = "";
     setText(m_rootstr);
 }
 
