@@ -1,0 +1,90 @@
+name: Qt Application Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  # Job for Windows with MSVC
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: TheMrMilchmann/setup-msvc-dev@v3
+        with:
+          arch: x64
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4 
+        with:
+          version: 6.7.3
+          
+      - name: Install FluidSynth 2
+        run: |
+          choco install fluidsynth
+
+      - name: Configure Qt project with qmake
+        run: |
+          qmake.exe Charts.pro
+
+      - name: Build Qt project with MSVC
+        run: |
+          msbuild Charts.pro /p:Configuration=Release
+
+  # Job for macOS with Clang++
+  macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4 
+        with:
+          version: 6.7.3
+          
+      - name: Install FluidSynth 2 (Homebrew)
+        run: |
+          brew install fluid-synth
+
+      - name: Configure Qt project with qmake
+        run: |
+          qmake Charts.pro
+
+      - name: Build Qt project with Clang++
+        run: |
+          make
+
+  # Job for Linux with Clang++
+  linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4 
+        with:
+          version: 6.7.3
+          
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libfluidsynth-dev 
+
+      - name: Configure Qt project with qmake
+        run: |
+          qmake Charts.pro
+
+      - name: Build Qt project with Clang++
+        run: |
+          make
