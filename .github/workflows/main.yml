@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-
+      
 jobs:
   # Job for Windows with MSVC
   windows:
@@ -25,6 +25,7 @@ jobs:
         uses: jurplel/install-qt-action@v4 
         with:
           version: 6.7.3
+          
       - name: Install FluidSynth 2
         run: |
           choco install fluidsynth
@@ -49,6 +50,7 @@ jobs:
         uses: jurplel/install-qt-action@v4 
         with:
           version: 6.7.3
+          
       - name: Install FluidSynth 2 (Homebrew)
         run: |
           brew install fluid-synth
@@ -73,6 +75,7 @@ jobs:
         uses: jurplel/install-qt-action@v4 
         with:
           version: 6.7.3
+          
       - name: Install build dependencies
         run: |
           sudo apt-get update
