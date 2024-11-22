@@ -35,7 +35,7 @@ jobs:
           
       - name: Configure Qt project with qmake
         run: |
-          qmake Charts.pro
+          qmake6 Charts.pro
 
       - name: Build Qt project with Clang++
         run: |
